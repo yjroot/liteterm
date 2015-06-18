@@ -1,0 +1,411 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BCB66D021B3287EE008AFB75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB66D011B3287EE008AFB75 /* AppDelegate.swift */; };
+		BCB66D041B3287EE008AFB75 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCB66D031B3287EE008AFB75 /* Images.xcassets */; };
+		BCB66D071B3287EE008AFB75 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCB66D051B3287EE008AFB75 /* MainMenu.xib */; };
+		BCB66D131B3287EE008AFB75 /* lighttermTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB66D121B3287EE008AFB75 /* lighttermTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BCB66D0D1B3287EE008AFB75 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BCB66CF41B3287EE008AFB75 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BCB66CFB1B3287EE008AFB75;
+			remoteInfo = lightterm;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BCB66CFC1B3287EE008AFB75 /* lightterm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lightterm.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCB66D001B3287EE008AFB75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCB66D011B3287EE008AFB75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BCB66D031B3287EE008AFB75 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BCB66D061B3287EE008AFB75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		BCB66D0C1B3287EE008AFB75 /* lighttermTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lighttermTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCB66D111B3287EE008AFB75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCB66D121B3287EE008AFB75 /* lighttermTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lighttermTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BCB66CF91B3287EE008AFB75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCB66D091B3287EE008AFB75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BCB66CF31B3287EE008AFB75 = {
+			isa = PBXGroup;
+			children = (
+				BCB66CFE1B3287EE008AFB75 /* lightterm */,
+				BCB66D0F1B3287EE008AFB75 /* lighttermTests */,
+				BCB66CFD1B3287EE008AFB75 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BCB66CFD1B3287EE008AFB75 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BCB66CFC1B3287EE008AFB75 /* lightterm.app */,
+				BCB66D0C1B3287EE008AFB75 /* lighttermTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BCB66CFE1B3287EE008AFB75 /* lightterm */ = {
+			isa = PBXGroup;
+			children = (
+				BCB66D011B3287EE008AFB75 /* AppDelegate.swift */,
+				BCB66D031B3287EE008AFB75 /* Images.xcassets */,
+				BCB66D051B3287EE008AFB75 /* MainMenu.xib */,
+				BCB66CFF1B3287EE008AFB75 /* Supporting Files */,
+			);
+			path = lightterm;
+			sourceTree = "<group>";
+		};
+		BCB66CFF1B3287EE008AFB75 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BCB66D001B3287EE008AFB75 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BCB66D0F1B3287EE008AFB75 /* lighttermTests */ = {
+			isa = PBXGroup;
+			children = (
+				BCB66D121B3287EE008AFB75 /* lighttermTests.swift */,
+				BCB66D101B3287EE008AFB75 /* Supporting Files */,
+			);
+			path = lighttermTests;
+			sourceTree = "<group>";
+		};
+		BCB66D101B3287EE008AFB75 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BCB66D111B3287EE008AFB75 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BCB66CFB1B3287EE008AFB75 /* lightterm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCB66D161B3287EE008AFB75 /* Build configuration list for PBXNativeTarget "lightterm" */;
+			buildPhases = (
+				BCB66CF81B3287EE008AFB75 /* Sources */,
+				BCB66CF91B3287EE008AFB75 /* Frameworks */,
+				BCB66CFA1B3287EE008AFB75 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = lightterm;
+			productName = lightterm;
+			productReference = BCB66CFC1B3287EE008AFB75 /* lightterm.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BCB66D0B1B3287EE008AFB75 /* lighttermTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCB66D191B3287EE008AFB75 /* Build configuration list for PBXNativeTarget "lighttermTests" */;
+			buildPhases = (
+				BCB66D081B3287EE008AFB75 /* Sources */,
+				BCB66D091B3287EE008AFB75 /* Frameworks */,
+				BCB66D0A1B3287EE008AFB75 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BCB66D0E1B3287EE008AFB75 /* PBXTargetDependency */,
+			);
+			name = lighttermTests;
+			productName = lighttermTests;
+			productReference = BCB66D0C1B3287EE008AFB75 /* lighttermTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BCB66CF41B3287EE008AFB75 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = Netsarang;
+				TargetAttributes = {
+					BCB66CFB1B3287EE008AFB75 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					BCB66D0B1B3287EE008AFB75 = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = BCB66CFB1B3287EE008AFB75;
+					};
+				};
+			};
+			buildConfigurationList = BCB66CF71B3287EE008AFB75 /* Build configuration list for PBXProject "lightterm" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BCB66CF31B3287EE008AFB75;
+			productRefGroup = BCB66CFD1B3287EE008AFB75 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BCB66CFB1B3287EE008AFB75 /* lightterm */,
+				BCB66D0B1B3287EE008AFB75 /* lighttermTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BCB66CFA1B3287EE008AFB75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCB66D041B3287EE008AFB75 /* Images.xcassets in Resources */,
+				BCB66D071B3287EE008AFB75 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCB66D0A1B3287EE008AFB75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BCB66CF81B3287EE008AFB75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCB66D021B3287EE008AFB75 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCB66D081B3287EE008AFB75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCB66D131B3287EE008AFB75 /* lighttermTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BCB66D0E1B3287EE008AFB75 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BCB66CFB1B3287EE008AFB75 /* lightterm */;
+			targetProxy = BCB66D0D1B3287EE008AFB75 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BCB66D051B3287EE008AFB75 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BCB66D061B3287EE008AFB75 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BCB66D141B3287EE008AFB75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BCB66D151B3287EE008AFB75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		BCB66D171B3287EE008AFB75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = lightterm/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BCB66D181B3287EE008AFB75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = lightterm/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		BCB66D1A1B3287EE008AFB75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = lighttermTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/lightterm.app/Contents/MacOS/lightterm";
+			};
+			name = Debug;
+		};
+		BCB66D1B1B3287EE008AFB75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = lighttermTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/lightterm.app/Contents/MacOS/lightterm";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BCB66CF71B3287EE008AFB75 /* Build configuration list for PBXProject "lightterm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCB66D141B3287EE008AFB75 /* Debug */,
+				BCB66D151B3287EE008AFB75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCB66D161B3287EE008AFB75 /* Build configuration list for PBXNativeTarget "lightterm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCB66D171B3287EE008AFB75 /* Debug */,
+				BCB66D181B3287EE008AFB75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BCB66D191B3287EE008AFB75 /* Build configuration list for PBXNativeTarget "lighttermTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCB66D1A1B3287EE008AFB75 /* Debug */,
+				BCB66D1B1B3287EE008AFB75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BCB66CF41B3287EE008AFB75 /* Project object */;
+}
