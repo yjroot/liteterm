@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC06C4D41B3427D200CA6D44 /* TerminalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC06C4D31B3427D200CA6D44 /* TerminalView.swift */; };
 		BCB66D021B3287EE008AFB75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB66D011B3287EE008AFB75 /* AppDelegate.swift */; };
 		BCB66D041B3287EE008AFB75 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCB66D031B3287EE008AFB75 /* Images.xcassets */; };
 		BCB66D071B3287EE008AFB75 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCB66D051B3287EE008AFB75 /* MainMenu.xib */; };
@@ -24,6 +25,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC06C4D31B3427D200CA6D44 /* TerminalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerminalView.swift; sourceTree = "<group>"; };
 		BCB66CFC1B3287EE008AFB75 /* lightterm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lightterm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCB66D001B3287EE008AFB75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCB66D011B3287EE008AFB75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 		BCB66CFE1B3287EE008AFB75 /* lightterm */ = {
 			isa = PBXGroup;
 			children = (
+				BC06C4D31B3427D200CA6D44 /* TerminalView.swift */,
 				BCB66D011B3287EE008AFB75 /* AppDelegate.swift */,
 				BCB66D031B3287EE008AFB75 /* Images.xcassets */,
 				BCB66D051B3287EE008AFB75 /* MainMenu.xib */,
@@ -205,6 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC06C4D41B3427D200CA6D44 /* TerminalView.swift in Sources */,
 				BCB66D021B3287EE008AFB75 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,6 +400,7 @@
 				BCB66D181B3287EE008AFB75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BCB66D191B3287EE008AFB75 /* Build configuration list for PBXNativeTarget "lighttermTests" */ = {
 			isa = XCConfigurationList;
@@ -404,6 +409,7 @@
 				BCB66D1B1B3287EE008AFB75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
