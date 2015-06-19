@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6233" systemVersion="14A329f" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6233"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -11,7 +11,7 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target">
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="lightterm" customModuleProvider="target">
             <connections>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
@@ -670,11 +670,29 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1177"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
             </view>
+            <toolbar key="toolbar" implicitIdentifier="9B1686DD-563A-46AB-81E3-C44DE141AAB3" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="dna-jm-rI8">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="8C9426A8-FED1-4874-8410-B174E8D24741" label="Sessions" paletteLabel="Sessions" tag="-1" image="NSFolder" id="ZSf-7r-1tH"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" explicitItemIdentifier="NSToolbarOpenSession" id="6UZ-A2-2ea"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="JcD-28-9jv"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="cYE-w2-QJh"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="esq-bx-4P9"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="v05-9B-WyL"/>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="ZSf-7r-1tH"/>
+                    <toolbarItem reference="v05-9B-WyL"/>
+                </defaultToolbarItems>
+            </toolbar>
+            <point key="canvasLocation" x="290" y="404"/>
         </window>
     </objects>
+    <resources>
+        <image name="NSFolder" width="32" height="32"/>
+    </resources>
 </document>
