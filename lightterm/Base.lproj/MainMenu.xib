@@ -675,7 +675,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
             </view>
-            <toolbar key="toolbar" implicitIdentifier="9B1686DD-563A-46AB-81E3-C44DE141AAB3" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="dna-jm-rI8">
+            <toolbar key="toolbar" implicitIdentifier="9B1686DD-563A-46AB-81E3-C44DE141AAB3" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="small" id="dna-jm-rI8">
                 <allowedToolbarItems>
                     <toolbarItem implicitItemIdentifier="8C9426A8-FED1-4874-8410-B174E8D24741" label="Sessions" paletteLabel="Sessions" tag="-1" image="NSFolder" id="ZSf-7r-1tH"/>
                     <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" explicitItemIdentifier="NSToolbarOpenSession" id="6UZ-A2-2ea"/>
