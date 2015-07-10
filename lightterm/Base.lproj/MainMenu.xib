@@ -67,14 +67,14 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="File" id="bib-Uj-vzu">
                         <items>
-                            <menuItem title="New" keyEquivalent="n" id="Was-JA-tGl">
+                            <menuItem title="New Session" keyEquivalent="n" id="Was-JA-tGl">
                                 <connections>
-                                    <action selector="newDocument:" target="-1" id="4Si-XN-c54"/>
+                                    <action selector="newSession:" target="Voe-Tx-rLC" id="ubq-W9-iEe"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Open…" keyEquivalent="o" id="IAo-SY-fd9">
+                            <menuItem title="Open Session…" keyEquivalent="o" id="IAo-SY-fd9">
                                 <connections>
-                                    <action selector="openDocument:" target="-1" id="bVn-NM-KNZ"/>
+                                    <action selector="openSession:" target="Voe-Tx-rLC" id="EML-rH-EXm"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Open Recent" id="tXI-mr-wws">
@@ -689,7 +689,7 @@
                     <toolbarItem reference="v05-9B-WyL"/>
                 </defaultToolbarItems>
             </toolbar>
-            <point key="canvasLocation" x="290" y="404"/>
+            <point key="canvasLocation" x="382" y="453"/>
         </window>
     </objects>
     <resources>

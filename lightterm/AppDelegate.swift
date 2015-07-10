@@ -22,5 +22,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillTerminate(aNotification: NSNotification) {
         // Insert code here to tear down your application
     }
+    
+    let sessionDetailWindowController = SessionDetailWindowController(windowNibName: "SessionDetail")
+    
+    @IBAction func newSession(sender: AnyObject) {
+        sessionDetailWindowController.showWindow(sender)
+    }
+    
+    @IBAction func openSession(AnyObject) {
+        let alert = NSAlert()
+        alert.messageText = "Event"
+        alert.addButtonWithTitle("OK")
+        alert.informativeText = "Open Session."
+        
+        alert.beginSheetModalForWindow(window, completionHandler: nil)
+    }
 }
 
