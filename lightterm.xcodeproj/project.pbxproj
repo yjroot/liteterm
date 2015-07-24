@@ -16,6 +16,8 @@
 		BCB66D041B3287EE008AFB75 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCB66D031B3287EE008AFB75 /* Images.xcassets */; };
 		BCB66D071B3287EE008AFB75 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCB66D051B3287EE008AFB75 /* MainMenu.xib */; };
 		BCB66D131B3287EE008AFB75 /* lighttermTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB66D121B3287EE008AFB75 /* lighttermTests.swift */; };
+		FADFC4141B62552B001A8124 /* Options.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADFC4131B62552B001A8124 /* Options.xib */; };
+		FADFC4161B6258B6001A8124 /* OptionWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADFC4151B6258B6001A8124 /* OptionWindowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		BCB66D0C1B3287EE008AFB75 /* lighttermTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lighttermTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCB66D111B3287EE008AFB75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCB66D121B3287EE008AFB75 /* lighttermTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lighttermTests.swift; sourceTree = "<group>"; };
+		FADFC4131B62552B001A8124 /* Options.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Options.xib; sourceTree = "<group>"; };
+		FADFC4151B6258B6001A8124 /* OptionWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionWindowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,8 @@
 				BC57DF0B1B46D307008B7A75 /* Session.swift */,
 				BC57DF0F1B46D650008B7A75 /* SessionDetailWindow.swift */,
 				BC4BB5FB1B4FEAE500D2956A /* SessionDetailWindowController.swift */,
+				FADFC4131B62552B001A8124 /* Options.xib */,
+				FADFC4151B6258B6001A8124 /* OptionWindowController.swift */,
 			);
 			path = lightterm;
 			sourceTree = "<group>";
@@ -201,6 +207,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FADFC4141B62552B001A8124 /* Options.xib in Resources */,
 				BCB66D041B3287EE008AFB75 /* Images.xcassets in Resources */,
 				BC57DF081B46CA59008B7A75 /* SessionDetail.xib in Resources */,
 				BCB66D071B3287EE008AFB75 /* MainMenu.xib in Resources */,
@@ -223,6 +230,7 @@
 			files = (
 				BC06C4D41B3427D200CA6D44 /* TerminalView.swift in Sources */,
 				BC4BB5FD1B4FEAE500D2956A /* SessionDetailWindowController.swift in Sources */,
+				FADFC4161B6258B6001A8124 /* OptionWindowController.swift in Sources */,
 				BCB66D021B3287EE008AFB75 /* AppDelegate.swift in Sources */,
 				BC57DF0C1B46D307008B7A75 /* Session.swift in Sources */,
 				BC57DF101B46D650008B7A75 /* SessionDetailWindow.swift in Sources */,
