@@ -69,7 +69,7 @@
                         <items>
                             <menuItem title="New Session" keyEquivalent="n" id="Was-JA-tGl">
                                 <connections>
-                                    <action selector="newSession:" target="Voe-Tx-rLC" id="ubq-W9-iEe"/>
+                                    <action selector="newSession:" target="Voe-Tx-rLC" id="slT-RE-qtC"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Open Session…" keyEquivalent="o" id="IAo-SY-fd9">
@@ -683,10 +683,24 @@
                     <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="cYE-w2-QJh"/>
                     <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="esq-bx-4P9"/>
                     <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="v05-9B-WyL"/>
+                    <toolbarItem implicitItemIdentifier="83F21062-FD80-44C9-9261-0111C63CA6D9" label="Address" paletteLabel="Address" id="KfK-5z-ykQ">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="96" height="27"/>
+                        <size key="maxSize" width="20000" height="27"/>
+                        <textField key="view" verticalHuggingPriority="750" id="FHD-TK-PWj">
+                            <rect key="frame" x="0.0" y="14" width="96" height="27"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="rf1-hu-e3e">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </toolbarItem>
                 </allowedToolbarItems>
                 <defaultToolbarItems>
                     <toolbarItem reference="ZSf-7r-1tH"/>
-                    <toolbarItem reference="v05-9B-WyL"/>
+                    <toolbarItem reference="KfK-5z-ykQ"/>
                 </defaultToolbarItems>
             </toolbar>
             <point key="canvasLocation" x="382" y="453"/>
