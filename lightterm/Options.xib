@@ -11,58 +11,64 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="480" height="270"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="900"/>
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="za8-YF-b47">
-                        <rect key="frame" x="93" y="44" width="96" height="21"/>
+                        <rect key="frame" x="35" y="104" width="269" height="21"/>
                         <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="s7v-Lh-zQo"/>
                     </slider>
-                    <tabView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DJg-BU-9rw">
-                        <rect key="frame" x="1" y="123" width="177" height="124"/>
-                        <font key="font" metaFont="system"/>
-                        <tabViewItems>
-                            <tabViewItem label="Tab" identifier="1" id="fDZ-Fp-6EI">
-                                <view key="view" id="oYB-p5-iiz">
-                                    <rect key="frame" x="10" y="33" width="157" height="78"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                            </tabViewItem>
-                            <tabViewItem label="View" identifier="2" id="fr7-fX-OXU">
-                                <view key="view" id="Z8W-Tr-Ze3">
-                                    <rect key="frame" x="10" y="33" width="157" height="78"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </view>
-                            </tabViewItem>
-                        </tabViewItems>
-                    </tabView>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="92N-aG-dv0">
-                        <rect key="frame" x="302" y="178" width="61" height="18"/>
-                        <buttonCell key="cell" type="check" title="Check" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="MRo-YS-HfK">
+                        <rect key="frame" x="18" y="207" width="270" height="20"/>
+                        <buttonCell key="cell" type="check" title="Hide tab bar when there is only one tab" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="MRo-YS-HfK">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                     </button>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Vc-bM-cHm">
-                        <rect key="frame" x="302" y="158" width="61" height="18"/>
-                        <buttonCell key="cell" type="check" title="Check" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="7fG-CD-5zN">
+                        <rect key="frame" x="18" y="168" width="281" height="18"/>
+                        <buttonCell key="cell" type="check" title="Auto-hide Menubar in non-lion fullscreen" bezelStyle="regularSquare" imagePosition="left" inset="2" id="7fG-CD-5zN">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                     </button>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bxJ-GE-hLy">
-                        <rect key="frame" x="302" y="138" width="61" height="18"/>
-                        <buttonCell key="cell" type="check" title="Check" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="hZx-UQ-aJh">
+                        <rect key="frame" x="18" y="188" width="144" height="18"/>
+                        <buttonCell key="cell" type="check" title="Hide tab's number" bezelStyle="regularSquare" imagePosition="left" inset="2" id="hZx-UQ-aJh">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                     </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hzG-id-ji4">
+                        <rect key="frame" x="18" y="233" width="38" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Tabs" id="eIZ-w5-wKp">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KJa-hP-uoY">
+                        <rect key="frame" x="18" y="80" width="53" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Cursor" id="zoy-g8-fBQ">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OwP-CA-sQq">
+                        <rect key="frame" x="35" y="120" width="269" height="42"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Show Tabs in fullscreen by holding &quot;command&quot; key for :" placeholderString="holding" id="kXD-S9-3hr">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                     <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" autorecalculatesCellSize="YES" translatesAutoresizingMaskIntoConstraints="NO" id="by6-Sg-1Lx">
-                        <rect key="frame" x="300" y="69" width="61" height="38"/>
+                        <rect key="frame" x="20" y="17" width="110" height="58"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        <size key="cellSize" width="58" height="18"/>
+                        <size key="cellSize" width="110" height="18"/>
                         <size key="intercellSpacing" width="4" height="2"/>
                         <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" inset="2" id="Jq4-Dm-EmE">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -70,11 +76,15 @@
                         </buttonCell>
                         <cells>
                             <column>
-                                <buttonCell type="radio" title="Radio" imagePosition="left" alignment="left" state="on" tag="1" inset="2" id="bHe-3Q-vc0">
+                                <buttonCell type="radio" title="Underline" imagePosition="left" alignment="left" state="on" tag="1" inset="2" id="bHe-3Q-vc0">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
-                                <buttonCell type="radio" title="Radio" imagePosition="left" alignment="left" inset="2" id="BTb-MI-CBd">
+                                <buttonCell type="radio" title="Vertical Line" imagePosition="left" alignment="left" inset="2" id="BTb-MI-CBd">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <buttonCell type="radio" title="Box" imagePosition="left" alignment="left" inset="2" id="S3Z-AD-W2r">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>

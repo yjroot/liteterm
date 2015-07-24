@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
     </dependencies>
@@ -627,6 +627,19 @@
                         </items>
                     </menu>
                 </menuItem>
+                <menuItem title="Tools" id="Wfn-HD-aw0" userLabel="Tools">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Tools" id="xQS-KH-eJF">
+                        <items>
+                            <menuItem title="Options" id="q4C-q2-bJh">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="openOptions:" target="Voe-Tx-rLC" id="L7F-cU-wUB"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
                 <menuItem title="Window" id="aUF-d1-5bR">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Window" systemMenu="window" id="Td7-aD-5lo">
@@ -670,7 +683,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="900"/>
             <view key="contentView" id="EiT-Mj-1SZ" customClass="TerminalView" customModule="lightterm" customModuleProvider="target">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -683,6 +696,11 @@
                     <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="cYE-w2-QJh"/>
                     <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="esq-bx-4P9"/>
                     <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="v05-9B-WyL"/>
+                    <toolbarItem implicitItemIdentifier="3C39D273-15C0-4FC9-AE57-F235749B8E31" label="Options" paletteLabel="Options" tag="-1" image="NSAdvanced" id="J9x-Oi-U5G">
+                        <connections>
+                            <action selector="openOptions:" target="Voe-Tx-rLC" id="Tdb-nK-Gux"/>
+                        </connections>
+                    </toolbarItem>
                     <toolbarItem implicitItemIdentifier="83F21062-FD80-44C9-9261-0111C63CA6D9" label="Address" paletteLabel="Address" id="KfK-5z-ykQ">
                         <nil key="toolTip"/>
                         <size key="minSize" width="96" height="27"/>
@@ -700,13 +718,15 @@
                 </allowedToolbarItems>
                 <defaultToolbarItems>
                     <toolbarItem reference="ZSf-7r-1tH"/>
+                    <toolbarItem reference="J9x-Oi-U5G"/>
                     <toolbarItem reference="KfK-5z-ykQ"/>
                 </defaultToolbarItems>
             </toolbar>
-            <point key="canvasLocation" x="382" y="453"/>
+            <point key="canvasLocation" x="275" y="250"/>
         </window>
     </objects>
     <resources>
+        <image name="NSAdvanced" width="32" height="32"/>
         <image name="NSFolder" width="32" height="32"/>
     </resources>
 </document>
