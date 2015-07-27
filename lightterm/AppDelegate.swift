@@ -37,5 +37,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         alert.beginSheetModalForWindow(window, completionHandler: nil)
     }
+    
+    let optionWindowController = OptionWindowController(windowNibName: "Options")
+    
+    @IBAction func openOptions(sender: AnyObject){
+        optionWindowController.showWindow(sender)
+    }
 }
 
