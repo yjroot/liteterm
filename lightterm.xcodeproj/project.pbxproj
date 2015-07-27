@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		BC06C4D41B3427D200CA6D44 /* TerminalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC06C4D31B3427D200CA6D44 /* TerminalView.swift */; };
+		BC4088511B62542B00E54711 /* SessionProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4088501B62542B00E54711 /* SessionProfile.swift */; };
+		BC40BCDD1B62558A007D9FF9 /* SessionProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC40BCDC1B62558A007D9FF9 /* SessionProfileTests.swift */; };
+		BC40BCDE1B62565D007D9FF9 /* SessionProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4088501B62542B00E54711 /* SessionProfile.swift */; };
+		BC40BCE01B625A4E007D9FF9 /* SessionProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC40BCDF1B625A4E007D9FF9 /* SessionProfileManager.swift */; };
+		BC40BCE11B625A4E007D9FF9 /* SessionProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC40BCDF1B625A4E007D9FF9 /* SessionProfileManager.swift */; };
+		BC40BCE71B626F73007D9FF9 /* local.lit in Resources */ = {isa = PBXBuildFile; fileRef = BC40BCE41B626F73007D9FF9 /* local.lit */; };
+		BC40BCE81B626F73007D9FF9 /* ssh.lit in Resources */ = {isa = PBXBuildFile; fileRef = BC40BCE51B626F73007D9FF9 /* ssh.lit */; };
+		BC40BCE91B626F73007D9FF9 /* telnet.lit in Resources */ = {isa = PBXBuildFile; fileRef = BC40BCE61B626F73007D9FF9 /* telnet.lit */; };
+		BC40BCEB1B663D3F007D9FF9 /* SessionProfileManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC40BCEA1B663D3F007D9FF9 /* SessionProfileManagerTests.swift */; };
 		BC4BB5FD1B4FEAE500D2956A /* SessionDetailWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4BB5FB1B4FEAE500D2956A /* SessionDetailWindowController.swift */; };
 		BC57DF081B46CA59008B7A75 /* SessionDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC57DF071B46CA59008B7A75 /* SessionDetail.xib */; };
 		BC57DF0C1B46D307008B7A75 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC57DF0B1B46D307008B7A75 /* Session.swift */; };
@@ -30,6 +39,13 @@
 
 /* Begin PBXFileReference section */
 		BC06C4D31B3427D200CA6D44 /* TerminalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerminalView.swift; sourceTree = "<group>"; };
+		BC4088501B62542B00E54711 /* SessionProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionProfile.swift; sourceTree = "<group>"; };
+		BC40BCDC1B62558A007D9FF9 /* SessionProfileTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionProfileTests.swift; sourceTree = "<group>"; };
+		BC40BCDF1B625A4E007D9FF9 /* SessionProfileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionProfileManager.swift; sourceTree = "<group>"; };
+		BC40BCE41B626F73007D9FF9 /* local.lit */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = local.lit; sourceTree = "<group>"; };
+		BC40BCE51B626F73007D9FF9 /* ssh.lit */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ssh.lit; sourceTree = "<group>"; };
+		BC40BCE61B626F73007D9FF9 /* telnet.lit */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = telnet.lit; sourceTree = "<group>"; };
+		BC40BCEA1B663D3F007D9FF9 /* SessionProfileManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionProfileManagerTests.swift; sourceTree = "<group>"; };
 		BC4BB5FB1B4FEAE500D2956A /* SessionDetailWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDetailWindowController.swift; sourceTree = "<group>"; };
 		BC57DF071B46CA59008B7A75 /* SessionDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionDetail.xib; sourceTree = "<group>"; };
 		BC57DF0B1B46D307008B7A75 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
@@ -62,9 +78,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC40884F1B6252F700E54711 /* Session File */ = {
+			isa = PBXGroup;
+			children = (
+				BC4088501B62542B00E54711 /* SessionProfile.swift */,
+				BC40BCDF1B625A4E007D9FF9 /* SessionProfileManager.swift */,
+			);
+			name = "Session File";
+			sourceTree = "<group>";
+		};
+		BC40BCE21B626F17007D9FF9 /* mocks */ = {
+			isa = PBXGroup;
+			children = (
+				BC40BCE41B626F73007D9FF9 /* local.lit */,
+				BC40BCE51B626F73007D9FF9 /* ssh.lit */,
+				BC40BCE61B626F73007D9FF9 /* telnet.lit */,
+			);
+			name = mocks;
+			sourceTree = "<group>";
+		};
 		BCB66CF31B3287EE008AFB75 = {
 			isa = PBXGroup;
 			children = (
+				BC40884F1B6252F700E54711 /* Session File */,
 				BCB66CFE1B3287EE008AFB75 /* lightterm */,
 				BCB66D0F1B3287EE008AFB75 /* lighttermTests */,
 				BCB66CFD1B3287EE008AFB75 /* Products */,
@@ -107,8 +143,11 @@
 		BCB66D0F1B3287EE008AFB75 /* lighttermTests */ = {
 			isa = PBXGroup;
 			children = (
+				BC40BCE21B626F17007D9FF9 /* mocks */,
 				BCB66D121B3287EE008AFB75 /* lighttermTests.swift */,
 				BCB66D101B3287EE008AFB75 /* Supporting Files */,
+				BC40BCDC1B62558A007D9FF9 /* SessionProfileTests.swift */,
+				BC40BCEA1B663D3F007D9FF9 /* SessionProfileManagerTests.swift */,
 			);
 			path = lighttermTests;
 			sourceTree = "<group>";
@@ -211,6 +250,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC40BCE81B626F73007D9FF9 /* ssh.lit in Resources */,
+				BC40BCE91B626F73007D9FF9 /* telnet.lit in Resources */,
+				BC40BCE71B626F73007D9FF9 /* local.lit in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,10 +263,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC4088511B62542B00E54711 /* SessionProfile.swift in Sources */,
 				BC06C4D41B3427D200CA6D44 /* TerminalView.swift in Sources */,
 				BC4BB5FD1B4FEAE500D2956A /* SessionDetailWindowController.swift in Sources */,
 				BCB66D021B3287EE008AFB75 /* AppDelegate.swift in Sources */,
 				BC57DF0C1B46D307008B7A75 /* Session.swift in Sources */,
+				BC40BCE01B625A4E007D9FF9 /* SessionProfileManager.swift in Sources */,
 				BC57DF101B46D650008B7A75 /* SessionDetailWindow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -233,6 +277,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC40BCDE1B62565D007D9FF9 /* SessionProfile.swift in Sources */,
+				BC40BCDD1B62558A007D9FF9 /* SessionProfileTests.swift in Sources */,
+				BC40BCE11B625A4E007D9FF9 /* SessionProfileManager.swift in Sources */,
+				BC40BCEB1B663D3F007D9FF9 /* SessionProfileManagerTests.swift in Sources */,
 				BCB66D131B3287EE008AFB75 /* lighttermTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
