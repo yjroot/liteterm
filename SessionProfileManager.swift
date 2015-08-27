@@ -44,7 +44,7 @@ class SessionProfileManager {
             if (!fileManager.fileExistsAtPath(profilePath)) {
                 return nil;
             }
-            return SessionProfile(filename: profilePath)
+            return SessionProfile(filepath: profilePath)
         }
         set(profile) {
             

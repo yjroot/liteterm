@@ -9,10 +9,14 @@
 import Foundation
 
 class SessionProfile {
-    var filename: String? = nil
+    var filepath: String? = nil
+    var name: String? = nil
     
-    init(filename: String? = nil) {
-        self.filename = filename
+    init(filepath: String? = nil) {
+        if filepath != nil {
+            self.filepath = filepath
+            self.name = filepath?.lastPathComponent.stringByDeletingPathExtension
+        }
     }
     
     subscript(key : String) -> String? {

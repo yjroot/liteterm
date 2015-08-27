@@ -23,4 +23,27 @@ class SessionProfileTests: XCTestCase {
     override func tearDown() {
         super.tearDown()
     }
+    
+    func testNew() {
+        let profile = SessionProfile()
+        
+        XCTAssert(profile.filepath == nil)
+        XCTAssert(profile.name == nil)
+    }
+    
+    func testOpen() {
+        var sshProfile = self.manager!["ssh"]!
+        XCTAssert(sshProfile.name == "ssh")
+    }
+    
+    /*
+    func testGetValue() {
+        var sshProfile = self.manager!["ssh"]!
+        
+        XCTAssert(sshProfile["conneciton > host"] == "www.lightterm.com")
+        XCTAssert(sshProfile["conneciton > protocol"] == "ssh")
+        XCTAssert(sshProfile["conneciton > ssh > port"] == "22")
+        XCTAssert(sshProfile["not > exist"] == nil)
+    }
+    */
 }
