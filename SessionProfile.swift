@@ -69,7 +69,10 @@ class SessionProfileSelector {
             for key in self.list {
                 xml = xml[key]
             }
-            return xml.element!.text!
+            if var element: XMLElement = xml.element {
+                return element.text ?? ""
+            }
+            return ""
         }
         set(newValue) {
         }
