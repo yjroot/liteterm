@@ -1,5 +1,5 @@
-<ligthterm version="0.01">
-    <conneciton>
+<lightterm version="0.01">
+    <connection>
         <host>www.lightterm.com</host>
         <protocol>ssh</protocol>
         <ssh>
@@ -21,7 +21,7 @@
         </ssh>
         <telnet>
         </telnet>
-    </conneciton>
+    </connection>
     <terminal>
         <type>VT52</type>
         <keyboard>

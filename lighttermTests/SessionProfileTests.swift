@@ -36,14 +36,12 @@ class SessionProfileTests: XCTestCase {
         XCTAssert(sshProfile.name == "ssh")
     }
     
-    /*
     func testGetValue() {
         var sshProfile = self.manager!["ssh"]!
         
-        XCTAssert(sshProfile["conneciton > host"] == "www.lightterm.com")
-        XCTAssert(sshProfile["conneciton > protocol"] == "ssh")
-        XCTAssert(sshProfile["conneciton > ssh > port"] == "22")
-        XCTAssert(sshProfile["not > exist"] == nil)
+        XCTAssert(sshProfile["connection"]["host"].value == "www.lightterm.com")
+        XCTAssert(sshProfile["connection"]["protocol"].value == "ssh")
+        XCTAssert(sshProfile["connection"]["ssh"]["port"].value == "22")
+        //XCTAssert(sshProfile["not"]["exist"].value == "")
     }
-    */
 }

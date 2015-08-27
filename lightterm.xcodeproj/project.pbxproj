@@ -21,6 +21,8 @@
 		BC57DF081B46CA59008B7A75 /* SessionDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC57DF071B46CA59008B7A75 /* SessionDetail.xib */; };
 		BC57DF0C1B46D307008B7A75 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC57DF0B1B46D307008B7A75 /* Session.swift */; };
 		BC57DF101B46D650008B7A75 /* SessionDetailWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC57DF0F1B46D650008B7A75 /* SessionDetailWindow.swift */; };
+		BCAE49851B8F3BC6008D8CBA /* SWXMLHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE49841B8F3BC6008D8CBA /* SWXMLHash.swift */; };
+		BCAE49861B8F3BF8008D8CBA /* SWXMLHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE49841B8F3BC6008D8CBA /* SWXMLHash.swift */; };
 		BCB66D021B3287EE008AFB75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB66D011B3287EE008AFB75 /* AppDelegate.swift */; };
 		BCB66D041B3287EE008AFB75 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCB66D031B3287EE008AFB75 /* Images.xcassets */; };
 		BCB66D071B3287EE008AFB75 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCB66D051B3287EE008AFB75 /* MainMenu.xib */; };
@@ -52,6 +54,8 @@
 		BC57DF071B46CA59008B7A75 /* SessionDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionDetail.xib; sourceTree = "<group>"; };
 		BC57DF0B1B46D307008B7A75 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		BC57DF0F1B46D650008B7A75 /* SessionDetailWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDetailWindow.swift; sourceTree = "<group>"; };
+		BCAE49831B8F3BC6008D8CBA /* SWXMLHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWXMLHash.h; path = Library/SWXMLHash/Source/SWXMLHash.h; sourceTree = "<group>"; };
+		BCAE49841B8F3BC6008D8CBA /* SWXMLHash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SWXMLHash.swift; path = Library/SWXMLHash/Source/SWXMLHash.swift; sourceTree = "<group>"; };
 		BCB66CFC1B3287EE008AFB75 /* lightterm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lightterm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCB66D001B3287EE008AFB75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCB66D011B3287EE008AFB75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,9 +105,27 @@
 			name = mocks;
 			sourceTree = "<group>";
 		};
+		BCAE49811B8F3B91008D8CBA /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				BCAE49821B8F3BA9008D8CBA /* SWXMLHash */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		BCAE49821B8F3BA9008D8CBA /* SWXMLHash */ = {
+			isa = PBXGroup;
+			children = (
+				BCAE49831B8F3BC6008D8CBA /* SWXMLHash.h */,
+				BCAE49841B8F3BC6008D8CBA /* SWXMLHash.swift */,
+			);
+			name = SWXMLHash;
+			sourceTree = "<group>";
+		};
 		BCB66CF31B3287EE008AFB75 = {
 			isa = PBXGroup;
 			children = (
+				BCAE49811B8F3B91008D8CBA /* Library */,
 				BC40884F1B6252F700E54711 /* Session File */,
 				BCB66CFE1B3287EE008AFB75 /* lightterm */,
 				BCB66D0F1B3287EE008AFB75 /* lighttermTests */,
@@ -277,6 +299,7 @@
 				BCB66D021B3287EE008AFB75 /* AppDelegate.swift in Sources */,
 				BC57DF0C1B46D307008B7A75 /* Session.swift in Sources */,
 				BC40BCE01B625A4E007D9FF9 /* SessionProfileManager.swift in Sources */,
+				BCAE49851B8F3BC6008D8CBA /* SWXMLHash.swift in Sources */,
 				BC57DF101B46D650008B7A75 /* SessionDetailWindow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC40BCDE1B62565D007D9FF9 /* SessionProfile.swift in Sources */,
+				BCAE49861B8F3BF8008D8CBA /* SWXMLHash.swift in Sources */,
 				BC40BCDD1B62558A007D9FF9 /* SessionProfileTests.swift in Sources */,
 				BC40BCE11B625A4E007D9FF9 /* SessionProfileManager.swift in Sources */,
 				BC40BCEB1B663D3F007D9FF9 /* SessionProfileManagerTests.swift in Sources */,
