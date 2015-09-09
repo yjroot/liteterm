@@ -27,6 +27,8 @@
 		BCB66D041B3287EE008AFB75 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCB66D031B3287EE008AFB75 /* Images.xcassets */; };
 		BCB66D071B3287EE008AFB75 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCB66D051B3287EE008AFB75 /* MainMenu.xib */; };
 		BCB66D131B3287EE008AFB75 /* lighttermTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB66D121B3287EE008AFB75 /* lighttermTests.swift */; };
+		FAD6BBDC1B66505500C93AC4 /* Options.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAD6BBDB1B66505500C93AC4 /* Options.plist */; };
+		FAD6BBDE1B6651B000C93AC4 /* OptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6BBDD1B6651B000C93AC4 /* OptionManager.swift */; };
 		FADFC4141B62552B001A8124 /* Options.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADFC4131B62552B001A8124 /* Options.xib */; };
 		FADFC4161B6258B6001A8124 /* OptionWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADFC4151B6258B6001A8124 /* OptionWindowController.swift */; };
 /* End PBXBuildFile section */
@@ -64,6 +66,8 @@
 		BCB66D0C1B3287EE008AFB75 /* lighttermTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lighttermTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCB66D111B3287EE008AFB75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCB66D121B3287EE008AFB75 /* lighttermTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lighttermTests.swift; sourceTree = "<group>"; };
+		FAD6BBDB1B66505500C93AC4 /* Options.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Options.plist; sourceTree = "<group>"; };
+		FAD6BBDD1B6651B000C93AC4 /* OptionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionManager.swift; sourceTree = "<group>"; };
 		FADFC4131B62552B001A8124 /* Options.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Options.xib; sourceTree = "<group>"; };
 		FADFC4151B6258B6001A8124 /* OptionWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionWindowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -156,6 +160,7 @@
 				BC4BB5FB1B4FEAE500D2956A /* SessionDetailWindowController.swift */,
 				FADFC4131B62552B001A8124 /* Options.xib */,
 				FADFC4151B6258B6001A8124 /* OptionWindowController.swift */,
+				FAD6BBDD1B6651B000C93AC4 /* OptionManager.swift */,
 			);
 			path = lightterm;
 			sourceTree = "<group>";
@@ -164,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				BCB66D001B3287EE008AFB75 /* Info.plist */,
+				FAD6BBDB1B66505500C93AC4 /* Options.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -271,6 +277,7 @@
 				FADFC4141B62552B001A8124 /* Options.xib in Resources */,
 				BCB66D041B3287EE008AFB75 /* Images.xcassets in Resources */,
 				BC57DF081B46CA59008B7A75 /* SessionDetail.xib in Resources */,
+				FAD6BBDC1B66505500C93AC4 /* Options.plist in Resources */,
 				BCB66D071B3287EE008AFB75 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,6 +301,7 @@
 			files = (
 				BC4088511B62542B00E54711 /* SessionProfile.swift in Sources */,
 				BC06C4D41B3427D200CA6D44 /* TerminalView.swift in Sources */,
+				FAD6BBDE1B6651B000C93AC4 /* OptionManager.swift in Sources */,
 				BC4BB5FD1B4FEAE500D2956A /* SessionDetailWindowController.swift in Sources */,
 				FADFC4161B6258B6001A8124 /* OptionWindowController.swift in Sources */,
 				BCB66D021B3287EE008AFB75 /* AppDelegate.swift in Sources */,
