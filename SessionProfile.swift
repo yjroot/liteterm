@@ -79,7 +79,16 @@ class SessionProfileSelector {
             return ""
         }
         set(newValue) {
-            
+            var xml: XMLIndexer = self.profile.xml!["lightterm"]
+            for key in self.list {
+                if xml[key].boolValue {
+                    xml = xml[key]
+                } else {
+                    xml.element?.addElement(key, withAttributes: [:])
+                    xml = xml[key]
+                }
+            }
+            xml.element?.text = newValue
         }
     }
 }
