@@ -9,29 +9,41 @@
 import Foundation
 
 class SessionProfile {
+    var parent: SessionProfile? = nil
     var error: Bool = false
-    
-    var xml: XMLIndexer? = nil
     var filepath: String? = nil
-    var name: String? = nil
     
-    init(filepath: String? = nil) {
-        if filepath != nil {
-            self.filepath = filepath
-            self.name = filepath?.lastPathComponent.stringByDeletingPathExtension
-            
-            let data: NSData? = NSData(contentsOfFile:self.filepath!, options: nil, error: nil)
-            if data == nil {
-                self.error = false
-                return
-            }
-            
-            self.xml = SWXMLHash.parse(data!)
-            // TODO: Because parse mothod will be slow with large file, it needs
-            //       to change to lazy mothod. But, lazy parse does not support 
-            //       description yet.
+    private var xml: XMLIndexer? = nil
+    var root: XMLIndexer {
+        if self.xml != nil {
+            return self.xml!["lightterm"]
         }
         
+        if let data: NSData = NSData(contentsOfFile:self.filepath!, options: nil, error: nil) {
+            // TODO: Because parse mothod will be slow with large file, it needs
+            //       to change to lazy mothod. But, lazy parse does not support
+            //       description yet.
+            var xml = SWXMLHash.parse(data)
+            if xml["lightterm"].element?.attributes["version"] == "0.01" {
+                self.xml = xml
+            }
+        }
+        
+        if self.xml == nil {
+            var root = XMLElement(name: rootElementName)
+            root.addElement("lightterm", withAttributes: ["version":"0.01"])
+            self.xml = XMLIndexer(root)
+        }
+        
+        return self.xml!["lightterm"]
+    }
+    
+    var name: String {
+        return self.filepath?.lastPathComponent.stringByDeletingPathExtension ?? ""
+    }
+    
+    init(filepath: String? = nil) {
+        self.filepath = filepath
     }
     
     subscript(key : String) -> SessionProfileSelector {
@@ -49,6 +61,30 @@ class SessionProfile {
             return true
         }
         return false
+    }
+    
+    func getValue(keys: [String]) -> String {
+        var xml: XMLIndexer = self.root
+        for key in keys {
+            xml = xml[key]
+        }
+        if var element: XMLElement = xml.element {
+            return element.text ?? ""
+        }
+        return self.parent?.getValue(keys) ?? ""
+    }
+    
+    func setValue(keys: [String], value: String)  {
+        var xml: XMLIndexer = self.root
+        for key in keys {
+            if xml[key].boolValue {
+                xml = xml[key]
+            } else {
+                xml.element?.addElement(key, withAttributes: [:])
+                xml = xml[key]
+            }
+        }
+        xml.element?.text = value
     }
 }
 
@@ -83,26 +119,10 @@ class SessionProfileSelector {
     
     var value: String {
         get {
-            var xml: XMLIndexer = self.profile.xml!["lightterm"]
-            for key in self.list {
-                xml = xml[key]
-            }
-            if var element: XMLElement = xml.element {
-                return element.text ?? ""
-            }
-            return ""
+            return self.profile.getValue(self.list)
         }
         set(newValue) {
-            var xml: XMLIndexer = self.profile.xml!["lightterm"]
-            for key in self.list {
-                if xml[key].boolValue {
-                    xml = xml[key]
-                } else {
-                    xml.element?.addElement(key, withAttributes: [:])
-                    xml = xml[key]
-                }
-            }
-            xml.element?.text = newValue
+            self.profile.setValue(self.list, value: newValue)
         }
     }
 }

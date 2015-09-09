@@ -28,7 +28,7 @@ class SessionProfileTests: XCTestCase {
         let profile = SessionProfile()
         
         XCTAssert(profile.filepath == nil)
-        XCTAssert(profile.name == nil)
+        XCTAssert(profile.name == "")
     }
     
     func testOpen() {
