@@ -25,7 +25,11 @@ class SessionProfile {
                 self.error = false
                 return
             }
-            self.xml = SWXMLHash.lazy(data!)
+            
+            self.xml = SWXMLHash.parse(data!)
+            // TODO: Because parse mothod will be slow with large file, it needs
+            //       to change to lazy mothod. But, lazy parse does not support 
+            //       description yet.
         }
         
     }
@@ -75,6 +79,7 @@ class SessionProfileSelector {
             return ""
         }
         set(newValue) {
+            
         }
     }
 }
