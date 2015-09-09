@@ -40,7 +40,7 @@ class SessionProfileManager {
         get {
             let profilePath = self.profileDirPath.stringByAppendingPathComponent(name.stringByAppendingPathExtension("lit")!)
             let fileManager = NSFileManager.defaultManager()
-            println(profilePath)
+
             if (!fileManager.fileExistsAtPath(profilePath)) {
                 return nil;
             }
