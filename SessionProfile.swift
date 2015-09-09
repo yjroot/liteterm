@@ -9,7 +9,7 @@
 import Foundation
 
 class SessionProfile {
-    var parent: SessionProfile? = nil
+    var parent: BaseProfile = DefaultProfile()
     var error: Bool = false
     var filepath: String? = nil
     
@@ -46,21 +46,20 @@ class SessionProfile {
         self.filepath = filepath
     }
     
-    subscript(key : String) -> SessionProfileSelector {
-        get {
-            return SessionProfileSelector(profile: self, key: key)
-        }
-        set(newValue) {
-            
-        }
-    }
-    
     func save() -> Bool {
         if var path: String = self.filepath {
             "\(self)".writeToFile(path, atomically: true, encoding: NSUTF8StringEncoding)
             return true
         }
         return false
+    }
+}
+
+extension SessionProfile: BaseProfile {
+    subscript(key : String) -> ProfileSelector {
+        get {
+            return ProfileSelector(profile: self, key: key)
+        }
     }
     
     func getValue(keys: [String]) -> String {
@@ -71,7 +70,7 @@ class SessionProfile {
         if var element: XMLElement = xml.element {
             return element.text ?? ""
         }
-        return self.parent?.getValue(keys) ?? ""
+        return self.parent.getValue(keys) ?? ""
     }
     
     func setValue(keys: [String], value: String)  {
@@ -86,43 +85,8 @@ class SessionProfile {
         }
         xml.element?.text = value
     }
-}
-
-extension SessionProfile: Printable {
+    
     var description: String {
         return self.xml!.description
-    }
-}
-
-class SessionProfileSelector {
-    var profile: SessionProfile
-    var list: [String]
-    
-    init(profile: SessionProfile, key: String) {
-        self.profile = profile
-        self.list = [key]
-    }
-    
-    init(selector: SessionProfileSelector, key: String) {
-        self.profile = selector.profile
-        self.list = selector.list + [key]
-    }
-    
-    subscript(key : String) -> SessionProfileSelector {
-        get {
-            return SessionProfileSelector(selector: self, key: key)
-        }
-        set(newValue) {
-            
-        }
-    }
-    
-    var value: String {
-        get {
-            return self.profile.getValue(self.list)
-        }
-        set(newValue) {
-            self.profile.setValue(self.list, value: newValue)
-        }
     }
 }

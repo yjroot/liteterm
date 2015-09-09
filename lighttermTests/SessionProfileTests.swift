@@ -45,6 +45,12 @@ class SessionProfileTests: XCTestCase {
         XCTAssert(sshProfile["not"]["exist"].value == "")
     }
     
+    func testGetDefaultValue() {
+        var sshProfile = self.manager!["ssh"]!
+        
+        XCTAssert(sshProfile["connection"]["telnet"]["port"].value == "23")
+    }
+    
     func testSetValue() {
         var sshProfile = self.manager!["ssh"]!
         
