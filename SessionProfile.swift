@@ -42,6 +42,20 @@ class SessionProfile {
             
         }
     }
+    
+    func save() -> Bool {
+        if var path: String = self.filepath {
+            "\(self)".writeToFile(path, atomically: true, encoding: NSUTF8StringEncoding)
+            return true
+        }
+        return false
+    }
+}
+
+extension SessionProfile: Printable {
+    var description: String {
+        return self.xml!.description
+    }
 }
 
 class SessionProfileSelector {

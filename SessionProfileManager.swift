@@ -47,7 +47,9 @@ class SessionProfileManager {
             return SessionProfile(filepath: profilePath)
         }
         set(profile) {
-            
+            let profilePath = self.profileDirPath.stringByAppendingPathComponent(name.stringByAppendingPathExtension("lit")!)
+            profile?.filepath = profilePath
+            profile?.save()
         }
     }
 }

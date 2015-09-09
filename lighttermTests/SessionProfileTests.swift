@@ -52,4 +52,34 @@ class SessionProfileTests: XCTestCase {
         sshProfile["connection"]["ssh"]["auth"]["username"].value = "liteterm"
         XCTAssert(sshProfile["connection"]["ssh"]["auth"]["username"].value == "liteterm")
     }
+    
+    func testSave() {
+        var sshProfile = self.manager!["ssh"]!
+        
+        XCTAssert(sshProfile["connection"]["ssh"]["auth"]["username"].value == "user")
+        sshProfile["connection"]["ssh"]["auth"]["username"].value = "liteterm"
+        XCTAssert(sshProfile["connection"]["ssh"]["auth"]["username"].value == "liteterm")
+        sshProfile.save()
+        
+        sshProfile = self.manager!["ssh"]!
+        XCTAssert(sshProfile["connection"]["ssh"]["auth"]["username"].value == "liteterm")
+        sshProfile["connection"]["ssh"]["auth"]["username"].value = "user"
+        XCTAssert(sshProfile["connection"]["ssh"]["auth"]["username"].value == "user")
+        sshProfile.save()
+    }
+    
+    func testSaveAs() {
+        var sshProfile = self.manager!["ssh"]!
+        
+        XCTAssert(sshProfile["connection"]["ssh"]["auth"]["username"].value == "user")
+        sshProfile["connection"]["ssh"]["auth"]["username"].value = "liteterm"
+        XCTAssert(sshProfile["connection"]["ssh"]["auth"]["username"].value == "liteterm")
+        self.manager!["ssh_copy"] = sshProfile
+        
+        var copyProfile = self.manager!["ssh_copy"]!
+        XCTAssert(copyProfile["connection"]["ssh"]["auth"]["username"].value == "liteterm")
+        
+        sshProfile = self.manager!["ssh"]!
+        XCTAssert(sshProfile["connection"]["ssh"]["auth"]["username"].value == "user")
+    }
 }
