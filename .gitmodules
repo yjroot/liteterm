@@ -1,4 +1,4 @@
 [submodule "Library/SWXMLHash"]
 	path = Library/SWXMLHash
 	url = https://github.com/drmohundro/SWXMLHash.git
-    ignore = dirty
+	ignore = dirty
