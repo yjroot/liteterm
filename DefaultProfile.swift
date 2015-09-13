@@ -36,6 +36,13 @@ class DefaultProfile {
         ],
         "terminal": [
             "type": "xterm"
+        ],
+        "option": [
+            "HideTabOnlyOneTab": "false",
+            "HideTabNumber": "false",
+            "AutoHideMenuBar": "false",
+            "HoldingSecondsForShowingTab": "5",
+            "CursorAppearance":"1"
         ]
     ]
 }
