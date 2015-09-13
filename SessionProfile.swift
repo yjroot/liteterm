@@ -9,7 +9,7 @@
 import Foundation
 
 class SessionProfile {
-    var parent: BaseProfile = DefaultProfile()
+    var parent: BaseProfile = OptionProfile.sharedInstance
     var error: Bool = false
     var filepath: String? = nil
     
@@ -62,7 +62,7 @@ extension SessionProfile: BaseProfile {
         }
     }
     
-    func getValue(keys: [String]) -> String {
+    func getValue(keys: [String]) -> String? {
         var xml: XMLIndexer = self.root
         for key in keys {
             xml = xml[key]
@@ -70,7 +70,7 @@ extension SessionProfile: BaseProfile {
         if var element: XMLElement = xml.element {
             return element.text ?? ""
         }
-        return self.parent.getValue(keys) ?? ""
+        return nil
     }
     
     func setValue(keys: [String], value: String)  {

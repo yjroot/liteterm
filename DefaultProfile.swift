@@ -41,13 +41,20 @@ class DefaultProfile {
 }
 
 extension DefaultProfile: BaseProfile {
+    var parent: BaseProfile {
+        get {
+            return self
+        }
+        set(profile) {}
+    }
+    
     subscript(key : String) -> ProfileSelector {
         get {
             return ProfileSelector(profile: self, key: key)
         }
     }
     
-    func getValue(keys: [String]) -> String {
+    func getValue(keys: [String]) -> String? {
         var any: AnyObject? = DefaultProfile.profile
         for key in keys {
             switch any {

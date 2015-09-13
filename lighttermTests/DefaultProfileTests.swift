@@ -15,4 +15,9 @@ class DefaultProfileTests: XCTestCase {
         XCTAssert(profile["connection"]["ssh"]["port"].value == "22")
         XCTAssert(profile["terminal"]["type"].value == "xterm")
     }
+    
+    func testNotExist() {
+        var profile = DefaultProfile()
+        XCTAssert(profile["not"]["exist"].value == "")
+    }
 }

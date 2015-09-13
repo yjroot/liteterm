@@ -9,7 +9,8 @@
 import Foundation
 
 protocol BaseProfile: Printable {
-    func getValue(keys: [String]) -> String
+    var parent: BaseProfile { get set }
+    func getValue(keys: [String]) -> String?
     func setValue(keys: [String], value: String)
     subscript(key : String) -> ProfileSelector { get }
 }
@@ -36,7 +37,14 @@ class ProfileSelector {
     
     var value: String {
         get {
-            return self.profile.getValue(self.list)
+            var profile = self.profile
+            var result: String? = nil
+            
+            while result == nil {
+                result = profile.getValue(self.list)
+                profile = profile.parent
+            }
+            return result!
         }
         set(newValue) {
             self.profile.setValue(self.list, value: newValue)
