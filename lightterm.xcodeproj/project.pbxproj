@@ -18,6 +18,16 @@
 		BC40BCE91B626F73007D9FF9 /* telnet.lit in Resources */ = {isa = PBXBuildFile; fileRef = BC40BCE61B626F73007D9FF9 /* telnet.lit */; };
 		BC40BCEB1B663D3F007D9FF9 /* SessionProfileManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC40BCEA1B663D3F007D9FF9 /* SessionProfileManagerTests.swift */; };
 		BC4BB5FD1B4FEAE500D2956A /* SessionDetailWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4BB5FB1B4FEAE500D2956A /* SessionDetailWindowController.swift */; };
+		BC56D4221BA0871F009AA7AB /* BaseProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D4211BA0871F009AA7AB /* BaseProfile.swift */; };
+		BC56D4231BA0871F009AA7AB /* BaseProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D4211BA0871F009AA7AB /* BaseProfile.swift */; };
+		BC56D4251BA08BB9009AA7AB /* DefaultProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D4241BA08BB9009AA7AB /* DefaultProfile.swift */; };
+		BC56D4261BA08BB9009AA7AB /* DefaultProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D4241BA08BB9009AA7AB /* DefaultProfile.swift */; };
+		BC56D4281BA099A6009AA7AB /* DefaultProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D4271BA099A6009AA7AB /* DefaultProfileTests.swift */; };
+		BC56D42A1BA09E82009AA7AB /* OptionProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D4291BA09E82009AA7AB /* OptionProfile.swift */; };
+		BC56D42B1BA09E82009AA7AB /* OptionProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D4291BA09E82009AA7AB /* OptionProfile.swift */; };
+		BC56D42D1BA49C12009AA7AB /* OptionProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D42C1BA49C12009AA7AB /* OptionProfileTests.swift */; };
+		BC56D4301BA49E14009AA7AB /* PathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D42F1BA49E14009AA7AB /* PathUtils.swift */; };
+		BC56D4341BA4A7F0009AA7AB /* TestPathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D4321BA4A7F0009AA7AB /* TestPathUtils.swift */; };
 		BC57DF081B46CA59008B7A75 /* SessionDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC57DF071B46CA59008B7A75 /* SessionDetail.xib */; };
 		BC57DF0C1B46D307008B7A75 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC57DF0B1B46D307008B7A75 /* Session.swift */; };
 		BC57DF101B46D650008B7A75 /* SessionDetailWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC57DF0F1B46D650008B7A75 /* SessionDetailWindow.swift */; };
@@ -57,6 +67,13 @@
 		BC40BCE61B626F73007D9FF9 /* telnet.lit */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = telnet.lit; sourceTree = "<group>"; };
 		BC40BCEA1B663D3F007D9FF9 /* SessionProfileManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionProfileManagerTests.swift; sourceTree = "<group>"; };
 		BC4BB5FB1B4FEAE500D2956A /* SessionDetailWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDetailWindowController.swift; sourceTree = "<group>"; };
+		BC56D4211BA0871F009AA7AB /* BaseProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseProfile.swift; sourceTree = "<group>"; };
+		BC56D4241BA08BB9009AA7AB /* DefaultProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultProfile.swift; sourceTree = "<group>"; };
+		BC56D4271BA099A6009AA7AB /* DefaultProfileTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultProfileTests.swift; sourceTree = "<group>"; };
+		BC56D4291BA09E82009AA7AB /* OptionProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionProfile.swift; sourceTree = "<group>"; };
+		BC56D42C1BA49C12009AA7AB /* OptionProfileTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionProfileTests.swift; sourceTree = "<group>"; };
+		BC56D42F1BA49E14009AA7AB /* PathUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathUtils.swift; sourceTree = "<group>"; };
+		BC56D4321BA4A7F0009AA7AB /* TestPathUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestPathUtils.swift; sourceTree = "<group>"; };
 		BC57DF071B46CA59008B7A75 /* SessionDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionDetail.xib; sourceTree = "<group>"; };
 		BC57DF0B1B46D307008B7A75 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		BC57DF0F1B46D650008B7A75 /* SessionDetailWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDetailWindow.swift; sourceTree = "<group>"; };
@@ -103,6 +120,9 @@
 			children = (
 				BC4088501B62542B00E54711 /* SessionProfile.swift */,
 				BC40BCDF1B625A4E007D9FF9 /* SessionProfileManager.swift */,
+				BC56D4211BA0871F009AA7AB /* BaseProfile.swift */,
+				BC56D4241BA08BB9009AA7AB /* DefaultProfile.swift */,
+				BC56D4291BA09E82009AA7AB /* OptionProfile.swift */,
 			);
 			name = "Session File";
 			sourceTree = "<group>";
@@ -115,6 +135,15 @@
 				BC40BCE61B626F73007D9FF9 /* telnet.lit */,
 			);
 			name = mocks;
+			sourceTree = "<group>";
+		};
+		BC56D42E1BA49DE1009AA7AB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BC56D42F1BA49E14009AA7AB /* PathUtils.swift */,
+				BC56D4321BA4A7F0009AA7AB /* TestPathUtils.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		BCAE49811B8F3B91008D8CBA /* Library */ = {
@@ -137,6 +166,7 @@
 		BCB66CF31B3287EE008AFB75 = {
 			isa = PBXGroup;
 			children = (
+				BC56D42E1BA49DE1009AA7AB /* Utils */,
 				BCAE49811B8F3B91008D8CBA /* Library */,
 				BC40884F1B6252F700E54711 /* Session File */,
 				BCB66CFE1B3287EE008AFB75 /* lightterm */,
@@ -193,7 +223,9 @@
 				BCB66D121B3287EE008AFB75 /* lighttermTests.swift */,
 				BCB66D101B3287EE008AFB75 /* Supporting Files */,
 				BC40BCDC1B62558A007D9FF9 /* SessionProfileTests.swift */,
+				BC56D4271BA099A6009AA7AB /* DefaultProfileTests.swift */,
 				BC40BCEA1B663D3F007D9FF9 /* SessionProfileManagerTests.swift */,
+				BC56D42C1BA49C12009AA7AB /* OptionProfileTests.swift */,
 			);
 			path = lighttermTests;
 			sourceTree = "<group>";
@@ -316,6 +348,7 @@
 				BC4088511B62542B00E54711 /* SessionProfile.swift in Sources */,
 				BC06C4D41B3427D200CA6D44 /* TerminalView.swift in Sources */,
 				FAD6BBDE1B6651B000C93AC4 /* OptionManager.swift in Sources */,
+				BC56D42A1BA09E82009AA7AB /* OptionProfile.swift in Sources */,
 				BC4BB5FD1B4FEAE500D2956A /* SessionDetailWindowController.swift in Sources */,
 				FAC1E2061BAC320A000CA886 /* LTTabViewController.swift in Sources */,
 				FADFC4161B6258B6001A8124 /* OptionWindowController.swift in Sources */,
@@ -332,10 +365,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC56D4341BA4A7F0009AA7AB /* TestPathUtils.swift in Sources */,
 				BC40BCDE1B62565D007D9FF9 /* SessionProfile.swift in Sources */,
 				BCAE49861B8F3BF8008D8CBA /* SWXMLHash.swift in Sources */,
+				BC56D42D1BA49C12009AA7AB /* OptionProfileTests.swift in Sources */,
+				BC56D42B1BA09E82009AA7AB /* OptionProfile.swift in Sources */,
 				BC40BCDD1B62558A007D9FF9 /* SessionProfileTests.swift in Sources */,
+				BC56D4231BA0871F009AA7AB /* BaseProfile.swift in Sources */,
 				BC40BCE11B625A4E007D9FF9 /* SessionProfileManager.swift in Sources */,
+				BC56D4281BA099A6009AA7AB /* DefaultProfileTests.swift in Sources */,
+				BC56D4261BA08BB9009AA7AB /* DefaultProfile.swift in Sources */,
 				BC40BCEB1B663D3F007D9FF9 /* SessionProfileManagerTests.swift in Sources */,
 				BCB66D131B3287EE008AFB75 /* lighttermTests.swift in Sources */,
 			);

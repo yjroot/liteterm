@@ -28,7 +28,7 @@ class SessionProfileTests: XCTestCase {
         let profile = SessionProfile()
         
         XCTAssert(profile.filepath == nil)
-        XCTAssert(profile.name == nil)
+        XCTAssert(profile.name == "")
     }
     
     func testOpen() {
@@ -43,6 +43,12 @@ class SessionProfileTests: XCTestCase {
         XCTAssert(sshProfile["connection"]["protocol"].value == "ssh")
         XCTAssert(sshProfile["connection"]["ssh"]["port"].value == "22")
         XCTAssert(sshProfile["not"]["exist"].value == "")
+    }
+    
+    func testGetDefaultValue() {
+        var sshProfile = self.manager!["ssh"]!
+        
+        XCTAssert(sshProfile["connection"]["telnet"]["port"].value == "23")
     }
     
     func testSetValue() {
