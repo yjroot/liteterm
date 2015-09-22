@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
     </dependencies>
@@ -17,6 +17,7 @@
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <customObject id="sDh-Wo-Jog" customClass="LTTabViewController" customModule="lightterm" customModuleProvider="target"/>
         <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
             <items>
                 <menuItem title="lightterm" id="1Xt-HY-uBw">
@@ -624,6 +625,9 @@
                                     <action selector="runToolbarCustomizationPalette:" target="-1" id="pQI-g3-MTW"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Show Tab bar" id="HVi-lL-KAC">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
                         </items>
                     </menu>
                 </menuItem>
@@ -683,50 +687,69 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="900"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" id="EiT-Mj-1SZ" customClass="TerminalView" customModule="lightterm" customModuleProvider="target">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
-            </view>
-            <toolbar key="toolbar" implicitIdentifier="9B1686DD-563A-46AB-81E3-C44DE141AAB3" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="small" id="dna-jm-rI8">
-                <allowedToolbarItems>
-                    <toolbarItem implicitItemIdentifier="8C9426A8-FED1-4874-8410-B174E8D24741" label="Sessions" paletteLabel="Sessions" tag="-1" image="NSFolder" id="ZSf-7r-1tH"/>
-                    <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" explicitItemIdentifier="NSToolbarOpenSession" id="6UZ-A2-2ea"/>
-                    <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="JcD-28-9jv"/>
-                    <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="cYE-w2-QJh"/>
-                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="esq-bx-4P9"/>
-                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="v05-9B-WyL"/>
-                    <toolbarItem implicitItemIdentifier="3C39D273-15C0-4FC9-AE57-F235749B8E31" label="Options" paletteLabel="Options" tag="-1" image="NSAdvanced" id="J9x-Oi-U5G">
+                <subviews>
+                    <tabView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gPo-My-ekS" customClass="LTTabView" customModule="lightterm" customModuleProvider="target">
+                        <rect key="frame" x="13" y="10" width="454" height="356"/>
+                        <font key="font" metaFont="system"/>
+                        <tabViewItems>
+                            <tabViewItem label="tab1" identifier="1" id="PSl-zS-qnY">
+                                <view key="view" id="Q0m-Mq-VJ0">
+                                    <rect key="frame" x="10" y="33" width="64" height="0.0"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                            </tabViewItem>
+                        </tabViewItems>
                         <connections>
-                            <action selector="openOptions:" target="Voe-Tx-rLC" id="Tdb-nK-Gux"/>
+                            <outlet property="delegate" destination="Voe-Tx-rLC" id="S0z-it-EMk"/>
                         </connections>
-                    </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="83F21062-FD80-44C9-9261-0111C63CA6D9" label="Address" paletteLabel="Address" id="KfK-5z-ykQ">
-                        <nil key="toolTip"/>
-                        <size key="minSize" width="96" height="27"/>
-                        <size key="maxSize" width="20000" height="27"/>
-                        <textField key="view" verticalHuggingPriority="750" id="FHD-TK-PWj">
-                            <rect key="frame" x="0.0" y="14" width="96" height="27"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="rf1-hu-e3e">
-                                <font key="font" metaFont="system"/>
-                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                            </textFieldCell>
-                        </textField>
+                    </tabView>
+                </subviews>
+            </view>
+            <toolbar key="toolbar" implicitIdentifier="FEB44AF0-013F-4FD0-BED8-3E28DCFD288F" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="yW2-iP-9AM">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="DPd-Mv-URH"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="lm2-Fe-yvT"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="0U0-KF-sbE"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="ig4-ih-j2o"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="Dje-6b-oHY"/>
+                    <toolbarItem implicitItemIdentifier="D98E5F5F-37E4-4CF9-9917-F1F01A16E1F8" label="Add Tab" paletteLabel="Add Tab" tag="-1" image="NSAddTemplate" id="ENs-Hl-oc1" userLabel="New Tab">
+                        <connections>
+                            <action selector="AddNewTab:" target="sDh-Wo-Jog" id="H10-p8-5gt"/>
+                        </connections>
                     </toolbarItem>
                 </allowedToolbarItems>
                 <defaultToolbarItems>
-                    <toolbarItem reference="ZSf-7r-1tH"/>
-                    <toolbarItem reference="J9x-Oi-U5G"/>
-                    <toolbarItem reference="KfK-5z-ykQ"/>
+                    <toolbarItem reference="DPd-Mv-URH"/>
+                    <toolbarItem reference="lm2-Fe-yvT"/>
+                    <toolbarItem reference="Dje-6b-oHY"/>
+                    <toolbarItem reference="0U0-KF-sbE"/>
+                    <toolbarItem reference="ENs-Hl-oc1"/>
                 </defaultToolbarItems>
             </toolbar>
-            <point key="canvasLocation" x="275" y="250"/>
+            <point key="canvasLocation" x="-5" y="91"/>
         </window>
+        <toolbar implicitIdentifier="09D11707-F4A3-4FD5-970E-AC5832E91C2B" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="H3E-jf-AuL">
+            <allowedToolbarItems>
+                <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="xos-nE-paT"/>
+                <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="918-UG-Ft5"/>
+                <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="62y-Tg-GgW"/>
+                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="hE0-fN-5tf"/>
+                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="Yum-Kq-j2P"/>
+            </allowedToolbarItems>
+            <defaultToolbarItems>
+                <toolbarItem reference="xos-nE-paT"/>
+                <toolbarItem reference="918-UG-Ft5"/>
+                <toolbarItem reference="Yum-Kq-j2P"/>
+                <toolbarItem reference="62y-Tg-GgW"/>
+            </defaultToolbarItems>
+        </toolbar>
+        <objectController id="W22-o4-oF8"/>
     </objects>
     <resources>
-        <image name="NSAdvanced" width="32" height="32"/>
-        <image name="NSFolder" width="32" height="32"/>
+        <image name="NSAddTemplate" width="11" height="11"/>
     </resources>
 </document>

@@ -16,7 +16,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to initialize your application
-        window.titleVisibility = NSWindowTitleVisibility.Hidden
+        //window.titleVisibility = NSWindowTitleVisibility.Hidden
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
@@ -41,7 +41,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let optionWindowController = OptionWindowController(windowNibName: "Options")
     
     @IBAction func openOptions(sender: AnyObject){
-        optionWindowController.showWindow(sender)
+        optionWindowController.openWindow(sender)
     }
 }
 
