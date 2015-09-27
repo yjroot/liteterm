@@ -13,7 +13,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
 
-
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to initialize your application
         window.titleVisibility = NSWindowTitleVisibility.Hidden
@@ -23,10 +22,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
     
-    let sessionDetailWindowController = SessionDetailWindowController(windowNibName: "SessionDetail")
+    var sessionProfileWindowController: SessionProfileWindowController?
     
     @IBAction func newSession(sender: AnyObject) {
-        sessionDetailWindowController.showWindow(sender)
+        sessionProfileWindowController = SessionProfileWindowController()
+        sessionProfileWindowController!.loadWindow()
+        sessionProfileWindowController!.awakeFromNib()
+        sessionProfileWindowController!.showWindow(self)
     }
     
     @IBAction func openSession(AnyObject) {

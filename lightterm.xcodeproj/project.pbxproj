@@ -28,6 +28,14 @@
 		BC56D42D1BA49C12009AA7AB /* OptionProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D42C1BA49C12009AA7AB /* OptionProfileTests.swift */; };
 		BC56D4301BA49E14009AA7AB /* PathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D42F1BA49E14009AA7AB /* PathUtils.swift */; };
 		BC56D4341BA4A7F0009AA7AB /* TestPathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D4321BA4A7F0009AA7AB /* TestPathUtils.swift */; };
+		BC56D43D1BAC2FBD009AA7AB /* SessionProfileWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D43C1BAC2FBD009AA7AB /* SessionProfileWindowController.swift */; };
+		BC56D4411BB16B1B009AA7AB /* SessionProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D4401BB16B1B009AA7AB /* SessionProfileController.swift */; };
+		BC56D4431BB560CC009AA7AB /* SessionProfileFields.xml in Resources */ = {isa = PBXBuildFile; fileRef = BC56D4421BB560CC009AA7AB /* SessionProfileFields.xml */; };
+		BC56D4441BB560CC009AA7AB /* SessionProfileFields.xml in Resources */ = {isa = PBXBuildFile; fileRef = BC56D4421BB560CC009AA7AB /* SessionProfileFields.xml */; };
+		BC56D4491BB6DF4D009AA7AB /* SessionProfile.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC56D4481BB6DF4D009AA7AB /* SessionProfile.xib */; };
+		BC56D44A1BB6DF4D009AA7AB /* SessionProfile.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC56D4481BB6DF4D009AA7AB /* SessionProfile.xib */; };
+		BC56D44E1BB79F85009AA7AB /* SessionProfileWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D43C1BAC2FBD009AA7AB /* SessionProfileWindowController.swift */; };
+		BC56D44F1BB79F88009AA7AB /* SessionProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D4401BB16B1B009AA7AB /* SessionProfileController.swift */; };
 		BC57DF081B46CA59008B7A75 /* SessionDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC57DF071B46CA59008B7A75 /* SessionDetail.xib */; };
 		BC57DF0C1B46D307008B7A75 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC57DF0B1B46D307008B7A75 /* Session.swift */; };
 		BC57DF101B46D650008B7A75 /* SessionDetailWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC57DF0F1B46D650008B7A75 /* SessionDetailWindow.swift */; };
@@ -70,6 +78,10 @@
 		BC56D42C1BA49C12009AA7AB /* OptionProfileTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionProfileTests.swift; sourceTree = "<group>"; };
 		BC56D42F1BA49E14009AA7AB /* PathUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathUtils.swift; sourceTree = "<group>"; };
 		BC56D4321BA4A7F0009AA7AB /* TestPathUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestPathUtils.swift; sourceTree = "<group>"; };
+		BC56D43C1BAC2FBD009AA7AB /* SessionProfileWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionProfileWindowController.swift; sourceTree = "<group>"; };
+		BC56D4401BB16B1B009AA7AB /* SessionProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionProfileController.swift; sourceTree = "<group>"; };
+		BC56D4421BB560CC009AA7AB /* SessionProfileFields.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SessionProfileFields.xml; sourceTree = "<group>"; };
+		BC56D4481BB6DF4D009AA7AB /* SessionProfile.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionProfile.xib; sourceTree = "<group>"; };
 		BC57DF071B46CA59008B7A75 /* SessionDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionDetail.xib; sourceTree = "<group>"; };
 		BC57DF0B1B46D307008B7A75 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		BC57DF0F1B46D650008B7A75 /* SessionDetailWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDetailWindow.swift; sourceTree = "<group>"; };
@@ -138,6 +150,17 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
+		BC56D4351BAC2823009AA7AB /* PropertyDialog */ = {
+			isa = PBXGroup;
+			children = (
+				BC56D43C1BAC2FBD009AA7AB /* SessionProfileWindowController.swift */,
+				BC56D4401BB16B1B009AA7AB /* SessionProfileController.swift */,
+				BC56D4421BB560CC009AA7AB /* SessionProfileFields.xml */,
+				BC56D4481BB6DF4D009AA7AB /* SessionProfile.xib */,
+			);
+			name = PropertyDialog;
+			sourceTree = "<group>";
+		};
 		BCAE49811B8F3B91008D8CBA /* Library */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +181,7 @@
 		BCB66CF31B3287EE008AFB75 = {
 			isa = PBXGroup;
 			children = (
+				BC56D4351BAC2823009AA7AB /* PropertyDialog */,
 				BC56D42E1BA49DE1009AA7AB /* Utils */,
 				BCAE49811B8F3B91008D8CBA /* Library */,
 				BC40884F1B6252F700E54711 /* Session File */,
@@ -306,7 +330,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC56D4431BB560CC009AA7AB /* SessionProfileFields.xml in Resources */,
 				FADFC4141B62552B001A8124 /* Options.xib in Resources */,
+				BC56D4491BB6DF4D009AA7AB /* SessionProfile.xib in Resources */,
 				BCB66D041B3287EE008AFB75 /* Images.xcassets in Resources */,
 				BC57DF081B46CA59008B7A75 /* SessionDetail.xib in Resources */,
 				FAD6BBDC1B66505500C93AC4 /* Options.plist in Resources */,
@@ -319,6 +345,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC40BCE81B626F73007D9FF9 /* ssh.lit in Resources */,
+				BC56D44A1BB6DF4D009AA7AB /* SessionProfile.xib in Resources */,
+				BC56D4441BB560CC009AA7AB /* SessionProfileFields.xml in Resources */,
 				BC40BCE91B626F73007D9FF9 /* telnet.lit in Resources */,
 				BC40BCE71B626F73007D9FF9 /* local.lit in Resources */,
 			);
@@ -341,10 +369,12 @@
 				BCB66D021B3287EE008AFB75 /* AppDelegate.swift in Sources */,
 				BC57DF0C1B46D307008B7A75 /* Session.swift in Sources */,
 				BC40BCE01B625A4E007D9FF9 /* SessionProfileManager.swift in Sources */,
+				BC56D4411BB16B1B009AA7AB /* SessionProfileController.swift in Sources */,
 				BC56D4221BA0871F009AA7AB /* BaseProfile.swift in Sources */,
 				BC56D4251BA08BB9009AA7AB /* DefaultProfile.swift in Sources */,
 				BCAE49851B8F3BC6008D8CBA /* SWXMLHash.swift in Sources */,
 				BC57DF101B46D650008B7A75 /* SessionDetailWindow.swift in Sources */,
+				BC56D43D1BAC2FBD009AA7AB /* SessionProfileWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,9 +390,11 @@
 				BC40BCDD1B62558A007D9FF9 /* SessionProfileTests.swift in Sources */,
 				BC56D4231BA0871F009AA7AB /* BaseProfile.swift in Sources */,
 				BC40BCE11B625A4E007D9FF9 /* SessionProfileManager.swift in Sources */,
+				BC56D44F1BB79F88009AA7AB /* SessionProfileController.swift in Sources */,
 				BC56D4281BA099A6009AA7AB /* DefaultProfileTests.swift in Sources */,
 				BC56D4261BA08BB9009AA7AB /* DefaultProfile.swift in Sources */,
 				BC40BCEB1B663D3F007D9FF9 /* SessionProfileManagerTests.swift in Sources */,
+				BC56D44E1BB79F85009AA7AB /* SessionProfileWindowController.swift in Sources */,
 				BCB66D131B3287EE008AFB75 /* lighttermTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
