@@ -18,15 +18,12 @@
 		BC40BCE91B626F73007D9FF9 /* telnet.lit in Resources */ = {isa = PBXBuildFile; fileRef = BC40BCE61B626F73007D9FF9 /* telnet.lit */; };
 		BC40BCEB1B663D3F007D9FF9 /* SessionProfileManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC40BCEA1B663D3F007D9FF9 /* SessionProfileManagerTests.swift */; };
 		BC4BB5FD1B4FEAE500D2956A /* SessionDetailWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4BB5FB1B4FEAE500D2956A /* SessionDetailWindowController.swift */; };
-		BC56D4221BA0871F009AA7AB /* BaseProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D4211BA0871F009AA7AB /* BaseProfile.swift */; };
 		BC56D4231BA0871F009AA7AB /* BaseProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D4211BA0871F009AA7AB /* BaseProfile.swift */; };
-		BC56D4251BA08BB9009AA7AB /* DefaultProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D4241BA08BB9009AA7AB /* DefaultProfile.swift */; };
 		BC56D4261BA08BB9009AA7AB /* DefaultProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D4241BA08BB9009AA7AB /* DefaultProfile.swift */; };
 		BC56D4281BA099A6009AA7AB /* DefaultProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D4271BA099A6009AA7AB /* DefaultProfileTests.swift */; };
 		BC56D42A1BA09E82009AA7AB /* OptionProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D4291BA09E82009AA7AB /* OptionProfile.swift */; };
 		BC56D42B1BA09E82009AA7AB /* OptionProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D4291BA09E82009AA7AB /* OptionProfile.swift */; };
 		BC56D42D1BA49C12009AA7AB /* OptionProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D42C1BA49C12009AA7AB /* OptionProfileTests.swift */; };
-		BC56D4301BA49E14009AA7AB /* PathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D42F1BA49E14009AA7AB /* PathUtils.swift */; };
 		BC56D4341BA4A7F0009AA7AB /* TestPathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D4321BA4A7F0009AA7AB /* TestPathUtils.swift */; };
 		BC56D43D1BAC2FBD009AA7AB /* SessionProfileWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D43C1BAC2FBD009AA7AB /* SessionProfileWindowController.swift */; };
 		BC56D4411BB16B1B009AA7AB /* SessionProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D4401BB16B1B009AA7AB /* SessionProfileController.swift */; };
@@ -56,6 +53,9 @@
 		BC56D4751BB94C34009AA7AB /* NumberField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D4721BB94C34009AA7AB /* NumberField.swift */; };
 		BC56D4761BB94C34009AA7AB /* NumberField.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC56D4731BB94C34009AA7AB /* NumberField.xib */; };
 		BC56D4771BB94C34009AA7AB /* NumberField.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC56D4731BB94C34009AA7AB /* NumberField.xib */; };
+		BC56D4791BB95D65009AA7AB /* PathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D42F1BA49E14009AA7AB /* PathUtils.swift */; };
+		BC56D47A1BB95DFB009AA7AB /* BaseProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D4211BA0871F009AA7AB /* BaseProfile.swift */; };
+		BC56D47B1BB95DFE009AA7AB /* DefaultProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D4241BA08BB9009AA7AB /* DefaultProfile.swift */; };
 		BC57DF081B46CA59008B7A75 /* SessionDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC57DF071B46CA59008B7A75 /* SessionDetail.xib */; };
 		BC57DF0C1B46D307008B7A75 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC57DF0B1B46D307008B7A75 /* Session.swift */; };
 		BC57DF101B46D650008B7A75 /* SessionDetailWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC57DF0F1B46D650008B7A75 /* SessionDetailWindow.swift */; };
@@ -430,6 +430,7 @@
 			files = (
 				BC56D4301BA49E14009AA7AB /* PathUtils.swift in Sources */,
 				FAC1E20B1BAC328C000CA886 /* LTTabView.swift in Sources */,
+				BC56D47B1BB95DFE009AA7AB /* DefaultProfile.swift in Sources */,
 				BC4088511B62542B00E54711 /* SessionProfile.swift in Sources */,
 				BC56D45F1BB907BE009AA7AB /* BaseField.swift in Sources */,
 				BC06C4D41B3427D200CA6D44 /* TerminalView.swift in Sources */,
@@ -440,7 +441,9 @@
 				FAC1E2061BAC320A000CA886 /* LTTabViewController.swift in Sources */,
 				FADFC4161B6258B6001A8124 /* OptionWindowController.swift in Sources */,
 				BC56D4651BB9109C009AA7AB /* TextField.swift in Sources */,
+				BC56D47A1BB95DFB009AA7AB /* BaseProfile.swift in Sources */,
 				BCB66D021B3287EE008AFB75 /* AppDelegate.swift in Sources */,
+				BC56D4791BB95D65009AA7AB /* PathUtils.swift in Sources */,
 				BC57DF0C1B46D307008B7A75 /* Session.swift in Sources */,
 				BC40BCE01B625A4E007D9FF9 /* SessionProfileManager.swift in Sources */,
 				BC56D46A1BB9135B009AA7AB /* FormView.swift in Sources */,
