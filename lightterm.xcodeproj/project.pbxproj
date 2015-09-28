@@ -28,8 +28,8 @@
 		BC56D4411BB16B1B009AA7AB /* SessionProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D4401BB16B1B009AA7AB /* SessionProfileController.swift */; };
 		BC56D4431BB560CC009AA7AB /* SessionProfileFields.xml in Resources */ = {isa = PBXBuildFile; fileRef = BC56D4421BB560CC009AA7AB /* SessionProfileFields.xml */; };
 		BC56D4441BB560CC009AA7AB /* SessionProfileFields.xml in Resources */ = {isa = PBXBuildFile; fileRef = BC56D4421BB560CC009AA7AB /* SessionProfileFields.xml */; };
-		BC56D4491BB6DF4D009AA7AB /* SessionProfile.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC56D4481BB6DF4D009AA7AB /* SessionProfile.xib */; };
-		BC56D44A1BB6DF4D009AA7AB /* SessionProfile.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC56D4481BB6DF4D009AA7AB /* SessionProfile.xib */; };
+		BC56D4491BB6DF4D009AA7AB /* SessionProfileWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC56D4481BB6DF4D009AA7AB /* SessionProfileWindow.xib */; };
+		BC56D44A1BB6DF4D009AA7AB /* SessionProfileWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC56D4481BB6DF4D009AA7AB /* SessionProfileWindow.xib */; };
 		BC56D44E1BB79F85009AA7AB /* SessionProfileWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D43C1BAC2FBD009AA7AB /* SessionProfileWindowController.swift */; };
 		BC56D44F1BB79F88009AA7AB /* SessionProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D4401BB16B1B009AA7AB /* SessionProfileController.swift */; };
 		BC56D4581BB901B3009AA7AB /* PasswordField.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC56D4571BB901B3009AA7AB /* PasswordField.xib */; };
@@ -100,7 +100,7 @@
 		BC56D43C1BAC2FBD009AA7AB /* SessionProfileWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionProfileWindowController.swift; sourceTree = "<group>"; };
 		BC56D4401BB16B1B009AA7AB /* SessionProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionProfileController.swift; sourceTree = "<group>"; };
 		BC56D4421BB560CC009AA7AB /* SessionProfileFields.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SessionProfileFields.xml; sourceTree = "<group>"; };
-		BC56D4481BB6DF4D009AA7AB /* SessionProfile.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionProfile.xib; sourceTree = "<group>"; };
+		BC56D4481BB6DF4D009AA7AB /* SessionProfileWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionProfileWindow.xib; sourceTree = "<group>"; };
 		BC56D4571BB901B3009AA7AB /* PasswordField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PasswordField.xib; sourceTree = "<group>"; };
 		BC56D45A1BB907A3009AA7AB /* PasswordField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordField.swift; sourceTree = "<group>"; };
 		BC56D45D1BB907BE009AA7AB /* BaseField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseField.swift; sourceTree = "<group>"; };
@@ -187,7 +187,7 @@
 				BC56D43C1BAC2FBD009AA7AB /* SessionProfileWindowController.swift */,
 				BC56D4401BB16B1B009AA7AB /* SessionProfileController.swift */,
 				BC56D4421BB560CC009AA7AB /* SessionProfileFields.xml */,
-				BC56D4481BB6DF4D009AA7AB /* SessionProfile.xib */,
+				BC56D4481BB6DF4D009AA7AB /* SessionProfileWindow.xib */,
 				BC56D4691BB9135B009AA7AB /* FormView.swift */,
 			);
 			name = PropertyDialog;
@@ -383,7 +383,7 @@
 				FAC1E2071BAC320A000CA886 /* LTTabViewController.xib in Resources */,
 				FADFC4141B62552B001A8124 /* Options.xib in Resources */,
 				BC56D4581BB901B3009AA7AB /* PasswordField.xib in Resources */,
-				BC56D4491BB6DF4D009AA7AB /* SessionProfile.xib in Resources */,
+				BC56D4491BB6DF4D009AA7AB /* SessionProfileWindow.xib in Resources */,
 				BCB66D041B3287EE008AFB75 /* Images.xcassets in Resources */,
 				BC56D4761BB94C34009AA7AB /* NumberField.xib in Resources */,
 				BC56D4671BB9109C009AA7AB /* TextField.xib in Resources */,
@@ -398,7 +398,7 @@
 			files = (
 				BC56D4771BB94C34009AA7AB /* NumberField.xib in Resources */,
 				BC40BCE81B626F73007D9FF9 /* ssh.lit in Resources */,
-				BC56D44A1BB6DF4D009AA7AB /* SessionProfile.xib in Resources */,
+				BC56D44A1BB6DF4D009AA7AB /* SessionProfileWindow.xib in Resources */,
 				BC56D4441BB560CC009AA7AB /* SessionProfileFields.xml in Resources */,
 				BC40BCE91B626F73007D9FF9 /* telnet.lit in Resources */,
 				BC56D4711BB9423E009AA7AB /* SelectField.xib in Resources */,

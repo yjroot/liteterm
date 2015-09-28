@@ -13,7 +13,7 @@ class SessionProfileWindowController: NSWindowController {
     
     convenience init() {
         var object = SessionProfileController()
-        self.init(windowNibName: "SessionProfile", owner: object)
+        self.init(windowNibName: "SessionProfileWindow", owner: object)
         self.object = object
     }
     
