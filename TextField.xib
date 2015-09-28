@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="TextField" customModule="lightterm" customModuleProvider="target">
+            <connections>
+                <outlet property="labelView" destination="J93-pY-Esb" id="MMM-t3-QM5"/>
+                <outlet property="view" destination="HYS-Cx-2Fe" id="gtS-TY-19I"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="HYS-Cx-2Fe">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="22"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="J93-pY-Esb">
+                    <rect key="frame" x="-2" y="3" width="38" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="17" id="VB8-LJ-oka"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="1pk-ka-XD8">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PtH-vh-rM3">
+                    <rect key="frame" x="280" y="0.0" width="200" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="W9o-Ph-LeI"/>
+                        <constraint firstAttribute="width" priority="250" constant="200" id="kSs-XC-qMY"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="oY6-Q5-fkK">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="PtH-vh-rM3" firstAttribute="top" secondItem="HYS-Cx-2Fe" secondAttribute="top" id="6eQ-iw-cib"/>
+                <constraint firstAttribute="centerY" secondItem="J93-pY-Esb" secondAttribute="centerY" id="EOu-1q-Vq7"/>
+                <constraint firstAttribute="bottom" secondItem="PtH-vh-rM3" secondAttribute="bottom" id="ICd-uf-ITr"/>
+                <constraint firstItem="J93-pY-Esb" firstAttribute="leading" secondItem="HYS-Cx-2Fe" secondAttribute="leading" id="gr3-tq-3qO"/>
+                <constraint firstItem="PtH-vh-rM3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="J93-pY-Esb" secondAttribute="trailing" constant="10" id="hoO-Eo-nhv"/>
+                <constraint firstAttribute="trailing" secondItem="PtH-vh-rM3" secondAttribute="trailing" id="mKp-sl-UAx"/>
+            </constraints>
+            <point key="canvasLocation" x="246" y="301.5"/>
+        </customView>
+    </objects>
+</document>

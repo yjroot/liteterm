@@ -7,6 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="SessionProfileController" customModule="lightterm" customModuleProvider="target">
             <connections>
+                <outlet property="formView" destination="9k2-8o-On2" id="6Y7-2w-FRG"/>
                 <outlet property="sourceListView" destination="pAT-1E-TVx" id="c1c-dG-5aN"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="5Ca-cb-f8s"/>
             </connections>
@@ -15,27 +16,27 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-            <rect key="contentRect" x="196" y="240" width="600" height="400"/>
+            <rect key="contentRect" x="196" y="240" width="500" height="400"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
-            <value key="minSize" type="size" width="600" height="400"/>
+            <value key="minSize" type="size" width="500" height="400"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
+                <rect key="frame" x="0.0" y="0.0" width="500" height="400"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fz3-b7-u2f">
-                        <rect key="frame" x="-1" y="-1" width="167" height="402"/>
+                        <rect key="frame" x="-1" y="-1" width="126" height="402"/>
                         <clipView key="contentView" drawsBackground="NO" id="c65-Sv-Y8F">
                             <rect key="frame" x="1" y="1" width="148" height="398"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <outlineView appearanceType="vibrantLight" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="fL2-ls-ve5" id="pAT-1E-TVx">
-                                    <rect key="frame" x="0.0" y="0.0" width="148" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="165" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                     <tableColumns>
-                                        <tableColumn width="162" minWidth="16" maxWidth="1000" id="fL2-ls-ve5">
+                                        <tableColumn width="121" minWidth="16" maxWidth="1000" id="fL2-ls-ve5">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -49,7 +50,7 @@
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
                                                 <tableCellView identifier="GroupCell" id="Fff-Io-2xI">
-                                                    <rect key="frame" x="1" y="1" width="162" height="17"/>
+                                                    <rect key="frame" x="1" y="1" width="121" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G9K-vb-Dzd">
@@ -66,7 +67,7 @@
                                                     </connections>
                                                 </tableCellView>
                                                 <tableCellView identifier="IconFormCell" id="EJl-YN-Ipk">
-                                                    <rect key="frame" x="1" y="20" width="162" height="17"/>
+                                                    <rect key="frame" x="1" y="20" width="121" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AvR-6Y-n14">
@@ -88,7 +89,7 @@
                                                     </connections>
                                                 </tableCellView>
                                                 <tableCellView identifier="FormCell" id="cDl-ui-V2B">
-                                                    <rect key="frame" x="1" y="39" width="162" height="17"/>
+                                                    <rect key="frame" x="1" y="39" width="121" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="scd-nI-Vhg">
@@ -124,12 +125,19 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
+                    <stackView orientation="vertical" alignment="centerX" horizontalHuggingPriority="249" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="9k2-8o-On2" customClass="FormView" customModule="lightterm" customModuleProvider="target">
+                        <rect key="frame" x="135" y="10" width="355" height="380"/>
+                    </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="centerX" secondItem="fz3-b7-u2f" secondAttribute="trailing" multiplier="2" constant="-32" id="7AY-If-2jc"/>
+                    <constraint firstAttribute="centerX" secondItem="fz3-b7-u2f" secondAttribute="trailing" multiplier="2" id="7AY-If-2jc"/>
                     <constraint firstItem="fz3-b7-u2f" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="-1" id="Exf-wC-lwp"/>
+                    <constraint firstAttribute="trailing" secondItem="9k2-8o-On2" secondAttribute="trailing" constant="10" id="Pi1-xB-bAH"/>
+                    <constraint firstAttribute="bottom" secondItem="9k2-8o-On2" secondAttribute="bottom" constant="10" id="QCI-fE-mEk"/>
                     <constraint firstAttribute="bottom" secondItem="fz3-b7-u2f" secondAttribute="bottom" constant="-1" id="a2w-kn-QG8"/>
                     <constraint firstItem="fz3-b7-u2f" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="-1" id="gJ4-pa-hGc"/>
+                    <constraint firstItem="9k2-8o-On2" firstAttribute="leading" secondItem="fz3-b7-u2f" secondAttribute="trailing" constant="10" id="vc5-nG-Kmt"/>
+                    <constraint firstItem="9k2-8o-On2" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="10" id="vdE-fD-crW"/>
                 </constraints>
             </view>
             <point key="canvasLocation" x="297" y="373"/>

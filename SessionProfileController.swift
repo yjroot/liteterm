@@ -9,9 +9,10 @@
 import Cocoa
 
 class SessionProfileController: NSObject {
-    @IBOutlet weak var window:NSWindow?
-    @IBOutlet weak var sourceListView:NSOutlineView?
-
+    @IBOutlet weak var window:NSWindow!
+    @IBOutlet weak var sourceListView:NSOutlineView!
+    @IBOutlet weak var formView:FormView!
+    
     var fields: XMLElement {
         struct Holder {
             static var xml: XMLIndexer?
@@ -26,9 +27,7 @@ class SessionProfileController: NSObject {
         
         return Holder.xml!["property"].element!
     }
-}
-
-extension SessionProfileController: NSOutlineViewDelegate, NSOutlineViewDataSource {
+    
     private func getChildren(element: XMLElement) -> [XMLElement] {
         return element.children.filter { (child: XMLElement) -> Bool in
             return contains(["form", "group"], child.name)
@@ -37,10 +36,45 @@ extension SessionProfileController: NSOutlineViewDelegate, NSOutlineViewDataSour
     
     private func getFields(element: XMLElement) -> [XMLElement] {
         return element.children.filter { (child: XMLElement) -> Bool in
-            return contains(["text", "password", "select"], child.name)
+            return contains(["text", "password", "number", "select"], child.name)
         }
     }
     
+    var viewController: BaseField!
+    
+    func showForm(form: XMLElement) {
+        formView.removeAllFields()
+        
+        var fields = getFields(form)
+        for field in fields {
+            switch field.name {
+            case "text":
+                formView.addTextField(field.attributes["label"]!, path: field.attributes["path"]!)
+                
+            case "password":
+                formView.addPasswordField(field.attributes["label"]!, path: field.attributes["path"]!)
+                
+            case "number":
+                formView.addNumberField(field.attributes["label"]!, path: field.attributes["path"]!)
+                
+            case "select":
+                var options: [String:String] = [:]
+                for optionElement in field.children {
+                    if optionElement.name != "option" {
+                        continue
+                    }
+                    options[optionElement.text!] = optionElement.attributes["value"]!
+                }
+                formView.addSelectField(field.attributes["label"]!, path: field.attributes["path"]!, options: options)
+                
+            default:
+                formView.addTextField(field.attributes["label"]!, path: field.attributes["path"]!)
+            }
+        }
+    }
+}
+
+extension SessionProfileController: NSOutlineViewDelegate, NSOutlineViewDataSource {
     func outlineView(outlineView: NSOutlineView, numberOfChildrenOfItem item: AnyObject?) -> Int {
         if item == nil {
             return getChildren(self.fields).count
@@ -95,5 +129,9 @@ extension SessionProfileController: NSOutlineViewDelegate, NSOutlineViewDataSour
     
     func outlineView(outlineView: NSOutlineView, shouldSelectItem item: AnyObject) -> Bool {
         return getFields(item as! XMLElement).count > 0
+    }
+    
+    func outlineViewSelectionDidChange(notification: NSNotification) {
+        self.showForm(self.sourceListView.itemAtRow(self.sourceListView.selectedRow) as! XMLElement)
     }
 }
