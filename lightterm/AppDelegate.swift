@@ -41,7 +41,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let optionWindowController = OptionWindowController(windowNibName: "Options")
     
     @IBAction func openOptions(sender: AnyObject){
-        optionWindowController.openWindow(sender)
+        optionWindowController.openWindow()
     }
 }
 

@@ -69,7 +69,7 @@ class OptionWindowController : NSWindowController{
         NSApp.activateIgnoringOtherApps(true)
     }
     
-    func OpenWindow(){
+    func openWindow(){
         self.window!.beginSheet(self.window!, completionHandler: nil)
     }
 }
