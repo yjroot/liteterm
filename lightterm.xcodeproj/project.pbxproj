@@ -17,7 +17,6 @@
 		BC40BCE81B626F73007D9FF9 /* ssh.lit in Resources */ = {isa = PBXBuildFile; fileRef = BC40BCE51B626F73007D9FF9 /* ssh.lit */; };
 		BC40BCE91B626F73007D9FF9 /* telnet.lit in Resources */ = {isa = PBXBuildFile; fileRef = BC40BCE61B626F73007D9FF9 /* telnet.lit */; };
 		BC40BCEB1B663D3F007D9FF9 /* SessionProfileManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC40BCEA1B663D3F007D9FF9 /* SessionProfileManagerTests.swift */; };
-		BC4BB5FD1B4FEAE500D2956A /* SessionDetailWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4BB5FB1B4FEAE500D2956A /* SessionDetailWindowController.swift */; };
 		BC56D4231BA0871F009AA7AB /* BaseProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D4211BA0871F009AA7AB /* BaseProfile.swift */; };
 		BC56D4261BA08BB9009AA7AB /* DefaultProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D4241BA08BB9009AA7AB /* DefaultProfile.swift */; };
 		BC56D4281BA099A6009AA7AB /* DefaultProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D4271BA099A6009AA7AB /* DefaultProfileTests.swift */; };
@@ -56,9 +55,6 @@
 		BC56D4791BB95D65009AA7AB /* PathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D42F1BA49E14009AA7AB /* PathUtils.swift */; };
 		BC56D47A1BB95DFB009AA7AB /* BaseProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D4211BA0871F009AA7AB /* BaseProfile.swift */; };
 		BC56D47B1BB95DFE009AA7AB /* DefaultProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D4241BA08BB9009AA7AB /* DefaultProfile.swift */; };
-		BC57DF081B46CA59008B7A75 /* SessionDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC57DF071B46CA59008B7A75 /* SessionDetail.xib */; };
-		BC57DF0C1B46D307008B7A75 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC57DF0B1B46D307008B7A75 /* Session.swift */; };
-		BC57DF101B46D650008B7A75 /* SessionDetailWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC57DF0F1B46D650008B7A75 /* SessionDetailWindow.swift */; };
 		BCAE49851B8F3BC6008D8CBA /* SWXMLHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE49841B8F3BC6008D8CBA /* SWXMLHash.swift */; };
 		BCAE49861B8F3BF8008D8CBA /* SWXMLHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE49841B8F3BC6008D8CBA /* SWXMLHash.swift */; };
 		BCB66D021B3287EE008AFB75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB66D011B3287EE008AFB75 /* AppDelegate.swift */; };
@@ -94,7 +90,6 @@
 		BC40BCE51B626F73007D9FF9 /* ssh.lit */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ssh.lit; sourceTree = "<group>"; };
 		BC40BCE61B626F73007D9FF9 /* telnet.lit */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = telnet.lit; sourceTree = "<group>"; };
 		BC40BCEA1B663D3F007D9FF9 /* SessionProfileManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionProfileManagerTests.swift; sourceTree = "<group>"; };
-		BC4BB5FB1B4FEAE500D2956A /* SessionDetailWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDetailWindowController.swift; sourceTree = "<group>"; };
 		BC56D4211BA0871F009AA7AB /* BaseProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseProfile.swift; sourceTree = "<group>"; };
 		BC56D4241BA08BB9009AA7AB /* DefaultProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultProfile.swift; sourceTree = "<group>"; };
 		BC56D4271BA099A6009AA7AB /* DefaultProfileTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultProfileTests.swift; sourceTree = "<group>"; };
@@ -116,9 +111,6 @@
 		BC56D46D1BB9423E009AA7AB /* SelectField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectField.xib; sourceTree = "<group>"; };
 		BC56D4721BB94C34009AA7AB /* NumberField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberField.swift; sourceTree = "<group>"; };
 		BC56D4731BB94C34009AA7AB /* NumberField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NumberField.xib; sourceTree = "<group>"; };
-		BC57DF071B46CA59008B7A75 /* SessionDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionDetail.xib; sourceTree = "<group>"; };
-		BC57DF0B1B46D307008B7A75 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
-		BC57DF0F1B46D650008B7A75 /* SessionDetailWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDetailWindow.swift; sourceTree = "<group>"; };
 		BCAE49831B8F3BC6008D8CBA /* SWXMLHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWXMLHash.h; path = Library/SWXMLHash/Source/SWXMLHash.h; sourceTree = "<group>"; };
 		BCAE49841B8F3BC6008D8CBA /* SWXMLHash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SWXMLHash.swift; path = Library/SWXMLHash/Source/SWXMLHash.swift; sourceTree = "<group>"; };
 		BCB66CFC1B3287EE008AFB75 /* lightterm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lightterm.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -264,10 +256,6 @@
 				BCB66D031B3287EE008AFB75 /* Images.xcassets */,
 				BCB66D051B3287EE008AFB75 /* MainMenu.xib */,
 				BCB66CFF1B3287EE008AFB75 /* Supporting Files */,
-				BC57DF071B46CA59008B7A75 /* SessionDetail.xib */,
-				BC57DF0B1B46D307008B7A75 /* Session.swift */,
-				BC57DF0F1B46D650008B7A75 /* SessionDetailWindow.swift */,
-				BC4BB5FB1B4FEAE500D2956A /* SessionDetailWindowController.swift */,
 				FADFC4131B62552B001A8124 /* Options.xib */,
 				FADFC4151B6258B6001A8124 /* OptionWindowController.swift */,
 				FAD6BBDD1B6651B000C93AC4 /* OptionManager.swift */,
@@ -397,7 +385,6 @@
 				BC56D4581BB901B3009AA7AB /* PasswordField.xib in Resources */,
 				BC56D4491BB6DF4D009AA7AB /* SessionProfile.xib in Resources */,
 				BCB66D041B3287EE008AFB75 /* Images.xcassets in Resources */,
-				BC57DF081B46CA59008B7A75 /* SessionDetail.xib in Resources */,
 				BC56D4761BB94C34009AA7AB /* NumberField.xib in Resources */,
 				BC56D4671BB9109C009AA7AB /* TextField.xib in Resources */,
 				FAD6BBDC1B66505500C93AC4 /* Options.plist in Resources */,
@@ -428,7 +415,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC56D4301BA49E14009AA7AB /* PathUtils.swift in Sources */,
 				FAC1E20B1BAC328C000CA886 /* LTTabView.swift in Sources */,
 				BC56D47B1BB95DFE009AA7AB /* DefaultProfile.swift in Sources */,
 				BC4088511B62542B00E54711 /* SessionProfile.swift in Sources */,
@@ -436,7 +422,6 @@
 				BC06C4D41B3427D200CA6D44 /* TerminalView.swift in Sources */,
 				FAD6BBDE1B6651B000C93AC4 /* OptionManager.swift in Sources */,
 				BC56D42A1BA09E82009AA7AB /* OptionProfile.swift in Sources */,
-				BC4BB5FD1B4FEAE500D2956A /* SessionDetailWindowController.swift in Sources */,
 				BC56D4741BB94C34009AA7AB /* NumberField.swift in Sources */,
 				FAC1E2061BAC320A000CA886 /* LTTabViewController.swift in Sources */,
 				FADFC4161B6258B6001A8124 /* OptionWindowController.swift in Sources */,
@@ -444,16 +429,12 @@
 				BC56D47A1BB95DFB009AA7AB /* BaseProfile.swift in Sources */,
 				BCB66D021B3287EE008AFB75 /* AppDelegate.swift in Sources */,
 				BC56D4791BB95D65009AA7AB /* PathUtils.swift in Sources */,
-				BC57DF0C1B46D307008B7A75 /* Session.swift in Sources */,
 				BC40BCE01B625A4E007D9FF9 /* SessionProfileManager.swift in Sources */,
 				BC56D46A1BB9135B009AA7AB /* FormView.swift in Sources */,
 				BC56D4411BB16B1B009AA7AB /* SessionProfileController.swift in Sources */,
-				BC56D4221BA0871F009AA7AB /* BaseProfile.swift in Sources */,
-				BC56D4251BA08BB9009AA7AB /* DefaultProfile.swift in Sources */,
 				BC56D45B1BB907A3009AA7AB /* PasswordField.swift in Sources */,
 				FAC1E20F1BAC334B000CA886 /* LTTabViewItem.swift in Sources */,
 				BCAE49851B8F3BC6008D8CBA /* SWXMLHash.swift in Sources */,
-				BC57DF101B46D650008B7A75 /* SessionDetailWindow.swift in Sources */,
 				BC56D43D1BAC2FBD009AA7AB /* SessionProfileWindowController.swift in Sources */,
 				BC56D46E1BB9423E009AA7AB /* SelectField.swift in Sources */,
 			);
