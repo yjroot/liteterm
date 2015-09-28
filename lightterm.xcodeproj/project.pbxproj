@@ -65,6 +65,10 @@
 		BCB66D041B3287EE008AFB75 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCB66D031B3287EE008AFB75 /* Images.xcassets */; };
 		BCB66D071B3287EE008AFB75 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCB66D051B3287EE008AFB75 /* MainMenu.xib */; };
 		BCB66D131B3287EE008AFB75 /* lighttermTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB66D121B3287EE008AFB75 /* lighttermTests.swift */; };
+		FAC1E2061BAC320A000CA886 /* LTTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1E2041BAC320A000CA886 /* LTTabViewController.swift */; };
+		FAC1E2071BAC320A000CA886 /* LTTabViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC1E2051BAC320A000CA886 /* LTTabViewController.xib */; };
+		FAC1E20B1BAC328C000CA886 /* LTTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1E20A1BAC328C000CA886 /* LTTabView.swift */; };
+		FAC1E20F1BAC334B000CA886 /* LTTabViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1E20E1BAC334B000CA886 /* LTTabViewItem.swift */; };
 		FAD6BBDC1B66505500C93AC4 /* Options.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAD6BBDB1B66505500C93AC4 /* Options.plist */; };
 		FAD6BBDE1B6651B000C93AC4 /* OptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6BBDD1B6651B000C93AC4 /* OptionManager.swift */; };
 		FADFC4141B62552B001A8124 /* Options.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADFC4131B62552B001A8124 /* Options.xib */; };
@@ -125,6 +129,10 @@
 		BCB66D0C1B3287EE008AFB75 /* lighttermTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lighttermTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCB66D111B3287EE008AFB75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCB66D121B3287EE008AFB75 /* lighttermTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lighttermTests.swift; sourceTree = "<group>"; };
+		FAC1E2041BAC320A000CA886 /* LTTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTTabViewController.swift; sourceTree = "<group>"; };
+		FAC1E2051BAC320A000CA886 /* LTTabViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LTTabViewController.xib; sourceTree = "<group>"; };
+		FAC1E20A1BAC328C000CA886 /* LTTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTTabView.swift; sourceTree = "<group>"; };
+		FAC1E20E1BAC334B000CA886 /* LTTabViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTTabViewItem.swift; sourceTree = "<group>"; };
 		FAD6BBDB1B66505500C93AC4 /* Options.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Options.plist; sourceTree = "<group>"; };
 		FAD6BBDD1B6651B000C93AC4 /* OptionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionManager.swift; sourceTree = "<group>"; };
 		FADFC4131B62552B001A8124 /* Options.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Options.xib; sourceTree = "<group>"; };
@@ -263,6 +271,10 @@
 				FADFC4131B62552B001A8124 /* Options.xib */,
 				FADFC4151B6258B6001A8124 /* OptionWindowController.swift */,
 				FAD6BBDD1B6651B000C93AC4 /* OptionManager.swift */,
+				FAC1E2051BAC320A000CA886 /* LTTabViewController.xib */,
+				FAC1E2041BAC320A000CA886 /* LTTabViewController.swift */,
+				FAC1E20A1BAC328C000CA886 /* LTTabView.swift */,
+				FAC1E20E1BAC334B000CA886 /* LTTabViewItem.swift */,
 			);
 			path = lightterm;
 			sourceTree = "<group>";
@@ -380,6 +392,7 @@
 			files = (
 				BC56D4701BB9423E009AA7AB /* SelectField.xib in Resources */,
 				BC56D4431BB560CC009AA7AB /* SessionProfileFields.xml in Resources */,
+				FAC1E2071BAC320A000CA886 /* LTTabViewController.xib in Resources */,
 				FADFC4141B62552B001A8124 /* Options.xib in Resources */,
 				BC56D4581BB901B3009AA7AB /* PasswordField.xib in Resources */,
 				BC56D4491BB6DF4D009AA7AB /* SessionProfile.xib in Resources */,
@@ -416,6 +429,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC56D4301BA49E14009AA7AB /* PathUtils.swift in Sources */,
+				FAC1E20B1BAC328C000CA886 /* LTTabView.swift in Sources */,
 				BC4088511B62542B00E54711 /* SessionProfile.swift in Sources */,
 				BC56D45F1BB907BE009AA7AB /* BaseField.swift in Sources */,
 				BC06C4D41B3427D200CA6D44 /* TerminalView.swift in Sources */,
@@ -423,6 +437,7 @@
 				BC56D42A1BA09E82009AA7AB /* OptionProfile.swift in Sources */,
 				BC4BB5FD1B4FEAE500D2956A /* SessionDetailWindowController.swift in Sources */,
 				BC56D4741BB94C34009AA7AB /* NumberField.swift in Sources */,
+				FAC1E2061BAC320A000CA886 /* LTTabViewController.swift in Sources */,
 				FADFC4161B6258B6001A8124 /* OptionWindowController.swift in Sources */,
 				BC56D4651BB9109C009AA7AB /* TextField.swift in Sources */,
 				BCB66D021B3287EE008AFB75 /* AppDelegate.swift in Sources */,
@@ -433,6 +448,7 @@
 				BC56D4221BA0871F009AA7AB /* BaseProfile.swift in Sources */,
 				BC56D4251BA08BB9009AA7AB /* DefaultProfile.swift in Sources */,
 				BC56D45B1BB907A3009AA7AB /* PasswordField.swift in Sources */,
+				FAC1E20F1BAC334B000CA886 /* LTTabViewItem.swift in Sources */,
 				BCAE49851B8F3BC6008D8CBA /* SWXMLHash.swift in Sources */,
 				BC57DF101B46D650008B7A75 /* SessionDetailWindow.swift in Sources */,
 				BC56D43D1BAC2FBD009AA7AB /* SessionProfileWindowController.swift in Sources */,

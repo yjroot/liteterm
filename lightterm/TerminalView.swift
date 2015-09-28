@@ -10,6 +10,8 @@ import Cocoa
 
 class TerminalView: NSView {
 
+    let tabViewController = LTTabViewController()
+    
     override func drawRect(dirtyRect: NSRect) {
         super.drawRect(dirtyRect)
         
@@ -20,4 +22,12 @@ class TerminalView: NSView {
         bPath.fill();
     }
     
+    
+    func showTabView(){
+ 
+    }
+    
+    func hideTabView(){
+        
+    }
 }

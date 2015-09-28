@@ -50,4 +50,31 @@ class ProfileSelector {
             self.profile.setValue(self.list, value: newValue)
         }
     }
+    
+    var int: Int {
+        get {
+            return self.value.toInt() ?? 0
+        }
+        set(newValue) {
+            self.value = String(newValue)
+        }
+    }
+    
+    var string: String {
+        get {
+            return self.value
+        }
+        set(newValue) {
+            self.value = newValue
+        }
+    }
+    
+    var bool: Bool {
+        get {
+            return self.value.lowercaseString == "true"
+        }
+        set(newValue) {
+            self.value = newValue ? "true" : "false"
+        }
+    }
 }
