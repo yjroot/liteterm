@@ -24,7 +24,7 @@ class OptionProfile {
     
     private init() {
         profile = NSMutableDictionary(contentsOfFile: PathUtils.OptionPath) ?? NSMutableDictionary()
-        println(PathUtils.OptionPath)
+        print(PathUtils.OptionPath)
     }
     
     func save() {
@@ -76,7 +76,7 @@ extension OptionProfile: BaseProfile {
             case let dictValue as NSMutableDictionary:
                 dictionary = dictValue
             default:
-                var dictNew = NSMutableDictionary()
+                let dictNew = NSMutableDictionary()
                 dictionary.setObject(dictNew, forKey: key)
                 dictionary = dictNew
             }

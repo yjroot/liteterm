@@ -19,23 +19,23 @@ class OptionProfileTests: XCTestCase {
     }
     
     func testSet() {
-        var profile = OptionProfile.sharedInstance
+        let profile = OptionProfile.sharedInstance
         profile["option"]["profilepath"].value = PathUtils.AppSupportDir
         XCTAssert(profile["option"]["profilepath"].value == PathUtils.AppSupportDir, "Pass")
     }
     
     func testSave() {
-        var profile = OptionProfile.sharedInstance
+        let profile = OptionProfile.sharedInstance
         profile["option"]["profilepath"].value = PathUtils.AppSupportDir
         profile.save()
         
-        var dict = NSMutableDictionary(contentsOfFile: PathUtils.OptionPath)!
-        var option = dict["option"] as! NSMutableDictionary
+        let dict = NSMutableDictionary(contentsOfFile: PathUtils.OptionPath)!
+        let option = dict["option"] as! NSMutableDictionary
         XCTAssert(option["profilepath"] as! String == PathUtils.AppSupportDir, "Pass")
     }
     
     func testDefault() {
-        var profile = OptionProfile.sharedInstance
+        let profile = OptionProfile.sharedInstance
         XCTAssert(profile["connection"]["ssh"]["port"].value == "22")
     }
 }

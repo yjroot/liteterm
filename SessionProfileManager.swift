@@ -9,12 +9,12 @@
 import Foundation
 
 class SessionProfileManager {
-    let profileDirPath: String
+    let profileDirPath: NSString
     
     init(profileDirPath: String? = nil) {
         if (profileDirPath == nil) {
-            let documentsPath : AnyObject = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,.UserDomainMask,true)[0]
-            self.profileDirPath = documentsPath.stringByAppendingString("/lightterm")
+            let documentsPath : String = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,.UserDomainMask,true)[0]
+            self.profileDirPath = (documentsPath as NSString).stringByAppendingPathComponent("/lightrerm")
         } else {
             self.profileDirPath = profileDirPath!
         }
@@ -24,13 +24,19 @@ class SessionProfileManager {
         get {
             var profiles = [String]()
             let fileManager = NSFileManager.defaultManager()
-            let files = fileManager.contentsOfDirectoryAtPath(self.profileDirPath, error: nil) ?? []
-            let litFiles = files.filter({(file: AnyObject)-> Bool in
-                return (file as? NSString)?.pathExtension == "lit"
+            let files: [String]
+            do {
+                files = try fileManager.contentsOfDirectoryAtPath(self.profileDirPath as String)
+            } catch _ {
+                files = []
+            }
+            
+            let litFiles = files.filter({(file: String)-> Bool in
+                return (file as NSString).pathExtension == "lit"
             })
             
             for filename in litFiles {
-                profiles.append((filename as! String).stringByDeletingPathExtension)
+                profiles.append((filename as NSString).stringByDeletingPathExtension)
             }
             return profiles;
         }
@@ -38,17 +44,18 @@ class SessionProfileManager {
     
     subscript(name : String) -> SessionProfile? {
         get {
-            let profilePath = self.profileDirPath.stringByAppendingPathComponent(name.stringByAppendingPathExtension("lit")!)
+            let profilePath = self.profileDirPath.stringByAppendingPathComponent((name as NSString).stringByAppendingPathExtension("lit")!)
             let fileManager = NSFileManager.defaultManager()
 
             if (!fileManager.fileExistsAtPath(profilePath)) {
                 return nil;
             }
-            return SessionProfile(filepath: profilePath)
+            
+            return SessionProfile(filepath: NSURL(fileURLWithPath: profilePath))
         }
-        set(profile) {
-            let profilePath = self.profileDirPath.stringByAppendingPathComponent(name.stringByAppendingPathExtension("lit")!)
-            profile?.filepath = profilePath
+        set (profile) {
+            let profilePath = self.profileDirPath.stringByAppendingPathComponent((name as NSString).stringByAppendingPathExtension("lit")!)
+            profile?.filepath = NSURL(fileURLWithPath: profilePath)
             profile?.save()
         }
     }

@@ -15,7 +15,7 @@ class TerminalView: NSView {
     override func drawRect(dirtyRect: NSRect) {
         super.drawRect(dirtyRect)
         
-        var bPath:NSBezierPath = NSBezierPath(rect: dirtyRect)
+        let bPath:NSBezierPath = NSBezierPath(rect: dirtyRect)
         
         let backgroundColor = NSColor(red: 0, green: 0, blue: 0, alpha: 1)
         backgroundColor.set()
