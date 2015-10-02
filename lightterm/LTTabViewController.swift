@@ -17,11 +17,11 @@ class LTTabViewController: NSTabViewController {
     
     var tabNumber = 1;
     
-    @IBAction func AddNewTab(AnyObject){
-        var ltTabViewItem:LTTabViewItem = LTTabViewItem()
-        var ltTabView:LTTabView = LTTabView()
+    @IBAction func AddNewTab(_: AnyObject){
+        let ltTabViewItem:LTTabViewItem = LTTabViewItem()
+        let ltTabView:LTTabView = LTTabView()
         
-        var strTabText = String(format: "%@ %d", "Tab", tabNumber++)
+        let strTabText = String(format: "%@ %d", "Tab", tabNumber++)
         
         ltTabViewItem.label = strTabText
         ltTabViewItem.view = ltTabView

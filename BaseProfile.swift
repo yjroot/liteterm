@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol BaseProfile: Printable {
+protocol BaseProfile: CustomStringConvertible {
     var parent: BaseProfile { get set }
     func getValue(keys: [String]) -> String?
     func setValue(keys: [String], value: String)
@@ -53,7 +53,7 @@ class ProfileSelector {
     
     var int: Int {
         get {
-            return self.value.toInt() ?? 0
+            return Int(self.value) ?? 0
         }
         set(newValue) {
             self.value = String(newValue)

@@ -32,12 +32,12 @@ class SessionProfileTests: XCTestCase {
     }
     
     func testOpen() {
-        var sshProfile = self.manager!["ssh"]!
+        let sshProfile = self.manager!["ssh"]!
         XCTAssert(sshProfile.name == "ssh")
     }
     
     func testGetValue() {
-        var sshProfile = self.manager!["ssh"]!
+        let sshProfile = self.manager!["ssh"]!
         
         XCTAssert(sshProfile["connection"]["host"].value == "www.lightterm.com")
         XCTAssert(sshProfile["connection"]["protocol"].value == "ssh")
@@ -46,13 +46,13 @@ class SessionProfileTests: XCTestCase {
     }
     
     func testGetDefaultValue() {
-        var sshProfile = self.manager!["ssh"]!
+        let sshProfile = self.manager!["ssh"]!
         
         XCTAssert(sshProfile["connection"]["telnet"]["port"].value == "23")
     }
     
     func testSetValue() {
-        var sshProfile = self.manager!["ssh"]!
+        let sshProfile = self.manager!["ssh"]!
         
         XCTAssert(sshProfile["connection"]["ssh"]["auth"]["username"].value == "user")
         sshProfile["connection"]["ssh"]["auth"]["username"].value = "liteterm"
@@ -82,7 +82,7 @@ class SessionProfileTests: XCTestCase {
         XCTAssert(sshProfile["connection"]["ssh"]["auth"]["username"].value == "liteterm")
         self.manager!["ssh_copy"] = sshProfile
         
-        var copyProfile = self.manager!["ssh_copy"]!
+        let copyProfile = self.manager!["ssh_copy"]!
         XCTAssert(copyProfile["connection"]["ssh"]["auth"]["username"].value == "liteterm")
         
         sshProfile = self.manager!["ssh"]!
