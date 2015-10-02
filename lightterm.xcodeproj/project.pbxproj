@@ -180,17 +180,13 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
-		BC56D4351BAC2823009AA7AB /* PropertyDialog */ = {
+		BC56D4351BAC2823009AA7AB /* Property Dialog */ = {
 			isa = PBXGroup;
 			children = (
 				BC56D4561BB90196009AA7AB /* FieldView */,
-				BC56D43C1BAC2FBD009AA7AB /* SessionProfileWindowController.swift */,
-				BC56D4401BB16B1B009AA7AB /* SessionProfileController.swift */,
-				BC56D4421BB560CC009AA7AB /* SessionProfileFields.xml */,
-				BC56D4481BB6DF4D009AA7AB /* SessionProfileWindow.xib */,
 				BC56D4691BB9135B009AA7AB /* FormView.swift */,
 			);
-			name = PropertyDialog;
+			name = "Property Dialog";
 			sourceTree = "<group>";
 		};
 		BC56D4561BB90196009AA7AB /* FieldView */ = {
@@ -207,6 +203,17 @@
 				BC56D4641BB9109C009AA7AB /* TextField.xib */,
 			);
 			name = FieldView;
+			sourceTree = "<group>";
+		};
+		BC56D47C1BB9668C009AA7AB /* Session Profile Dialog */ = {
+			isa = PBXGroup;
+			children = (
+				BC56D43C1BAC2FBD009AA7AB /* SessionProfileWindowController.swift */,
+				BC56D4401BB16B1B009AA7AB /* SessionProfileController.swift */,
+				BC56D4421BB560CC009AA7AB /* SessionProfileFields.xml */,
+				BC56D4481BB6DF4D009AA7AB /* SessionProfileWindow.xib */,
+			);
+			name = "Session Profile Dialog";
 			sourceTree = "<group>";
 		};
 		BCAE49811B8F3B91008D8CBA /* Library */ = {
@@ -229,7 +236,8 @@
 		BCB66CF31B3287EE008AFB75 = {
 			isa = PBXGroup;
 			children = (
-				BC56D4351BAC2823009AA7AB /* PropertyDialog */,
+				BC56D47C1BB9668C009AA7AB /* Session Profile Dialog */,
+				BC56D4351BAC2823009AA7AB /* Property Dialog */,
 				BC56D42E1BA49DE1009AA7AB /* Utils */,
 				BCAE49811B8F3B91008D8CBA /* Library */,
 				BC40884F1B6252F700E54711 /* Session File */,
