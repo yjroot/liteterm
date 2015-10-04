@@ -21,11 +21,13 @@ class SelectField: BaseField {
             return
         }
         popupButton.removeAllItems()
-        popupButton.addItemsWithTitles(self.options.keys.array)
+        popupButton.addItemsWithTitles(self.options.map({ (key: String, value: String) -> String in
+            return key
+        }))
     }
     
-    private var _options: [String:String] = [:]
-    var options: [String:String] {
+    private var _options: [(String, String)] = []
+    var options: [(String,String)] {
         get {
             return _options
         }

@@ -19,7 +19,7 @@ class BaseField: NSViewController {
         self.fieldLabel = label
         self.fieldValue = value ?? ""
         self.fieldPlaceholder = placeholder ?? ""
-        super.init(nibName: NSStringFromClass(self.dynamicType).pathExtension, bundle: nil)
+        super.init(nibName: (NSStringFromClass(self.dynamicType) as NSString).pathExtension, bundle: nil)
     }
     
     required init?(coder: NSCoder) {

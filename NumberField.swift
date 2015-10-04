@@ -19,8 +19,8 @@ class NumberField: BaseField {
     class OnlyIntegerValueFormatter: NSNumberFormatter {
         override func isPartialStringValid(partialString: String, newEditingString newString: AutoreleasingUnsafeMutablePointer<NSString?>, errorDescription error: AutoreleasingUnsafeMutablePointer<NSString?>) -> Bool {
             
-            var regex = NSRegularExpression(pattern: "[^\\d]", options: nil, error: nil)!
-            if regex.numberOfMatchesInString(partialString, options: nil, range: NSRange(location:0, length:count(partialString))) != 0 {
+            let regex = try! NSRegularExpression(pattern: "[^\\d]", options: [])
+            if regex.numberOfMatchesInString(partialString, options: [], range: NSRange(location:0, length:partialString.characters.count)) != 0 {
                 NSBeep()
                 return false
             }

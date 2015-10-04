@@ -25,25 +25,25 @@ class FormView: NSStackView {
     }
     
     func addTextField(label: String, path:String) {
-        var field = FormField(path: path, controller: TextField(label: label)!)
+        let field = FormField(path: path, controller: TextField(label: label)!)
         self.addField(field)
     }
     
     func addPasswordField(label: String, path:String) {
-        var field = FormField(path: path, controller: PasswordField(label: label)!)
+        let field = FormField(path: path, controller: PasswordField(label: label)!)
         self.addField(field)
     }
     
     func addNumberField(label: String, path:String) {
-        var field = FormField(path: path, controller: NumberField(label: label)!)
+        let field = FormField(path: path, controller: NumberField(label: label)!)
         self.addField(field)
     }
     
-    func addSelectField(label: String, path:String, options: [String:String]) {
-        var controller = SelectField(label: label)!
+    func addSelectField(label: String, path:String, options: [(String, String)]) {
+        let controller = SelectField(label: label)!
         controller.options = options
 
-        var field = FormField(path: path, controller: controller)
+        let field = FormField(path: path, controller: controller)
         self.addField(field)
     }
     

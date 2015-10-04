@@ -19,8 +19,8 @@ class SessionProfileController: NSObject {
         }
         if Holder.xml == nil {
             let filePath: NSString = NSBundle.mainBundle().pathForResource("SessionProfileFields", ofType: "xml")!
-            if let data: NSData = NSData(contentsOfFile: String(filePath), options: nil, error: nil) {
-                var xml = SWXMLHash.parse(data)
+            if let data: NSData = try! NSData(contentsOfFile: String(filePath), options: []) {
+                let xml = SWXMLHash.parse(data)
                 Holder.xml = xml
             }
         }
@@ -30,13 +30,13 @@ class SessionProfileController: NSObject {
     
     private func getChildren(element: XMLElement) -> [XMLElement] {
         return element.children.filter { (child: XMLElement) -> Bool in
-            return contains(["form", "group"], child.name)
+            return ["form", "group"].contains(child.name)
         }
     }
     
     private func getFields(element: XMLElement) -> [XMLElement] {
         return element.children.filter { (child: XMLElement) -> Bool in
-            return contains(["text", "password", "number", "select"], child.name)
+            return ["text", "password", "number", "select"].contains(child.name)
         }
     }
     
@@ -45,7 +45,7 @@ class SessionProfileController: NSObject {
     func showForm(form: XMLElement) {
         formView.removeAllFields()
         
-        var fields = getFields(form)
+        let fields = getFields(form)
         for field in fields {
             switch field.name {
             case "text":
@@ -58,12 +58,12 @@ class SessionProfileController: NSObject {
                 formView.addNumberField(field.attributes["label"]!, path: field.attributes["path"]!)
                 
             case "select":
-                var options: [String:String] = [:]
+                var options: [(String, String)] = []
                 for optionElement in field.children {
                     if optionElement.name != "option" {
                         continue
                     }
-                    options[optionElement.text!] = optionElement.attributes["value"]!
+                    options.append((optionElement.text!, optionElement.attributes["value"]!))
                 }
                 formView.addSelectField(field.attributes["label"]!, path: field.attributes["path"]!, options: options)
                 
@@ -78,7 +78,7 @@ extension SessionProfileController: NSOutlineViewDelegate, NSOutlineViewDataSour
     func outlineView(outlineView: NSOutlineView, numberOfChildrenOfItem item: AnyObject?) -> Int {
         if item == nil {
             return getChildren(self.fields).count
-        } else if var element = item as? XMLElement {
+        } else if let element = item as? XMLElement {
             return getChildren(element).count
         }
         
@@ -86,7 +86,7 @@ extension SessionProfileController: NSOutlineViewDelegate, NSOutlineViewDataSour
     }
     
     func outlineView(outlineView: NSOutlineView, isItemExpandable item: AnyObject) -> Bool {
-        if var element = item as? XMLElement {
+        if let element = item as? XMLElement {
             return getChildren(element).count != 0
         }
         
@@ -97,7 +97,7 @@ extension SessionProfileController: NSOutlineViewDelegate, NSOutlineViewDataSour
         var children: [XMLElement]!
         if item == nil {
             children = getChildren(self.fields)
-        } else if var element = item as? XMLElement {
+        } else if let element = item as? XMLElement {
             children = getChildren(element)
         } else {
             return self
