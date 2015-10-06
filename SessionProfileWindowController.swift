@@ -3,7 +3,7 @@
 //  liteterm
 //
 //  Created by yjroot on 2015. 9. 18..
-//  Copyright (c) 2015년 Netsarang. All rights reserved.
+//  Copyright (c) 2015년 Liteterm team. All rights reserved.
 //
 
 import Cocoa
