@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8191"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NumberField" customModule="lightterm" customModuleProvider="target">
+            <connections>
+                <outlet property="labelView" destination="ucb-Rp-QDE" id="kio-gy-pvs"/>
+                <outlet property="textField" destination="Yn8-Hn-Z2V" id="61Q-WH-5vu"/>
+                <outlet property="view" destination="12J-1F-Wts" id="FLu-Iq-0sz"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="12J-1F-Wts">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="22"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ucb-Rp-QDE">
+                    <rect key="frame" x="-2" y="3" width="38" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="17" id="OnP-3i-cqL"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="xM4-GX-aWi">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yn8-Hn-Z2V">
+                    <rect key="frame" x="280" y="0.0" width="200" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" priority="250" constant="200" id="7k9-fp-rBu"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="o5Z-SZ-cxF"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="LcO-mF-JZJ">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="ucb-Rp-QDE" firstAttribute="leading" secondItem="12J-1F-Wts" secondAttribute="leading" id="1aW-pj-SjD"/>
+                <constraint firstAttribute="trailing" secondItem="Yn8-Hn-Z2V" secondAttribute="trailing" id="Zz3-Lp-7fQ"/>
+                <constraint firstAttribute="centerY" secondItem="ucb-Rp-QDE" secondAttribute="centerY" id="f9k-PC-lqn"/>
+                <constraint firstAttribute="bottom" secondItem="Yn8-Hn-Z2V" secondAttribute="bottom" id="nsW-Iz-qRV"/>
+                <constraint firstItem="Yn8-Hn-Z2V" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ucb-Rp-QDE" secondAttribute="trailing" constant="10" id="w5v-LP-3YR"/>
+                <constraint firstItem="Yn8-Hn-Z2V" firstAttribute="top" secondItem="12J-1F-Wts" secondAttribute="top" id="wkr-kq-aie"/>
+            </constraints>
+            <point key="canvasLocation" x="246" y="301.5"/>
+        </customView>
+    </objects>
+</document>
