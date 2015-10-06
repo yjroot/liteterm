@@ -1,6 +1,6 @@
-<lightterm version="0.01">
+<liteterm version="0.01">
     <connection>
-        <host>www.lightterm.com</host>
+        <host>www.liteterm.com</host>
         <protocol>ssh</protocol>
         <ssh>
             <port>22</port>
@@ -29,4 +29,4 @@
             <altgr>true</altgr>
         </keyboard>
     </terminal>
-</lightterm>
+</liteterm>

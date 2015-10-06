@@ -1,6 +1,6 @@
 //
 //  DefaultProfile.swift
-//  lightterm
+//  liteterm
 //
 //  Created by yjroot on 2015. 9. 10..
 //  Copyright (c) 2015년 Netsarang. All rights reserved.
@@ -17,7 +17,7 @@ import Foundation
 class DefaultProfile {
     static let profile = [
         "connection": [
-            "host": "lightterm.com",
+            "host": "liteterm.com",
             "protocol": "ssh",
             "ssh": [
                 "auth": [

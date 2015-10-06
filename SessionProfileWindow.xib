@@ -5,7 +5,7 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="SessionProfileController" customModule="lightterm" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="SessionProfileController" customModule="liteterm" customModuleProvider="target">
             <connections>
                 <outlet property="formView" destination="9k2-8o-On2" id="6Y7-2w-FRG"/>
                 <outlet property="sourceListView" destination="pAT-1E-TVx" id="c1c-dG-5aN"/>
@@ -125,7 +125,7 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
-                    <stackView orientation="vertical" alignment="centerX" horizontalHuggingPriority="249" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="9k2-8o-On2" customClass="FormView" customModule="lightterm" customModuleProvider="target">
+                    <stackView orientation="vertical" alignment="centerX" horizontalHuggingPriority="249" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="9k2-8o-On2" customClass="FormView" customModule="liteterm" customModuleProvider="target">
                         <rect key="frame" x="135" y="10" width="355" height="380"/>
                     </stackView>
                 </subviews>

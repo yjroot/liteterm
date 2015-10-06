@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="FieldViewController" customModule="lightterm" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="FieldViewController" customModule="liteterm" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="CsF-TE-M49" id="bCw-Oz-JnY"/>
             </connections>

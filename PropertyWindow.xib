@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="SessionProfileController" customModule="lightterm" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="SessionProfileController" customModule="liteterm" customModuleProvider="target">
             <connections>
                 <outlet property="sourceListView" destination="HON-TM-TWk" id="O5y-VD-NX9"/>
             </connections>

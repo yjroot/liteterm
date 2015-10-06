@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8191"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="NumberField" customModule="lightterm" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="NumberField" customModule="liteterm" customModuleProvider="target">
             <connections>
                 <outlet property="labelView" destination="ucb-Rp-QDE" id="kio-gy-pvs"/>
                 <outlet property="textField" destination="Yn8-Hn-Z2V" id="61Q-WH-5vu"/>

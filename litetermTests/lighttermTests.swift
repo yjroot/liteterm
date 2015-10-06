@@ -1,6 +1,6 @@
 //
-//  lighttermTests.swift
-//  lighttermTests
+//  litetermTests.swift
+//  litetermTests
 //
 //  Created by yjroot on 2015. 6. 18..
 //  Copyright (c) 2015년 Netsarang. All rights reserved.
@@ -9,7 +9,7 @@
 import Cocoa
 import XCTest
 
-class lighttermTests: XCTestCase {
+class litetermTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

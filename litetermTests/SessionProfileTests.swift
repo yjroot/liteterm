@@ -1,6 +1,6 @@
 //
 //  SessionProfileTests.swift
-//  lightterm
+//  liteterm
 //
 //  Created by yjroot on 2015. 7. 24..
 //  Copyright (c) 2015년 Netsarang. All rights reserved.
@@ -39,7 +39,7 @@ class SessionProfileTests: XCTestCase {
     func testGetValue() {
         let sshProfile = self.manager!["ssh"]!
         
-        XCTAssert(sshProfile["connection"]["host"].value == "www.lightterm.com")
+        XCTAssert(sshProfile["connection"]["host"].value == "www.liteterm.com")
         XCTAssert(sshProfile["connection"]["protocol"].value == "ssh")
         XCTAssert(sshProfile["connection"]["ssh"]["port"].value == "22")
         XCTAssert(sshProfile["not"]["exist"].value == "")

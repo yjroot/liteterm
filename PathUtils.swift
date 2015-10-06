@@ -1,6 +1,6 @@
 //
 //  PathUtils.swift
-//  lightterm
+//  liteterm
 //
 //  Created by yjroot on 2015. 9. 13..
 //  Copyright (c) 2015년 Netsarang. All rights reserved.
@@ -24,6 +24,6 @@ class PathUtils {
     }
     
     static var OptionPath: String {
-        return AppSupportPath("lightterm.plist")
+        return AppSupportPath("liteterm.plist")
     }
 }

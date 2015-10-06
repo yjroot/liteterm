@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="LTTabViewController" customModule="lightterm" customModuleProvider="target"/>
+        <customObject id="-2" userLabel="File's Owner" customClass="LTTabViewController" customModule="liteterm" customModuleProvider="target"/>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="Hz6-mo-xeY">
@@ -15,8 +15,8 @@
                     <rect key="frame" x="-40" y="207" width="177" height="124"/>
                     <font key="font" metaFont="system"/>
                     <tabViewItems>
-                        <tabViewItem label="Add tab" identifier="1" id="mEN-7G-QPf" customClass="LTTabViewItem" customModule="lightterm" customModuleProvider="target">
-                            <view key="view" id="acM-sn-5Mj" customClass="LTTabView" customModule="lightterm" customModuleProvider="target">
+                        <tabViewItem label="Add tab" identifier="1" id="mEN-7G-QPf" customClass="LTTabViewItem" customModule="liteterm" customModuleProvider="target">
+                            <view key="view" id="acM-sn-5Mj" customClass="LTTabView" customModule="liteterm" customModuleProvider="target">
                                 <rect key="frame" x="10" y="33" width="77" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </view>
