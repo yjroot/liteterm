@@ -29,7 +29,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         sessionDetailWindowController.showWindow(sender)
     }
     
-    @IBAction func openSession(AnyObject) {
+    @IBAction func openSession(_: AnyObject) {
         let alert = NSAlert()
         alert.messageText = "Event"
         alert.addButtonWithTitle("OK")

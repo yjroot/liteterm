@@ -8,10 +8,14 @@
 
 import Foundation
 
+enum ProfileError: ErrorType {
+    case UnkonwnVersion
+}
+
 class SessionProfile {
     var parent: BaseProfile = OptionProfile.sharedInstance
     var error: Bool = false
-    var filepath: String? = nil
+    var filepath: NSURL? = nil
     
     private var xml: XMLIndexer? = nil
     var root: XMLIndexer {
@@ -19,18 +23,18 @@ class SessionProfile {
             return self.xml!["lightterm"]
         }
         
-        if let data: NSData = NSData(contentsOfFile:self.filepath!, options: nil, error: nil) {
+        if let data: NSData = NSData(contentsOfURL: self.filepath!) {
             // TODO: Because parse mothod will be slow with large file, it needs
             //       to change to lazy mothod. But, lazy parse does not support
             //       description yet.
-            var xml = SWXMLHash.parse(data)
+            let xml = SWXMLHash.parse(data)
             if xml["lightterm"].element?.attributes["version"] == "0.01" {
                 self.xml = xml
             }
         }
         
         if self.xml == nil {
-            var root = XMLElement(name: rootElementName)
+            let root = XMLElement(name: rootElementName)
             root.addElement("lightterm", withAttributes: ["version":"0.01"])
             self.xml = XMLIndexer(root)
         }
@@ -39,16 +43,19 @@ class SessionProfile {
     }
     
     var name: String {
-        return self.filepath?.lastPathComponent.stringByDeletingPathExtension ?? ""
+        return self.filepath?.URLByDeletingPathExtension?.lastPathComponent ?? ""
     }
     
-    init(filepath: String? = nil) {
+    init(filepath: NSURL? = nil) {
         self.filepath = filepath
     }
     
     func save() -> Bool {
-        if var path: String = self.filepath {
-            "\(self)".writeToFile(path, atomically: true, encoding: NSUTF8StringEncoding)
+        if let path: NSURL = self.filepath {
+            do {
+                try "\(self)".writeToURL(path, atomically: true, encoding: NSUTF8StringEncoding)
+            } catch _ {
+            }
             return true
         }
         return false
@@ -67,7 +74,7 @@ extension SessionProfile: BaseProfile {
         for key in keys {
             xml = xml[key]
         }
-        if var element: XMLElement = xml.element {
+        if let element: XMLElement = xml.element {
             return element.text ?? ""
         }
         return nil

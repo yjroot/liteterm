@@ -24,9 +24,9 @@ class SessionProfileManagerTests: XCTestCase {
     func testSessionList() {
         let manager = SessionProfileManager(profileDirPath: self.sessionProfilePath)
         
-        XCTAssert(contains(manager.profiles, "local"), "Pass")
-        XCTAssert(contains(manager.profiles, "ssh"), "Pass")
-        XCTAssert(contains(manager.profiles, "telnet"), "Pass")
+        XCTAssert(manager.profiles.contains("local"), "Pass")
+        XCTAssert(manager.profiles.contains("ssh"), "Pass")
+        XCTAssert(manager.profiles.contains("telnet"), "Pass")
     }
     
     func testExistCheck() {
