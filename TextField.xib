@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8191"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="TextField" customModule="lightterm" customModuleProvider="target">
@@ -17,10 +17,11 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="J93-pY-Esb">
-                    <rect key="frame" x="-2" y="3" width="38" height="17"/>
+                    <rect key="frame" x="-2" y="3" width="37" height="17"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="17" id="VB8-LJ-oka"/>
                     </constraints>
+                    <animations/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="1pk-ka-XD8">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -33,6 +34,7 @@
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="W9o-Ph-LeI"/>
                         <constraint firstAttribute="width" priority="250" constant="200" id="kSs-XC-qMY"/>
                     </constraints>
+                    <animations/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="oY6-Q5-fkK">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -48,6 +50,7 @@
                 <constraint firstItem="PtH-vh-rM3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="J93-pY-Esb" secondAttribute="trailing" constant="10" id="hoO-Eo-nhv"/>
                 <constraint firstAttribute="trailing" secondItem="PtH-vh-rM3" secondAttribute="trailing" id="mKp-sl-UAx"/>
             </constraints>
+            <animations/>
             <point key="canvasLocation" x="246" y="301.5"/>
         </customView>
     </objects>
