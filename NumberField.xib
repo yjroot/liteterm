@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8191"/>
     </dependencies>
@@ -18,10 +18,11 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ucb-Rp-QDE">
-                    <rect key="frame" x="-2" y="3" width="38" height="17"/>
+                    <rect key="frame" x="-2" y="3" width="37" height="17"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="17" id="OnP-3i-cqL"/>
                     </constraints>
+                    <animations/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="xM4-GX-aWi">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -34,6 +35,7 @@
                         <constraint firstAttribute="width" priority="250" constant="200" id="7k9-fp-rBu"/>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="o5Z-SZ-cxF"/>
                     </constraints>
+                    <animations/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="LcO-mF-JZJ">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -49,6 +51,7 @@
                 <constraint firstItem="Yn8-Hn-Z2V" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ucb-Rp-QDE" secondAttribute="trailing" constant="10" id="w5v-LP-3YR"/>
                 <constraint firstItem="Yn8-Hn-Z2V" firstAttribute="top" secondItem="12J-1F-Wts" secondAttribute="top" id="wkr-kq-aie"/>
             </constraints>
+            <animations/>
             <point key="canvasLocation" x="246" y="301.5"/>
         </customView>
     </objects>
