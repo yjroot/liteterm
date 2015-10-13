@@ -10,5 +10,6 @@ import Cocoa
 
 class SessionProfileListController: NSObject {
     @IBOutlet weak var window:NSWindow!
-    @IBOutlet weak var managerListView:ManagerListView!
+    @IBOutlet weak var managerListView: ManagerListView!
+    @IBOutlet weak var profileListView: ProfileListView!
 }

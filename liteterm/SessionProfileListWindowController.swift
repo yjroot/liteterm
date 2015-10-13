@@ -24,6 +24,7 @@ class SessionProfileListWindowController: NSWindowController {
         super.awakeFromNib()
         self.object.managerListView.addManager(SessionProfileManager())
         self.object.managerListView.selectRowIndexes(NSIndexSet(index: 0), byExtendingSelection: false)
+        self.object.profileListView.reloadData()
         self.object.window.makeKeyAndOrderFront(self)
     }
 }

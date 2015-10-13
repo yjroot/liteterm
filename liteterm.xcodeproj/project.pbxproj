@@ -65,6 +65,7 @@
 		BCD4B39F1BCA70B7002AD52C /* SessionProfileListWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD4B39D1BCA70B7002AD52C /* SessionProfileListWindow.xib */; settings = {ASSET_TAGS = (); }; };
 		BCD4B3A11BCD132D002AD52C /* SessionProfileListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD4B3A01BCD132D002AD52C /* SessionProfileListController.swift */; settings = {ASSET_TAGS = (); }; };
 		BCD4B3A31BCD1F0F002AD52C /* ManagerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD4B3A21BCD1F0F002AD52C /* ManagerListView.swift */; settings = {ASSET_TAGS = (); }; };
+		BCD4B3A51BCD3940002AD52C /* ProfileListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD4B3A41BCD3940002AD52C /* ProfileListView.swift */; settings = {ASSET_TAGS = (); }; };
 		FAC1E2061BAC320A000CA886 /* LTTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1E2041BAC320A000CA886 /* LTTabViewController.swift */; };
 		FAC1E2071BAC320A000CA886 /* LTTabViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC1E2051BAC320A000CA886 /* LTTabViewController.xib */; };
 		FAC1E20B1BAC328C000CA886 /* LTTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1E20A1BAC328C000CA886 /* LTTabView.swift */; };
@@ -129,6 +130,7 @@
 		BCD4B39D1BCA70B7002AD52C /* SessionProfileListWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SessionProfileListWindow.xib; path = liteterm/SessionProfileListWindow.xib; sourceTree = "<group>"; };
 		BCD4B3A01BCD132D002AD52C /* SessionProfileListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SessionProfileListController.swift; path = liteterm/SessionProfileListController.swift; sourceTree = "<group>"; };
 		BCD4B3A21BCD1F0F002AD52C /* ManagerListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManagerListView.swift; path = liteterm/ManagerListView.swift; sourceTree = "<group>"; };
+		BCD4B3A41BCD3940002AD52C /* ProfileListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileListView.swift; path = liteterm/ProfileListView.swift; sourceTree = "<group>"; };
 		FAC1E2041BAC320A000CA886 /* LTTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTTabViewController.swift; sourceTree = "<group>"; };
 		FAC1E2051BAC320A000CA886 /* LTTabViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LTTabViewController.xib; sourceTree = "<group>"; };
 		FAC1E20A1BAC328C000CA886 /* LTTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTTabView.swift; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 				BCD4B39C1BCA70B7002AD52C /* SessionProfileListWindowController.swift */,
 				BCD4B3A01BCD132D002AD52C /* SessionProfileListController.swift */,
 				BCD4B3A21BCD1F0F002AD52C /* ManagerListView.swift */,
+				BCD4B3A41BCD3940002AD52C /* ProfileListView.swift */,
 				BCD4B39D1BCA70B7002AD52C /* SessionProfileListWindow.xib */,
 			);
 			name = "Session Profile List Dialog";
@@ -458,6 +461,7 @@
 				BC56D4741BB94C34009AA7AB /* NumberField.swift in Sources */,
 				FAC1E2061BAC320A000CA886 /* LTTabViewController.swift in Sources */,
 				FADFC4161B6258B6001A8124 /* OptionWindowController.swift in Sources */,
+				BCD4B3A51BCD3940002AD52C /* ProfileListView.swift in Sources */,
 				BC56D4651BB9109C009AA7AB /* TextField.swift in Sources */,
 				BC56D47A1BB95DFB009AA7AB /* BaseProfile.swift in Sources */,
 				BCB66D021B3287EE008AFB75 /* AppDelegate.swift in Sources */,

@@ -7,6 +7,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="SessionProfileListController" customModule="liteterm" customModuleProvider="target">
             <connections>
                 <outlet property="managerListView" destination="sce-3G-v94" id="Hhw-gN-gzm"/>
+                <outlet property="profileListView" destination="DAk-nR-oIU" id="rLp-o4-BJA"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -113,8 +114,8 @@
                             <rect key="frame" x="1" y="1" width="401" height="342"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="47" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" autoresizesOutlineColumn="YES" outlineTableColumn="9wP-uF-6FM" id="DAk-nR-oIU">
-                                    <rect key="frame" x="0.0" y="0.0" width="401" height="342"/>
+                                <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="47" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" autoresizesOutlineColumn="YES" outlineTableColumn="9wP-uF-6FM" id="DAk-nR-oIU" customClass="ProfileListView" customModule="liteterm" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="401" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                     <size key="intercellSpacing" width="3" height="2"/>
@@ -134,7 +135,7 @@
                                             </textFieldCell>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
-                                                <tableCellView id="P6A-Lz-w7e">
+                                                <tableCellView identifier="Profile" id="P6A-Lz-w7e">
                                                     <rect key="frame" x="1" y="1" width="398" height="47"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
