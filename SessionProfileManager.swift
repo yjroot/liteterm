@@ -9,6 +9,8 @@
 import Foundation
 
 class SessionProfileManager {
+    let name = "My Profiles"
+    
     let profileDirPath: NSString
     
     init(profileDirPath: String? = nil) {

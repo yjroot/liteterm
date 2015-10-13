@@ -9,11 +9,21 @@
 import Cocoa
 
 class SessionProfileListWindowController: NSWindowController {
+    var object: SessionProfileListController!
     convenience init() {
-        self.init(windowNibName: "SessionProfileListWindow")
+        let object = SessionProfileListController()
+        self.init(windowNibName: "SessionProfileListWindow", owner: object)
+        self.object = object
     }
     
     override func windowDidLoad() {
         super.windowDidLoad()
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.object.managerListView.addManager(SessionProfileManager())
+        self.object.managerListView.selectRowIndexes(NSIndexSet(index: 0), byExtendingSelection: false)
+        self.object.window.makeKeyAndOrderFront(self)
     }
 }

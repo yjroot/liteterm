@@ -22,5 +22,6 @@ class SessionProfileWindowController: NSWindowController {
         object.sourceListView!.expandItem(nil, expandChildren: true)
         object.sourceListView!.selectRowIndexes(NSIndexSet(index: 0), byExtendingSelection: false)
         object.window!.title = "New Session profile"
+        self.object.window.makeKeyAndOrderFront(self)
     }
 }
