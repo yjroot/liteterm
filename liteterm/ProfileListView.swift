@@ -10,7 +10,7 @@ import Cocoa
 
 class ProfileListView: NSOutlineView {
     @IBOutlet var controller: SessionProfileListWindowController!
-    var manager: SessionProfileManager! = nil
+    var manager: BaseProfileManager! = nil
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -19,7 +19,7 @@ class ProfileListView: NSOutlineView {
         setDelegate(self)
     }
     
-    func setManager(manager: SessionProfileManager) {
+    func setManager(manager: BaseProfileManager) {
         self.manager = manager
         self.reloadData()
     }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BC06C4D41B3427D200CA6D44 /* TerminalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC06C4D31B3427D200CA6D44 /* TerminalView.swift */; };
+		BC1742FA1BDBA32A0089DEF0 /* BaseProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1742F91BDBA32A0089DEF0 /* BaseProfileManager.swift */; settings = {ASSET_TAGS = (); }; };
+		BC1742FB1BDBA4120089DEF0 /* BaseProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1742F91BDBA32A0089DEF0 /* BaseProfileManager.swift */; settings = {ASSET_TAGS = (); }; };
 		BC4088511B62542B00E54711 /* SessionProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4088501B62542B00E54711 /* SessionProfile.swift */; };
 		BC40BCDD1B62558A007D9FF9 /* SessionProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC40BCDC1B62558A007D9FF9 /* SessionProfileTests.swift */; };
 		BC40BCDE1B62565D007D9FF9 /* SessionProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4088501B62542B00E54711 /* SessionProfile.swift */; };
@@ -87,6 +89,7 @@
 
 /* Begin PBXFileReference section */
 		BC06C4D31B3427D200CA6D44 /* TerminalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerminalView.swift; sourceTree = "<group>"; };
+		BC1742F91BDBA32A0089DEF0 /* BaseProfileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseProfileManager.swift; path = liteterm/BaseProfileManager.swift; sourceTree = "<group>"; };
 		BC4088501B62542B00E54711 /* SessionProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionProfile.swift; sourceTree = "<group>"; };
 		BC40BCDC1B62558A007D9FF9 /* SessionProfileTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionProfileTests.swift; sourceTree = "<group>"; };
 		BC40BCDF1B625A4E007D9FF9 /* SessionProfileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionProfileManager.swift; sourceTree = "<group>"; };
@@ -157,16 +160,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BC40884F1B6252F700E54711 /* Session File */ = {
+		BC40884F1B6252F700E54711 /* Session */ = {
 			isa = PBXGroup;
 			children = (
-				BC4088501B62542B00E54711 /* SessionProfile.swift */,
-				BC40BCDF1B625A4E007D9FF9 /* SessionProfileManager.swift */,
 				BC56D4211BA0871F009AA7AB /* BaseProfile.swift */,
+				BC1742F91BDBA32A0089DEF0 /* BaseProfileManager.swift */,
 				BC56D4241BA08BB9009AA7AB /* DefaultProfile.swift */,
 				BC56D4291BA09E82009AA7AB /* OptionProfile.swift */,
+				BC4088501B62542B00E54711 /* SessionProfile.swift */,
+				BC40BCDF1B625A4E007D9FF9 /* SessionProfileManager.swift */,
 			);
-			name = "Session File";
+			name = Session;
 			sourceTree = "<group>";
 		};
 		BC40BCE21B626F17007D9FF9 /* mocks */ = {
@@ -246,7 +250,7 @@
 			children = (
 				BCD4B3971BCA7039002AD52C /* Session Profile List Dialog */,
 				BC56D47C1BB9668C009AA7AB /* Session Profile Dialog */,
-				BC40884F1B6252F700E54711 /* Session File */,
+				BC40884F1B6252F700E54711 /* Session */,
 				BC56D4351BAC2823009AA7AB /* Property Dialog */,
 				BC56D42E1BA49DE1009AA7AB /* Utils */,
 				BCAE49811B8F3B91008D8CBA /* Library */,
@@ -462,6 +466,7 @@
 				BC56D47A1BB95DFB009AA7AB /* BaseProfile.swift in Sources */,
 				BCB66D021B3287EE008AFB75 /* AppDelegate.swift in Sources */,
 				BC56D4791BB95D65009AA7AB /* PathUtils.swift in Sources */,
+				BC1742FA1BDBA32A0089DEF0 /* BaseProfileManager.swift in Sources */,
 				BC40BCE01B625A4E007D9FF9 /* SessionProfileManager.swift in Sources */,
 				BC56D46A1BB9135B009AA7AB /* FormView.swift in Sources */,
 				BC56D4411BB16B1B009AA7AB /* SessionProfileController.swift in Sources */,
@@ -495,6 +500,7 @@
 				BC56D44F1BB79F88009AA7AB /* SessionProfileController.swift in Sources */,
 				BC56D4281BA099A6009AA7AB /* DefaultProfileTests.swift in Sources */,
 				BC56D4261BA08BB9009AA7AB /* DefaultProfile.swift in Sources */,
+				BC1742FB1BDBA4120089DEF0 /* BaseProfileManager.swift in Sources */,
 				BC40BCEB1B663D3F007D9FF9 /* SessionProfileManagerTests.swift in Sources */,
 				BC56D44E1BB79F85009AA7AB /* SessionProfileWindowController.swift in Sources */,
 				BCB66D131B3287EE008AFB75 /* litetermTests.swift in Sources */,

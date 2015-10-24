@@ -8,8 +8,8 @@
 
 import Foundation
 
-class SessionProfileManager {
-    let name = "My Profiles"
+class SessionProfileManager: BaseProfileManager {
+    var name = "My Profiles"
     
     let profileDirPath: NSString
     

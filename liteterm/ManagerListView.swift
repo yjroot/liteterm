@@ -64,7 +64,7 @@ extension ManagerListView: NSOutlineViewDelegate, NSOutlineViewDataSource {
     }
     
     func outlineViewSelectionDidChange(notification: NSNotification) {
-        self.controller.profileListView.setManager(self.itemAtRow(self.selectedRow) as! SessionProfileManager)
+        self.controller.profileListView.setManager(self.itemAtRow(self.selectedRow) as! BaseProfileManager)
         self.controller.profileListView.reloadData()
     }
 }
