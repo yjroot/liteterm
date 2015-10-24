@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8191"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="SessionProfileListController" customModule="liteterm" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="SessionProfileListWindowController" customModule="liteterm" customModuleProvider="target">
             <connections>
                 <outlet property="managerListView" destination="sce-3G-v94" id="Hhw-gN-gzm"/>
                 <outlet property="profileListView" destination="DAk-nR-oIU" id="rLp-o4-BJA"/>
@@ -88,6 +88,9 @@
                                             </prototypeCellViews>
                                         </tableColumn>
                                     </tableColumns>
+                                    <connections>
+                                        <outlet property="controller" destination="-2" id="X8Z-8h-Uuj"/>
+                                    </connections>
                                 </outlineView>
                             </subviews>
                             <animations/>
@@ -175,6 +178,9 @@
                                             </prototypeCellViews>
                                         </tableColumn>
                                     </tableColumns>
+                                    <connections>
+                                        <outlet property="controller" destination="-2" id="EeX-wS-y2W"/>
+                                    </connections>
                                 </outlineView>
                             </subviews>
                             <animations/>

@@ -63,7 +63,6 @@
 		BCB66D131B3287EE008AFB75 /* litetermTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB66D121B3287EE008AFB75 /* litetermTests.swift */; };
 		BCD4B39E1BCA70B7002AD52C /* SessionProfileListWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD4B39C1BCA70B7002AD52C /* SessionProfileListWindowController.swift */; settings = {ASSET_TAGS = (); }; };
 		BCD4B39F1BCA70B7002AD52C /* SessionProfileListWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD4B39D1BCA70B7002AD52C /* SessionProfileListWindow.xib */; settings = {ASSET_TAGS = (); }; };
-		BCD4B3A11BCD132D002AD52C /* SessionProfileListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD4B3A01BCD132D002AD52C /* SessionProfileListController.swift */; settings = {ASSET_TAGS = (); }; };
 		BCD4B3A31BCD1F0F002AD52C /* ManagerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD4B3A21BCD1F0F002AD52C /* ManagerListView.swift */; settings = {ASSET_TAGS = (); }; };
 		BCD4B3A51BCD3940002AD52C /* ProfileListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD4B3A41BCD3940002AD52C /* ProfileListView.swift */; settings = {ASSET_TAGS = (); }; };
 		FAC1E2061BAC320A000CA886 /* LTTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1E2041BAC320A000CA886 /* LTTabViewController.swift */; };
@@ -128,7 +127,6 @@
 		BCB66D121B3287EE008AFB75 /* litetermTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = litetermTests.swift; sourceTree = "<group>"; };
 		BCD4B39C1BCA70B7002AD52C /* SessionProfileListWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SessionProfileListWindowController.swift; path = liteterm/SessionProfileListWindowController.swift; sourceTree = "<group>"; };
 		BCD4B39D1BCA70B7002AD52C /* SessionProfileListWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SessionProfileListWindow.xib; path = liteterm/SessionProfileListWindow.xib; sourceTree = "<group>"; };
-		BCD4B3A01BCD132D002AD52C /* SessionProfileListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SessionProfileListController.swift; path = liteterm/SessionProfileListController.swift; sourceTree = "<group>"; };
 		BCD4B3A21BCD1F0F002AD52C /* ManagerListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManagerListView.swift; path = liteterm/ManagerListView.swift; sourceTree = "<group>"; };
 		BCD4B3A41BCD3940002AD52C /* ProfileListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileListView.swift; path = liteterm/ProfileListView.swift; sourceTree = "<group>"; };
 		FAC1E2041BAC320A000CA886 /* LTTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTTabViewController.swift; sourceTree = "<group>"; };
@@ -248,10 +246,10 @@
 			children = (
 				BCD4B3971BCA7039002AD52C /* Session Profile List Dialog */,
 				BC56D47C1BB9668C009AA7AB /* Session Profile Dialog */,
+				BC40884F1B6252F700E54711 /* Session File */,
 				BC56D4351BAC2823009AA7AB /* Property Dialog */,
 				BC56D42E1BA49DE1009AA7AB /* Utils */,
 				BCAE49811B8F3B91008D8CBA /* Library */,
-				BC40884F1B6252F700E54711 /* Session File */,
 				BCB66CFE1B3287EE008AFB75 /* liteterm */,
 				BCB66D0F1B3287EE008AFB75 /* litetermTests */,
 				BCB66CFD1B3287EE008AFB75 /* Products */,
@@ -321,7 +319,6 @@
 			isa = PBXGroup;
 			children = (
 				BCD4B39C1BCA70B7002AD52C /* SessionProfileListWindowController.swift */,
-				BCD4B3A01BCD132D002AD52C /* SessionProfileListController.swift */,
 				BCD4B3A21BCD1F0F002AD52C /* ManagerListView.swift */,
 				BCD4B3A41BCD3940002AD52C /* ProfileListView.swift */,
 				BCD4B39D1BCA70B7002AD52C /* SessionProfileListWindow.xib */,
@@ -451,7 +448,6 @@
 			files = (
 				FAC1E20B1BAC328C000CA886 /* LTTabView.swift in Sources */,
 				BC56D47B1BB95DFE009AA7AB /* DefaultProfile.swift in Sources */,
-				BCD4B3A11BCD132D002AD52C /* SessionProfileListController.swift in Sources */,
 				BC4088511B62542B00E54711 /* SessionProfile.swift in Sources */,
 				BC56D45F1BB907BE009AA7AB /* BaseField.swift in Sources */,
 				BC06C4D41B3427D200CA6D44 /* TerminalView.swift in Sources */,

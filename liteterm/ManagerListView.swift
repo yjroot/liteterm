@@ -9,6 +9,7 @@
 import Cocoa
 
 class ManagerListView: NSOutlineView {
+    @IBOutlet var controller: SessionProfileListWindowController!
     var managers: [SessionProfileManager] = []
     
     required init?(coder: NSCoder) {
@@ -63,6 +64,7 @@ extension ManagerListView: NSOutlineViewDelegate, NSOutlineViewDataSource {
     }
     
     func outlineViewSelectionDidChange(notification: NSNotification) {
-       Swift.print((self.itemAtRow(self.selectedRow) as! SessionProfileManager).name)
+        self.controller.profileListView.setManager(self.itemAtRow(self.selectedRow) as! SessionProfileManager)
+        self.controller.profileListView.reloadData()
     }
 }

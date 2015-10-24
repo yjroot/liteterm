@@ -34,7 +34,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func newSession(sender: AnyObject) {
         sessionProfileWindowController = SessionProfileWindowController()
         sessionProfileWindowController.loadWindow()
-        sessionProfileWindowController.awakeFromNib()
         sessionProfileWindowController.showWindow(self)
     }
     
@@ -42,7 +41,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func openSession(sender: AnyObject) {
         sessionProfileListWindowController = SessionProfileListWindowController()
         sessionProfileListWindowController.loadWindow()
-        sessionProfileListWindowController.awakeFromNib()
         sessionProfileListWindowController.showWindow(self)
     }
 }

@@ -9,7 +9,8 @@
 import Cocoa
 
 class ProfileListView: NSOutlineView {
-    var manager: SessionProfileManager! = SessionProfileManager()
+    @IBOutlet var controller: SessionProfileListWindowController!
+    var manager: SessionProfileManager! = nil
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)

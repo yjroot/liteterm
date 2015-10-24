@@ -9,11 +9,11 @@
 import Cocoa
 
 class SessionProfileListWindowController: NSWindowController {
-    var object: SessionProfileListController!
+    @IBOutlet weak var managerListView: ManagerListView!
+    @IBOutlet weak var profileListView: ProfileListView!
+    
     convenience init() {
-        let object = SessionProfileListController()
-        self.init(windowNibName: "SessionProfileListWindow", owner: object)
-        self.object = object
+        self.init(windowNibName: "SessionProfileListWindow")
     }
     
     override func windowDidLoad() {
@@ -22,9 +22,9 @@ class SessionProfileListWindowController: NSWindowController {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.object.managerListView.addManager(SessionProfileManager())
-        self.object.managerListView.selectRowIndexes(NSIndexSet(index: 0), byExtendingSelection: false)
-        self.object.profileListView.reloadData()
-        self.object.window.makeKeyAndOrderFront(self)
+        self.managerListView.addManager(SessionProfileManager())
+        self.managerListView.selectRowIndexes(NSIndexSet(index: 0), byExtendingSelection: false)
+        
+        self.window!.makeKeyAndOrderFront(self)
     }
 }
