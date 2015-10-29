@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8191"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="SessionProfileController" customModule="lightterm" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="SessionProfileController" customModule="liteterm" customModuleProvider="target">
             <connections>
                 <outlet property="formView" destination="9k2-8o-On2" id="6Y7-2w-FRG"/>
                 <outlet property="sourceListView" destination="pAT-1E-TVx" id="c1c-dG-5aN"/>
@@ -21,7 +21,7 @@
             <value key="minSize" type="size" width="500" height="400"/>
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="500" height="400"/>
-                <autoresizingMask key="autoresizingMask"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fz3-b7-u2f">
                         <rect key="frame" x="-1" y="-1" width="126" height="402"/>
@@ -30,8 +30,9 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <outlineView appearanceType="vibrantLight" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="fL2-ls-ve5" id="pAT-1E-TVx">
-                                    <rect key="frame" x="0.0" y="0.0" width="165" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="124" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
@@ -55,6 +56,7 @@
                                                     <subviews>
                                                         <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G9K-vb-Dzd">
                                                             <rect key="frame" x="0.0" y="1" width="145" height="14"/>
+                                                            <animations/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="HEADER CELL" id="USU-L0-298">
                                                                 <font key="font" metaFont="smallSystemBold"/>
                                                                 <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -62,6 +64,7 @@
                                                             </textFieldCell>
                                                         </textField>
                                                     </subviews>
+                                                    <animations/>
                                                     <connections>
                                                         <outlet property="textField" destination="G9K-vb-Dzd" id="DY8-yj-K5A"/>
                                                     </connections>
@@ -72,10 +75,12 @@
                                                     <subviews>
                                                         <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AvR-6Y-n14">
                                                             <rect key="frame" x="3" y="0.0" width="17" height="17"/>
+                                                            <animations/>
                                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSActionTemplate" id="3LO-WT-33H"/>
                                                         </imageView>
                                                         <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RX7-6p-jxw">
                                                             <rect key="frame" x="25" y="0.0" width="120" height="17"/>
+                                                            <animations/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="43g-tC-Tgf">
                                                                 <font key="font" metaFont="system"/>
                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -83,6 +88,7 @@
                                                             </textFieldCell>
                                                         </textField>
                                                     </subviews>
+                                                    <animations/>
                                                     <connections>
                                                         <outlet property="imageView" destination="AvR-6Y-n14" id="iwj-Cg-irE"/>
                                                         <outlet property="textField" destination="RX7-6p-jxw" id="UPe-Cq-Aii"/>
@@ -94,6 +100,7 @@
                                                     <subviews>
                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="scd-nI-Vhg">
                                                             <rect key="frame" x="0.0" y="0.0" width="100" height="17"/>
+                                                            <animations/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="jLd-g4-PJi">
                                                                 <font key="font" metaFont="system"/>
                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -101,6 +108,7 @@
                                                             </textFieldCell>
                                                         </textField>
                                                     </subviews>
+                                                    <animations/>
                                                     <connections>
                                                         <outlet property="textField" destination="scd-nI-Vhg" id="E8N-nY-i4q"/>
                                                     </connections>
@@ -114,19 +122,24 @@
                                     </connections>
                                 </outlineView>
                             </subviews>
+                            <animations/>
                             <nil key="backgroundColor"/>
                         </clipView>
+                        <animations/>
                         <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="TeR-Mt-uOT">
-                            <rect key="frame" x="1" y="363.53183317184448" width="142" height="16"/>
+                            <rect key="frame" x="1" y="363" width="142" height="16"/>
                             <autoresizingMask key="autoresizingMask"/>
+                            <animations/>
                         </scroller>
                         <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="Htm-pV-okO">
                             <rect key="frame" x="224" y="17" width="15" height="102"/>
                             <autoresizingMask key="autoresizingMask"/>
+                            <animations/>
                         </scroller>
                     </scrollView>
-                    <stackView orientation="vertical" alignment="centerX" horizontalHuggingPriority="249" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="9k2-8o-On2" customClass="FormView" customModule="lightterm" customModuleProvider="target">
+                    <stackView orientation="vertical" alignment="centerX" horizontalHuggingPriority="249" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="9k2-8o-On2" customClass="FormView" customModule="liteterm" customModuleProvider="target">
                         <rect key="frame" x="135" y="10" width="355" height="380"/>
+                        <animations/>
                     </stackView>
                 </subviews>
                 <constraints>
@@ -139,6 +152,7 @@
                     <constraint firstItem="9k2-8o-On2" firstAttribute="leading" secondItem="fz3-b7-u2f" secondAttribute="trailing" constant="10" id="vc5-nG-Kmt"/>
                     <constraint firstItem="9k2-8o-On2" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="10" id="vdE-fD-crW"/>
                 </constraints>
+                <animations/>
             </view>
             <point key="canvasLocation" x="297" y="373"/>
         </window>

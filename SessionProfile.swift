@@ -1,9 +1,9 @@
 //
 //  SessionProfile.swift
-//  lightterm
+//  liteterm
 //
 //  Created by yjroot on 2015. 7. 24..
-//  Copyright (c) 2015년 Netsarang. All rights reserved.
+//  Copyright (c) 2015년 Liteterm team. All rights reserved.
 //
 
 import Foundation
@@ -20,7 +20,7 @@ class SessionProfile {
     private var xml: XMLIndexer? = nil
     var root: XMLIndexer {
         if self.xml != nil {
-            return self.xml!["lightterm"]
+            return self.xml!["liteterm"]
         }
         
         if let data: NSData = NSData(contentsOfURL: self.filepath!) {
@@ -28,18 +28,18 @@ class SessionProfile {
             //       to change to lazy mothod. But, lazy parse does not support
             //       description yet.
             let xml = SWXMLHash.parse(data)
-            if xml["lightterm"].element?.attributes["version"] == "0.01" {
+            if xml["liteterm"].element?.attributes["version"] == "0.01" {
                 self.xml = xml
             }
         }
         
         if self.xml == nil {
             let root = XMLElement(name: rootElementName)
-            root.addElement("lightterm", withAttributes: ["version":"0.01"])
+            root.addElement("liteterm", withAttributes: ["version":"0.01"])
             self.xml = XMLIndexer(root)
         }
         
-        return self.xml!["lightterm"]
+        return self.xml!["liteterm"]
     }
     
     var name: String {

@@ -1,9 +1,9 @@
 //
 //  SessionProfileManager.swift
-//  lightterm
+//  liteterm
 //
 //  Created by yjroot on 2015. 7. 24..
-//  Copyright (c) 2015년 Netsarang. All rights reserved.
+//  Copyright (c) 2015년 Liteterm team. All rights reserved.
 //
 
 import Foundation
@@ -14,7 +14,7 @@ class SessionProfileManager {
     init(profileDirPath: String? = nil) {
         if (profileDirPath == nil) {
             let documentsPath : String = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,.UserDomainMask,true)[0]
-            self.profileDirPath = (documentsPath as NSString).stringByAppendingPathComponent("/lightrerm")
+            self.profileDirPath = (documentsPath as NSString).stringByAppendingPathComponent("/liteterm")
         } else {
             self.profileDirPath = profileDirPath!
         }
