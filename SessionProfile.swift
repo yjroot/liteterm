@@ -46,7 +46,7 @@ class SessionProfile {
         return self.filepath?.URLByDeletingPathExtension?.lastPathComponent ?? ""
     }
     
-    init(filepath: NSURL? = nil) {
+    init(filepath: NSURL) {
         self.filepath = filepath
     }
     
@@ -65,7 +65,7 @@ class SessionProfile {
 extension SessionProfile: BaseProfile {
     subscript(key : String) -> ProfileSelector {
         get {
-            return ProfileSelector(profile: self, key: key)
+            return ProfileSelector(profile: self, keyList: [key])
         }
     }
     

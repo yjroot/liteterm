@@ -9,4 +9,16 @@
 import Cocoa
 
 class PasswordField: BaseField {
+    @IBOutlet weak var secureTextField: NSSecureTextField!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        secureTextField.stringValue = self.profileSelector.string
+    }
+}
+
+extension PasswordField: NSTextFieldDelegate {
+    override func controlTextDidChange(obj: NSNotification) {
+        self.profileSelector.string = secureTextField.stringValue
+    }
 }

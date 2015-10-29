@@ -19,9 +19,9 @@ class ProfileSelector {
     var profile: BaseProfile
     var list: [String]
     
-    init(profile: BaseProfile, key: String) {
+    init(profile: BaseProfile, keyList: [String]) {
         self.profile = profile
-        self.list = [key]
+        self.list = keyList
     }
     
     init(selector: ProfileSelector, key: String) {

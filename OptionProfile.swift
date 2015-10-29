@@ -42,7 +42,7 @@ extension OptionProfile: BaseProfile {
     
     subscript(key : String) -> ProfileSelector {
         get {
-            return ProfileSelector(profile: self, key: key)
+            return ProfileSelector(profile: self, keyList: [key])
         }
     }
     

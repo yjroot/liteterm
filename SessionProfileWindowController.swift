@@ -21,13 +21,11 @@ class SessionProfileWindowController: NSWindowController {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.groupListView.reloadData()
-        self.groupListView.expandItem(nil, expandChildren: true)
-        self.groupListView.selectRowIndexes(NSIndexSet(index: 0), byExtendingSelection: false)
-        self.window!.title = "New Session profile"
-        self.window!.makeKeyAndOrderFront(self)
-        
+        self.groupListView.profile = self.profile
+        self.groupListView.fields = SessionProfileWindowController.fields
         self.updateWindowTitle()
+        
+        self.window!.makeKeyAndOrderFront(self)
     }
     
     private func updateWindowTitle() {
@@ -43,7 +41,7 @@ class SessionProfileWindowController: NSWindowController {
     }
     
     static var fieldsXML: XMLIndexer?
-    var fields: XMLElement {
+    static var fields: XMLElement {
         if SessionProfileWindowController.fieldsXML == nil {
             let filePath: NSString = NSBundle.mainBundle().pathForResource("SessionProfileFields", ofType: "xml")!
             if let data: NSData = try! NSData(contentsOfFile: String(filePath), options: []) {

@@ -9,4 +9,16 @@
 import Cocoa
 
 class TextField: BaseField {
+    @IBOutlet weak var textField: NSTextField!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        textField.stringValue = self.profileSelector.string
+    }
+}
+
+extension TextField: NSTextFieldDelegate {
+    override func controlTextDidChange(obj: NSNotification) {
+        self.profileSelector.string = textField.stringValue
+    }
 }

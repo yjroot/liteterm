@@ -10,15 +10,18 @@ import Cocoa
 
 class BaseField: NSViewController {
     @IBOutlet weak var labelView: NSTextField!
-    
+
     var fieldLabel: String
     var fieldValue: String
     var fieldPlaceholder: String
     
-    init?(label: String, value: String? = nil, placeholder: String? = nil) {
+    var profileSelector: ProfileSelector!
+    
+    init?(label: String, value: String = "", placeholder: String = "", profileSelector: ProfileSelector) {
         self.fieldLabel = label
-        self.fieldValue = value ?? ""
-        self.fieldPlaceholder = placeholder ?? ""
+        self.fieldValue = value
+        self.fieldPlaceholder = placeholder
+        self.profileSelector = profileSelector
         super.init(nibName: (NSStringFromClass(self.dynamicType) as NSString).pathExtension, bundle: nil)
     }
     

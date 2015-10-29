@@ -9,16 +9,37 @@
 import Cocoa
 
 class GroupListView: NSOutlineView {
-    @IBOutlet var controller: SessionProfileWindowController!
     @IBOutlet var formView: FormView!
-    
-    var fields: XMLElement!
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         
         setDataSource(self)
         setDelegate(self)
+    }
+    
+    private var _fields: XMLElement!
+    var fields: XMLElement! {
+        set(fields) {
+            self._fields = fields
+            reloadData()
+            expandItem(nil, expandChildren: true)
+            selectRowIndexes(NSIndexSet(index: 0), byExtendingSelection: false)
+        }
+        get {
+            return self._fields
+        }
+    }
+    
+    var _profile: BaseProfile!
+    var profile: BaseProfile {
+        set(profile) {
+            self._profile = profile
+            self.formView.profile = profile
+        }
+        get {
+            return self._profile
+        }
     }
 }
 
@@ -36,11 +57,10 @@ func getFields(element: XMLElement) -> [XMLElement] {
 
 extension GroupListView: NSOutlineViewDelegate, NSOutlineViewDataSource {
     func outlineView(outlineView: NSOutlineView, numberOfChildrenOfItem item: AnyObject?) -> Int {
-        
-        if controller == nil {
-            return 0;
+        if self.fields == nil {
+            return 0
         } else if item == nil {
-            return getChildren(controller.fields).count
+            return getChildren(self.fields).count
         } else if let element = item as? XMLElement {
             return getChildren(element).count
         }
@@ -59,7 +79,7 @@ extension GroupListView: NSOutlineViewDelegate, NSOutlineViewDataSource {
     func outlineView(outlineView: NSOutlineView, child index: Int, ofItem item: AnyObject?) -> AnyObject {
         var children: [XMLElement]!
         if item == nil {
-            children = getChildren(controller.fields)
+            children = getChildren(fields)
         } else if let element = item as? XMLElement {
             children = getChildren(element)
         } else {
