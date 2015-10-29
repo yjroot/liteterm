@@ -24,6 +24,14 @@ class SelectField: BaseField {
         popupButton.addItemsWithTitles(self.options.map({ (key: String, value: String) -> String in
             return key
         }))
+        
+        let valueIndex = self.options.map({ (key: String, value: String) -> String in
+            return value
+        }).indexOf(self.profileSelector.string)
+        
+        if valueIndex != nil {
+            popupButton.selectItemAtIndex(Int(valueIndex!))
+        }
     }
     
     private var _options: [(String, String)] = []
@@ -35,5 +43,9 @@ class SelectField: BaseField {
             _options = options
             updateItems()
         }
+    }
+    
+    @IBAction func onChange(sender: AnyObject) {
+        // TODO: Update value
     }
 }

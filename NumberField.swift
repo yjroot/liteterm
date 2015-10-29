@@ -14,7 +14,11 @@ class NumberField: BaseField {
     override func viewDidLoad() {
         super.viewDidLoad()
         textField.formatter = OnlyIntegerValueFormatter()
-        textField.integerValue = self.profileSelector.int
+        if self.profileSelector.exist {
+            textField.integerValue = self.profileSelector.int
+        } else {
+            textField.placeholderString = self.profileSelector.string
+        }
     }
 
     class OnlyIntegerValueFormatter: NSNumberFormatter {

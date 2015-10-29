@@ -44,6 +44,9 @@
                             </items>
                         </menu>
                     </popUpButtonCell>
+                    <connections>
+                        <action selector="onChange:" target="-2" id="oa4-6O-abz"/>
+                    </connections>
                 </popUpButton>
             </subviews>
             <constraints>

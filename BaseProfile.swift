@@ -35,6 +35,10 @@ class ProfileSelector {
         }
     }
     
+    var exist: Bool {
+        return profile.getValue(self.list) != nil
+    }
+    
     var value: String {
         get {
             var profile = self.profile

@@ -13,7 +13,11 @@ class PasswordField: BaseField {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        secureTextField.stringValue = self.profileSelector.string
+        if self.profileSelector.exist {
+            secureTextField.stringValue = self.profileSelector.string
+        } else {
+            secureTextField.placeholderString = self.profileSelector.string
+        }
     }
 }
 

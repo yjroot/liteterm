@@ -13,7 +13,11 @@ class TextField: BaseField {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        textField.stringValue = self.profileSelector.string
+        if self.profileSelector.exist {
+            textField.stringValue = self.profileSelector.string
+        } else {
+            textField.placeholderString = self.profileSelector.string
+        }
     }
 }
 
