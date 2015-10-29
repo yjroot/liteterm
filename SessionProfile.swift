@@ -53,7 +53,7 @@ class SessionProfile {
     func save() -> Bool {
         if let path: NSURL = self.filepath {
             do {
-                try "\(self)".writeToURL(path, atomically: true, encoding: NSUTF8StringEncoding)
+                try self.xml!.description.writeToURL(path, atomically: true, encoding: NSUTF8StringEncoding)
             } catch _ {
             }
             return true
@@ -94,6 +94,6 @@ extension SessionProfile: BaseProfile {
     }
     
     var description: String {
-        return self.xml!.description
+        return "description"
     }
 }

@@ -138,7 +138,7 @@
                                             </textFieldCell>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
-                                                <tableCellView identifier="Profile" id="P6A-Lz-w7e">
+                                                <tableCellView identifier="Profile" id="P6A-Lz-w7e" customClass="ProfileCellView" customModule="liteterm" customModuleProvider="target">
                                                     <rect key="frame" x="1" y="1" width="398" height="47"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
@@ -160,18 +160,32 @@
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                         </textField>
+                                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6VA-HO-Xmd">
+                                                            <rect key="frame" x="354" y="14" width="34" height="17"/>
+                                                            <animations/>
+                                                            <buttonCell key="cell" type="inline" title="Edit" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="XAI-og-TVg">
+                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="smallSystemBold"/>
+                                                                <connections>
+                                                                    <action selector="onEdit:" target="P6A-Lz-w7e" id="voa-oW-JWL"/>
+                                                                </connections>
+                                                            </buttonCell>
+                                                        </button>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="r0q-af-F0O" secondAttribute="trailing" constant="10" id="7Wx-Si-wHL"/>
                                                         <constraint firstAttribute="bottom" secondItem="NC3-hd-Sbu" secondAttribute="bottom" constant="5" id="88b-9X-g11"/>
                                                         <constraint firstAttribute="trailing" secondItem="NC3-hd-Sbu" secondAttribute="trailing" constant="10" id="FKA-F3-2tc"/>
+                                                        <constraint firstItem="6VA-HO-Xmd" firstAttribute="centerY" secondItem="P6A-Lz-w7e" secondAttribute="centerY" id="Jxg-BY-fXk"/>
                                                         <constraint firstItem="NC3-hd-Sbu" firstAttribute="leading" secondItem="P6A-Lz-w7e" secondAttribute="leading" constant="10" id="PZq-jl-HHE"/>
                                                         <constraint firstItem="r0q-af-F0O" firstAttribute="top" secondItem="P6A-Lz-w7e" secondAttribute="top" constant="5" id="SM9-Wf-TgH"/>
                                                         <constraint firstItem="NC3-hd-Sbu" firstAttribute="top" secondItem="r0q-af-F0O" secondAttribute="bottom" constant="3" id="iSW-yE-w5L"/>
                                                         <constraint firstItem="r0q-af-F0O" firstAttribute="leading" secondItem="P6A-Lz-w7e" secondAttribute="leading" constant="10" id="wfR-20-W4R"/>
+                                                        <constraint firstAttribute="trailing" secondItem="6VA-HO-Xmd" secondAttribute="trailing" constant="10" id="zAN-BH-8h1"/>
                                                     </constraints>
                                                     <animations/>
                                                     <connections>
+                                                        <outlet property="descriptionField" destination="NC3-hd-Sbu" id="2AP-ED-fa0"/>
                                                         <outlet property="textField" destination="r0q-af-F0O" id="MmV-q4-baW"/>
                                                     </connections>
                                                 </tableCellView>

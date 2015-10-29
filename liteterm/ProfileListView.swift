@@ -49,10 +49,8 @@ extension ProfileListView: NSOutlineViewDelegate, NSOutlineViewDataSource {
     func outlineView(outlineView: NSOutlineView, viewForTableColumn tableColumn: NSTableColumn?, item: AnyObject) -> NSView? {
         let profile = item as! SessionProfile
         
-        let view = outlineView.makeViewWithIdentifier("Profile", owner: self) as! NSTableCellView
-        if let textField = view.textField {
-            textField.stringValue = profile.name
-        }
+        let view = outlineView.makeViewWithIdentifier("Profile", owner: self) as! ProfileCellView
+        view.profile = profile
         
         return view
     }
