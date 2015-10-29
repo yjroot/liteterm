@@ -46,6 +46,7 @@ class SelectField: BaseField {
     }
     
     @IBAction func onChange(sender: AnyObject) {
-        // TODO: Update value
+        profileSelector.string = self.options[popupButton.indexOfSelectedItem].1
+        formView.updateFields()
     }
 }

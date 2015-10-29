@@ -37,5 +37,6 @@ class NumberField: BaseField {
 extension NumberField: NSTextFieldDelegate {
     override func controlTextDidChange(obj: NSNotification) {
         self.profileSelector.int = textField.integerValue
+        formView.updateFields()
     }
 }

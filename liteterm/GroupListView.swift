@@ -31,16 +31,7 @@ class GroupListView: NSOutlineView {
         }
     }
     
-    var _profile: BaseProfile!
-    var profile: BaseProfile {
-        set(profile) {
-            self._profile = profile
-            self.formView.profile = profile
-        }
-        get {
-            return self._profile
-        }
-    }
+    var profile: BaseProfile!
 }
 
 func getChildren(element: XMLElement) -> [XMLElement] {
@@ -115,39 +106,6 @@ extension GroupListView: NSOutlineViewDelegate, NSOutlineViewDataSource {
     }
     
     func outlineViewSelectionDidChange(notification: NSNotification) {
-        formView.setForm(self.itemAtRow(self.selectedRow) as! XMLElement)
-    }
-}
-
-extension FormView {
-    func setForm(form: XMLElement) {
-        self.removeAllFields()
-        
-        let fields = getFields(form)
-        for field in fields {
-            switch field.name {
-            case "text":
-                self.addTextField(field.attributes["label"]!, path: field.attributes["path"]!)
-                
-            case "password":
-                self.addPasswordField(field.attributes["label"]!, path: field.attributes["path"]!)
-                
-            case "number":
-                self.addNumberField(field.attributes["label"]!, path: field.attributes["path"]!)
-                
-            case "select":
-                var options: [(String, String)] = []
-                for optionElement in field.children {
-                    if optionElement.name != "option" {
-                        continue
-                    }
-                    options.append((optionElement.text!, optionElement.attributes["value"]!))
-                }
-                self.addSelectField(field.attributes["label"]!, path: field.attributes["path"]!, options: options)
-                
-            default:
-                self.addTextField(field.attributes["label"]!, path: field.attributes["path"]!)
-            }
-        }
+        formView.setForm(self.itemAtRow(self.selectedRow) as! XMLElement, profile: self.profile)
     }
 }

@@ -11,13 +11,15 @@ import Cocoa
 class BaseField: NSViewController {
     @IBOutlet weak var labelView: NSTextField!
 
+    var formView: FormView!
     var fieldLabel: String
     var fieldValue: String
     var fieldPlaceholder: String
     
     var profileSelector: ProfileSelector!
     
-    init?(label: String, value: String = "", placeholder: String = "", profileSelector: ProfileSelector) {
+    init?(formView: FormView, label: String, value: String = "", placeholder: String = "", profileSelector: ProfileSelector) {
+        self.formView = formView
         self.fieldLabel = label
         self.fieldValue = value
         self.fieldPlaceholder = placeholder

@@ -24,5 +24,6 @@ class TextField: BaseField {
 extension TextField: NSTextFieldDelegate {
     override func controlTextDidChange(obj: NSNotification) {
         self.profileSelector.string = textField.stringValue
+        formView.updateFields()
     }
 }

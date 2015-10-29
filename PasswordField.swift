@@ -24,5 +24,6 @@ class PasswordField: BaseField {
 extension PasswordField: NSTextFieldDelegate {
     override func controlTextDidChange(obj: NSNotification) {
         self.profileSelector.string = secureTextField.stringValue
+        formView.updateFields()
     }
 }
