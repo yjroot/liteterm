@@ -5,10 +5,10 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="SessionProfileController" customModule="liteterm" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="SessionProfileWindowController" customModule="liteterm" customModuleProvider="target">
             <connections>
                 <outlet property="formView" destination="9k2-8o-On2" id="6Y7-2w-FRG"/>
-                <outlet property="sourceListView" destination="pAT-1E-TVx" id="c1c-dG-5aN"/>
+                <outlet property="groupListView" destination="pAT-1E-TVx" id="jmS-b1-jo0"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="5Ca-cb-f8s"/>
             </connections>
         </customObject>
@@ -29,7 +29,7 @@
                             <rect key="frame" x="1" y="1" width="148" height="398"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <outlineView appearanceType="vibrantLight" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="fL2-ls-ve5" id="pAT-1E-TVx">
+                                <outlineView appearanceType="vibrantLight" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="fL2-ls-ve5" id="pAT-1E-TVx" customClass="GroupListView" customModule="liteterm" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="124" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
@@ -117,8 +117,8 @@
                                         </tableColumn>
                                     </tableColumns>
                                     <connections>
-                                        <outlet property="dataSource" destination="-2" id="o9x-jz-plS"/>
-                                        <outlet property="delegate" destination="-2" id="IMo-6I-0hz"/>
+                                        <outlet property="controller" destination="-2" id="gP2-ha-bbP"/>
+                                        <outlet property="formView" destination="9k2-8o-On2" id="qcw-NO-j6N"/>
                                     </connections>
                                 </outlineView>
                             </subviews>

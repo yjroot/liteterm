@@ -28,11 +28,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         optionWindowController.openWindow()
     }
     
-    
     // MainMenu - File
     var sessionProfileWindowController: SessionProfileWindowController!
     @IBAction func newSession(sender: AnyObject) {
-        sessionProfileWindowController = SessionProfileWindowController()
+        sessionProfileWindowController = SessionProfileWindowController(profile: SessionProfile())
         sessionProfileWindowController.loadWindow()
         sessionProfileWindowController.showWindow(self)
     }
