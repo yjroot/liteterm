@@ -21,6 +21,7 @@ class DefaultProfile {
             "protocol": "ssh",
             "ssh": [
                 "auth": [
+                    "method": "password",
                     "username": "",
                     "password": ""
                 ],

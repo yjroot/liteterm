@@ -16,7 +16,6 @@
         <number label="Port" path="connection/telnet/port" if="connection/protocol==telnet" />
         <text label="Username" path="connection/telnet/auth/username" if="connection/protocol==telnet" />
         <password label="Password" path="connection/telnet/auth/password" if="connection/protocol==telnet" />
-        
         <serialpath label="Serial path" path="connection/serial/path" if="connection/protocol==serial" />
         
         <multilinetext label="Command" path="connection/host" if="connection/protocol==local" />
@@ -51,7 +50,11 @@
     <group label="SSH" if="connection/protocol==ssh">
         <form label="Authentication">
             <text label="Username" path="connection/ssh/auth/username" />
-            <password label="Password" path="connection/ssh/auth/password" />
+            <select label="Authentication Method" path="connection/ssh/auth/method">
+                <option value="password">Password</option>
+                <option value="publickey">Public Key</option>
+            </select>
+            <password label="Password" path="connection/ssh/auth/password" if="connection/ssh/auth/method==password"/>
         </form>
     </group>
     
