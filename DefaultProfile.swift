@@ -56,12 +56,6 @@ extension DefaultProfile: BaseProfile {
         set(profile) {}
     }
     
-    subscript(key : String) -> ProfileSelector {
-        get {
-            return ProfileSelector(profile: self, keyList: [key])
-        }
-    }
-    
     func getValue(keys: [String]) -> String? {
         var any: AnyObject? = DefaultProfile.profile
         for key in keys {

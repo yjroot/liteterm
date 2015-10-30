@@ -63,12 +63,6 @@ class SessionProfile {
 }
 
 extension SessionProfile: BaseProfile {
-    subscript(key : String) -> ProfileSelector {
-        get {
-            return ProfileSelector(profile: self, keyList: [key])
-        }
-    }
-    
     func getValue(keys: [String]) -> String? {
         var xml: XMLIndexer = self.root
         for key in keys {

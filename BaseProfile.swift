@@ -12,7 +12,14 @@ protocol BaseProfile: CustomStringConvertible {
     var parent: BaseProfile { get set }
     func getValue(keys: [String]) -> String?
     func setValue(keys: [String], value: String)
-    subscript(key : String) -> ProfileSelector { get }
+}
+
+extension BaseProfile {
+    subscript(key : String) -> ProfileSelector {
+        get {
+            return ProfileSelector(profile: self, keyList: [key])
+        }
+    }
 }
 
 class ProfileSelector {
