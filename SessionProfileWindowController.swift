@@ -59,6 +59,8 @@ class SessionProfileWindowController: NSWindowController {
 
 extension SessionProfileWindowController: NSWindowDelegate {
     func windowWillClose(notification: NSNotification) {
+        self.profile.save()
+        
         if modalSession != nil {
             NSApp.endModalSession(self.modalSession)
             self.modalSession = nil

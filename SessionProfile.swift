@@ -17,6 +17,12 @@ class SessionProfile {
     var error: Bool = false
     var filepath: NSURL? = nil
     
+    private func emptyXML() -> XMLIndexer {
+        let root = XMLElement(name: rootElementName)
+        root.addElement("liteterm", withAttributes: ["version":"0.01"])
+        return XMLIndexer(root)
+    }
+    
     private var xml: XMLIndexer? = nil
     var root: XMLIndexer {
         if self.xml != nil {
@@ -34,9 +40,7 @@ class SessionProfile {
         }
         
         if self.xml == nil {
-            let root = XMLElement(name: rootElementName)
-            root.addElement("liteterm", withAttributes: ["version":"0.01"])
-            self.xml = XMLIndexer(root)
+            self.xml = self.emptyXML()
         }
         
         return self.xml!["liteterm"]
@@ -46,8 +50,11 @@ class SessionProfile {
         return self.filepath?.URLByDeletingPathExtension?.lastPathComponent ?? ""
     }
     
-    init(filepath: NSURL) {
+    init(filepath: NSURL? = nil) {
         self.filepath = filepath
+        if filepath == nil {
+            self.xml = emptyXML()
+        }
     }
     
     func save() -> Bool {

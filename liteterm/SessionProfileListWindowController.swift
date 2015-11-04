@@ -27,6 +27,40 @@ class SessionProfileListWindowController: NSWindowController {
         self.modalSession = NSApp.beginModalSessionForWindow(window!)
         NSApp.runModalSession(self.modalSession)
     }
+    
+    var sessionProfileWindowController: SessionProfileWindowController!
+    @IBAction func onNew(sender: AnyObject) {
+        let newProfileDialog: NSAlert = NSAlert()
+        newProfileDialog.window.title = "New profile"
+        newProfileDialog.messageText = "Please enter a new profile name"
+        
+        newProfileDialog.alertStyle = NSAlertStyle.InformationalAlertStyle
+        
+        newProfileDialog.addButtonWithTitle("Create")
+        newProfileDialog.addButtonWithTitle("Cancel")
+        
+        let textField = NSTextField(frame: NSRect(x: 0, y: 0, width: 240, height: 24))
+        newProfileDialog.accessoryView = textField
+        
+        newProfileDialog.icon = NSImage()
+        
+        if newProfileDialog.runModal() == NSAlertFirstButtonReturn {
+            if profileListView.manager.profiles.contains(textField.stringValue) {
+                let alert: NSAlert = NSAlert()
+                alert.alertStyle = NSAlertStyle.CriticalAlertStyle
+                alert.messageText = "The name already exists"
+                alert.runModal()
+            }
+            
+            let newProfile = SessionProfile()
+            profileListView.manager[textField.stringValue] = newProfile
+            profileListView.reloadData()
+            
+            sessionProfileWindowController = SessionProfileWindowController(profile: newProfile)
+            sessionProfileWindowController.loadWindow()
+            sessionProfileWindowController.showWindow(self)
+        }
+    }
 }
 
 extension SessionProfileListWindowController: NSWindowDelegate {
