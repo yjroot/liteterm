@@ -19,6 +19,7 @@ class SessionProfileWindowController: NSWindowController {
         self.profile = profile
     }
     
+    var modalSession: NSModalSession!
     override func awakeFromNib() {
         super.awakeFromNib()
         self.groupListView.profile = self.profile
@@ -26,6 +27,9 @@ class SessionProfileWindowController: NSWindowController {
         self.updateWindowTitle()
         
         self.window!.makeKeyAndOrderFront(self)
+        
+        self.modalSession = NSApp.beginModalSessionForWindow(window!)
+        NSApp.runModalSession(self.modalSession)
     }
     
     private func updateWindowTitle() {
@@ -50,5 +54,14 @@ class SessionProfileWindowController: NSWindowController {
         }
         
         return SessionProfileWindowController.fieldsXML!["property"].element!
+    }
+}
+
+extension SessionProfileWindowController: NSWindowDelegate {
+    func windowWillClose(notification: NSNotification) {
+        if modalSession != nil {
+            NSApp.endModalSession(self.modalSession)
+            self.modalSession = nil
+        }
     }
 }

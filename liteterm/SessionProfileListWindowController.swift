@@ -16,15 +16,24 @@ class SessionProfileListWindowController: NSWindowController {
         self.init(windowNibName: "SessionProfileListWindow")
     }
     
-    override func windowDidLoad() {
-        super.windowDidLoad()
-    }
-    
+    var modalSession: NSModalSession!
     override func awakeFromNib() {
         super.awakeFromNib()
         self.managerListView.addManager(SessionProfileManager())
         self.managerListView.selectRowIndexes(NSIndexSet(index: 0), byExtendingSelection: false)
         
         self.window!.makeKeyAndOrderFront(self)
+        
+        self.modalSession = NSApp.beginModalSessionForWindow(window!)
+        NSApp.runModalSession(self.modalSession)
+    }
+}
+
+extension SessionProfileListWindowController: NSWindowDelegate {
+    func windowWillClose(notification: NSNotification) {
+        if modalSession != nil {
+            NSApp.endModalSession(self.modalSession)
+            self.modalSession = nil
+        }
     }
 }

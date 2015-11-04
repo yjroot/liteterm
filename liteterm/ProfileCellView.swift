@@ -23,8 +23,8 @@ class ProfileCellView: NSTableCellView {
         }
     }
     
+    var sessionProfileWindowController: SessionProfileWindowController!
     @IBAction func onEdit(sender: AnyObject) {
-        var sessionProfileWindowController: SessionProfileWindowController!
         sessionProfileWindowController = SessionProfileWindowController(profile: self.profile)
         sessionProfileWindowController.loadWindow()
         sessionProfileWindowController.showWindow(self)
