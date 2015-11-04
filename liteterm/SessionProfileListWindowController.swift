@@ -61,6 +61,11 @@ class SessionProfileListWindowController: NSWindowController {
             sessionProfileWindowController.showWindow(self)
         }
     }
+    
+    @IBAction func onOpenSession(sender: AnyObject) {
+        let profile = self.profileListView.itemAtRow(self.profileListView.selectedRow) as! SessionProfile
+        print(profile.name)
+    }
 }
 
 extension SessionProfileListWindowController: NSWindowDelegate {

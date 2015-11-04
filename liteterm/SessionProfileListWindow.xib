@@ -196,6 +196,7 @@
                                         </tableColumn>
                                     </tableColumns>
                                     <connections>
+                                        <action trigger="doubleAction" selector="onOpenSession:" target="-2" id="xeZ-jR-Mx1"/>
                                         <outlet property="controller" destination="-2" id="EeX-wS-y2W"/>
                                     </connections>
                                 </outlineView>
