@@ -27,7 +27,5 @@ class LTTabViewController: NSTabViewController {
         ltTabViewItem.view = ltTabView
 
         addTabViewItem(ltTabViewItem)
-        
-        reset
     }
 }
