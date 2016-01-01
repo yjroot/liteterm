@@ -9,25 +9,48 @@
 import Cocoa
 
 class TerminalView: NSView {
-
-    let tabViewController = LTTabViewController()
+    override init(frame frameRect: NSRect) {
+        super.init(frame: frameRect)
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
     
     override func drawRect(dirtyRect: NSRect) {
         super.drawRect(dirtyRect)
         
         let bPath:NSBezierPath = NSBezierPath(rect: dirtyRect)
         
-        let backgroundColor = NSColor(red: 0, green: 0, blue: 0, alpha: 1)
+        let backgroundColor = NSColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1)
         backgroundColor.set()
         bPath.fill();
-    }
-    
-    
-    func showTabView(){
- 
-    }
-    
-    func hideTabView(){
         
+        let text = NSString(string: "liteterm")
+        text.drawAtPoint(NSPoint(x: 0, y: 0), withAttributes: nil)
+        //text.dr
+    }
+    
+    func getFont() -> NSFont {
+        return NSFont.systemFontOfSize(11.0)
+    }
+    
+    func getGlyph(char: UniChar) {
+    }
+    
+    func setTerminalSize(width: Int, height: Int) {
+    }
+    
+    // updateText -> damage -> drawText
+    
+    func updateText(text: String, attr: [TerminalCharacterAttributes], x: Int, y: Int) {
+        
+    }
+    
+    func drawText(text: String, attr: [TerminalCharacterAttributes], x: Int, y: Int) {
+        
+    }
+    
+    func newline(lines: Int = 1) {
     }
 }

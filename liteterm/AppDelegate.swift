@@ -10,12 +10,18 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-
     @IBOutlet weak var window: NSWindow!
+    @IBOutlet weak var view: NSView!
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to initialize your application
         //window.titleVisibility = NSWindowTitleVisibility.Hidden
+        
+        let terminalView = TerminalView(frame: view.frame)
+        self.view.addSubview(terminalView)
+        view.autoresizesSubviews = true
+        terminalView.autoresizingMask = NSAutoresizingMaskOptions([.ViewHeightSizable, .ViewWidthSizable])
+        terminalView.updateText("test", attr: [], x: 0, y: 0)
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
