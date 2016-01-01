@@ -16,8 +16,16 @@ struct TerminalCharacter {
             return 1;
         }
     }
+    
     init(chars: [Character] = [], attr: TerminalCharacterAttributes = TerminalCharacterAttributes()) {
         self.chars = chars
         self.attr = attr
+    }
+    
+    var string: String {
+        if chars.count == 0 {
+            return " "
+        }
+        return String(self.chars)
     }
 }

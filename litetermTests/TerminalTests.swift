@@ -23,6 +23,7 @@ class TerminalTests: XCTestCase {
 
     func testInputText() {
         terminal.putData("liteterm")
+        XCTAssert(terminal[0].string == "liteterm")
         XCTAssert(terminal[0][0].chars == ["l"])
         XCTAssert(terminal[0][1].chars == ["i"])
         XCTAssert(terminal[0][2].chars == ["t"])
@@ -34,5 +35,10 @@ class TerminalTests: XCTestCase {
         XCTAssert(terminal[0][8].chars == [])
         XCTAssert(terminal.cursor.row == 0)
         XCTAssert(terminal.cursor.col == 8)
+    }
+    
+    func testAutoWrap() {
+        terminal.putData("0123456789liteterm")
+        XCTAssert(terminal[1].string == "liteterm")
     }
 }

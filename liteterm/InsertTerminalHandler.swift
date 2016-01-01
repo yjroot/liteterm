@@ -22,7 +22,7 @@ class InsertTerminalHandler: TerminalHandler {
     
     func insertChar(char: TerminalCharacter) {
         var cursor = self.termianl.cursor
-        if char.wcwidth + cursor.col >= self.termianl.cols {
+        if self.termianl.cols < char.wcwidth + cursor.col {
             cursor.col = 0
             cursor.row++
         }

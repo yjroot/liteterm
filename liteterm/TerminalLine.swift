@@ -30,4 +30,12 @@ class TerminalLine {
             return self.chars[key] = value
         }
     }
+    
+    var string: String {
+        get {
+            return self.chars.map({ (char) -> String in
+                return char.string
+            }).joinWithSeparator("")
+        }
+    }
 }
