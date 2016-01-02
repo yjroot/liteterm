@@ -22,6 +22,10 @@ class ControlCharacterTerminalHandler: TerminalHandler {
         case "\r":
             carriagereturn()
             break
+        case "\r\n":
+            carriagereturn()
+            newline()
+            break
         default:
             return false
         }

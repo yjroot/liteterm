@@ -14,6 +14,7 @@ class Terminal {
     var cursor: TerminalPosition = TerminalPosition()
     var cols: Int
     var rows: Int
+    var viewer: TerminalView!
     
     init(cols: Int, rows: Int) {
         self.cols = cols
@@ -42,6 +43,9 @@ class Terminal {
             }
         }
         self.defaultHandler.putData(data)
+        while self.rows <= self.cursor.row {
+            self.scrollUp()
+        }
     }
     
     func putData(data: [Character]) {
@@ -52,5 +56,13 @@ class Terminal {
     
     func putData(data: String) {
         self.putData(Array(data.characters))
+    }
+    
+    func scrollUp() {
+        let line = self.lines.removeFirst()
+        if self.viewer != nil {
+            self.viewer.addScroll(line)
+        }
+        self.cursor.row--
     }
 }

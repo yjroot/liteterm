@@ -52,4 +52,21 @@ class TerminalTests: XCTestCase {
         terminal.putData("........\rliteterm")
         XCTAssert(terminal[0].string == "liteterm")
     }
+    
+    func testCRLF() {
+        terminal.putData("0\r\n1\n\r2\n3\r4")
+        XCTAssert(terminal[0].string == "0")
+        XCTAssert(terminal[1].string == "1")
+        XCTAssert(terminal[2].string == "2")
+        XCTAssert(terminal[3].string == "43")
+    }
+    
+    func testScrollUp() {
+        terminal.putData("0\r\n1\r\n2\r\n3\r\n4\r\n5")
+        XCTAssert(terminal[0].string == "1")
+        XCTAssert(terminal[1].string == "2")
+        XCTAssert(terminal[2].string == "3")
+        XCTAssert(terminal[3].string == "4")
+        XCTAssert(terminal[4].string == "5")
+    }
 }

@@ -44,13 +44,14 @@ class TerminalView: NSView {
     // updateText -> damage -> drawText
     
     func updateText(text: String, attr: [TerminalCharacterAttributes], x: Int, y: Int) {
-        
     }
     
     func drawText(text: String, attr: [TerminalCharacterAttributes], x: Int, y: Int) {
-        
     }
     
     func newline(lines: Int = 1) {
+    }
+    
+    func addScroll(line: TerminalLine) {
     }
 }

@@ -22,6 +22,7 @@
 		BC0F90AB1C32ED2C0004D2B7 /* TerminalHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0F90A91C32ED2C0004D2B7 /* TerminalHandler.swift */; };
 		BC10F24D1C36E83600456A6E /* TerminalHandlerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC10F24C1C36E83600456A6E /* TerminalHandlerList.swift */; };
 		BC10F24E1C36E83600456A6E /* TerminalHandlerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC10F24C1C36E83600456A6E /* TerminalHandlerList.swift */; };
+		BC10F24F1C38115B00456A6E /* TerminalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC06C4D31B3427D200CA6D44 /* TerminalView.swift */; };
 		BC1725FB1C362FB000F9D9A6 /* InsertTerminalHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1725FA1C362FB000F9D9A6 /* InsertTerminalHandler.swift */; };
 		BC1725FC1C362FB000F9D9A6 /* InsertTerminalHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1725FA1C362FB000F9D9A6 /* InsertTerminalHandler.swift */; };
 		BC1725FE1C3635D000F9D9A6 /* EscapeSequenceTerminalHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1725FD1C3635D000F9D9A6 /* EscapeSequenceTerminalHandler.swift */; };
@@ -619,6 +620,7 @@
 				BC40BCEB1B663D3F007D9FF9 /* SessionProfileManagerTests.swift in Sources */,
 				BC56D44E1BB79F85009AA7AB /* SessionProfileWindowController.swift in Sources */,
 				BCB66D131B3287EE008AFB75 /* litetermTests.swift in Sources */,
+				BC10F24F1C38115B00456A6E /* TerminalView.swift in Sources */,
 				BC6823E01BEF5665002FDF0C /* Terminal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
