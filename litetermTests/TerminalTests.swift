@@ -69,4 +69,25 @@ class TerminalTests: XCTestCase {
         XCTAssert(terminal[3].string == "4")
         XCTAssert(terminal[4].string == "5")
     }
+    
+    func testBackspace() {
+        terminal.putData("\u{8}")
+        XCTAssert(terminal.cursor.row == 0)
+        XCTAssert(terminal.cursor.col == 0)
+        terminal.putData("test")
+        XCTAssert(terminal.cursor.row == 0)
+        XCTAssert(terminal.cursor.col == 4)
+        terminal.putData("\u{8}")
+        XCTAssert(terminal.cursor.row == 0)
+        XCTAssert(terminal.cursor.col == 3)
+        terminal.putData("\r0123456789\u{8}")
+        XCTAssert(terminal.cursor.row == 0)
+        XCTAssert(terminal.cursor.col == 9)
+        terminal.putData("\r01234567890\u{8}")
+        XCTAssert(terminal.cursor.row == 1)
+        XCTAssert(terminal.cursor.col == 0)
+        terminal.putData("\u{8}")
+        XCTAssert(terminal.cursor.row == 0)
+        XCTAssert(terminal.cursor.col == 9)
+    }
 }

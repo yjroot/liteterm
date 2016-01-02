@@ -16,6 +16,9 @@ class ControlCharacterTerminalHandler: TerminalHandler {
     
     func putData(data: Character) -> Bool {
         switch (data) {
+        case "\u{8}":
+            backspace()
+            break
         case "\n":
             newline()
             break
@@ -31,6 +34,17 @@ class ControlCharacterTerminalHandler: TerminalHandler {
         }
         
         return true
+    }
+    func backspace() {
+        self.termianl.cursor.col--
+        if self.termianl.cursor.col < 0 {
+            self.termianl.cursor.col += self.termianl.cols
+            self.termianl.cursor.row--
+        }
+        if self.termianl.cursor.row < 0 {
+            self.termianl.cursor.row = 0
+            self.termianl.cursor.col = 0
+        }
     }
     
     func newline() {
