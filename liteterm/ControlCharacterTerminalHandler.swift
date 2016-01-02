@@ -15,6 +15,25 @@ class ControlCharacterTerminalHandler: TerminalHandler {
     }
     
     func putData(data: Character) -> Bool {
+        switch (data) {
+        case "\n":
+            newline()
+            break
+        case "\r":
+            carriagereturn()
+            break
+        default:
+            return false
+        }
+        
         return true
+    }
+    
+    func newline() {
+        self.termianl.cursor.row++
+    }
+    
+    func carriagereturn() {
+        self.termianl.cursor.col = 0
     }
 }

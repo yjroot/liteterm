@@ -18,7 +18,10 @@ class Terminal {
     init(cols: Int, rows: Int) {
         self.cols = cols
         self.rows = rows
-        self.handler = InsertTerminalHandler(terminal: self)
+        let defaultHandlers = TerminalHandlerList(terminal: self)
+        defaultHandlers.add(InsertTerminalHandler(terminal: self))
+        defaultHandlers.add(ControlCharacterTerminalHandler(terminal: self))
+        self.defaultHandler = defaultHandlers
     }
     
     subscript(key: Int) -> TerminalLine {
@@ -30,10 +33,20 @@ class Terminal {
         }
     }
     
-    var handler: TerminalHandler!
+    var handlers: Stack<TerminalHandler> = Stack()
+    var defaultHandler: TerminalHandler!
+    func putData(data: Character) {
+        if !self.handlers.items.isEmpty {
+            if self.handlers.top().putData(data) {
+                return
+            }
+        }
+        self.defaultHandler.putData(data)
+    }
+    
     func putData(data: [Character]) {
         for c in data {
-            self.handler.putData(c)
+            self.putData(c)
         }
     }
     

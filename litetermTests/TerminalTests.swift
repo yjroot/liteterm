@@ -41,4 +41,15 @@ class TerminalTests: XCTestCase {
         terminal.putData("0123456789liteterm")
         XCTAssert(terminal[1].string == "liteterm")
     }
+    
+    func testNewline() {
+        terminal.putData("lite\nterm")
+        XCTAssert(terminal[0].string == "lite")
+        XCTAssert(terminal[1].string == "    term")
+    }
+    
+    func testCarriageReturn() {
+        terminal.putData("........\rliteterm")
+        XCTAssert(terminal[0].string == "liteterm")
+    }
 }

@@ -15,6 +15,9 @@ class InsertTerminalHandler: TerminalHandler {
     }
     
     func putData(data: Character) -> Bool {
+        if data.unicode < 32 {
+            return false
+        }
         let char = TerminalCharacter(chars: [data], attr: self.termianl.attr)
         insertChar(char)
         return true
@@ -29,5 +32,14 @@ class InsertTerminalHandler: TerminalHandler {
         self.termianl[cursor.row][cursor.col] = char
         cursor.col += char.wcwidth
         self.termianl.cursor = cursor
+    }
+}
+
+extension Character {
+    var unicode: UInt32 {
+        let characterString = String(self)
+        let scalars = characterString.unicodeScalars
+        
+        return scalars[scalars.startIndex].value
     }
 }
