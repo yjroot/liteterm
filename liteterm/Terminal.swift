@@ -19,7 +19,7 @@ class Terminal {
     init(cols: Int, rows: Int) {
         self.cols = cols
         self.rows = rows
-        let defaultHandlers = TerminalHandlerList(terminal: self)
+        let defaultHandlers = TerminalHandlerList()
         defaultHandlers.add(InsertTerminalHandler(terminal: self))
         defaultHandlers.add(ControlCharacterTerminalHandler(terminal: self))
         self.defaultHandler = defaultHandlers
@@ -34,15 +34,14 @@ class Terminal {
         }
     }
     
-    var handlers: Stack<TerminalHandler> = Stack()
+    var handler: TerminalHandler!
     var defaultHandler: TerminalHandler!
     func putData(data: Character) {
-        if !self.handlers.items.isEmpty {
-            if self.handlers.top().putData(data) {
-                return
-            }
+        if self.handler != nil {
+            self.handler.putData(data)
+        } else {
+            self.defaultHandler.putData(data)
         }
-        self.defaultHandler.putData(data)
         while self.rows <= self.cursor.row {
             self.scrollUp()
         }

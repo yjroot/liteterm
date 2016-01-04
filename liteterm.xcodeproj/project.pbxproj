@@ -23,6 +23,8 @@
 		BC10F24D1C36E83600456A6E /* TerminalHandlerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC10F24C1C36E83600456A6E /* TerminalHandlerList.swift */; };
 		BC10F24E1C36E83600456A6E /* TerminalHandlerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC10F24C1C36E83600456A6E /* TerminalHandlerList.swift */; };
 		BC10F24F1C38115B00456A6E /* TerminalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC06C4D31B3427D200CA6D44 /* TerminalView.swift */; };
+		BC10F2511C3AB73700456A6E /* NumberListTerminalHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC10F2501C3AB73700456A6E /* NumberListTerminalHandler.swift */; };
+		BC10F2521C3AB73700456A6E /* NumberListTerminalHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC10F2501C3AB73700456A6E /* NumberListTerminalHandler.swift */; };
 		BC1725FB1C362FB000F9D9A6 /* InsertTerminalHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1725FA1C362FB000F9D9A6 /* InsertTerminalHandler.swift */; };
 		BC1725FC1C362FB000F9D9A6 /* InsertTerminalHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1725FA1C362FB000F9D9A6 /* InsertTerminalHandler.swift */; };
 		BC1725FE1C3635D000F9D9A6 /* EscapeSequenceTerminalHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1725FD1C3635D000F9D9A6 /* EscapeSequenceTerminalHandler.swift */; };
@@ -127,6 +129,7 @@
 		BC0F90A61C32E4D50004D2B7 /* TerminalPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TerminalPosition.swift; path = liteterm/TerminalPosition.swift; sourceTree = "<group>"; };
 		BC0F90A91C32ED2C0004D2B7 /* TerminalHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TerminalHandler.swift; path = liteterm/TerminalHandler.swift; sourceTree = "<group>"; };
 		BC10F24C1C36E83600456A6E /* TerminalHandlerList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TerminalHandlerList.swift; path = liteterm/TerminalHandlerList.swift; sourceTree = "<group>"; };
+		BC10F2501C3AB73700456A6E /* NumberListTerminalHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NumberListTerminalHandler.swift; path = liteterm/NumberListTerminalHandler.swift; sourceTree = "<group>"; };
 		BC1725FA1C362FB000F9D9A6 /* InsertTerminalHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InsertTerminalHandler.swift; path = liteterm/InsertTerminalHandler.swift; sourceTree = "<group>"; };
 		BC1725FD1C3635D000F9D9A6 /* EscapeSequenceTerminalHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EscapeSequenceTerminalHandler.swift; path = liteterm/EscapeSequenceTerminalHandler.swift; sourceTree = "<group>"; };
 		BC1726001C36385200F9D9A6 /* CSITerminalHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSITerminalHandler.swift; path = liteterm/CSITerminalHandler.swift; sourceTree = "<group>"; };
@@ -217,6 +220,7 @@
 				BC1726001C36385200F9D9A6 /* CSITerminalHandler.swift */,
 				BC1726031C36386D00F9D9A6 /* OSCTerminalHandler.swift */,
 				BC1726061C3638E500F9D9A6 /* ControlCharacterTerminalHandler.swift */,
+				BC10F2501C3AB73700456A6E /* NumberListTerminalHandler.swift */,
 			);
 			name = "Terminal Handler";
 			sourceTree = "<group>";
@@ -564,6 +568,7 @@
 				BC1742FA1BDBA32A0089DEF0 /* BaseProfileManager.swift in Sources */,
 				BC0F90A41C32CB170004D2B7 /* TerminalLine.swift in Sources */,
 				BC6823E21BEF5711002FDF0C /* TerminalCharacterAttributes.swift in Sources */,
+				BC10F2511C3AB73700456A6E /* NumberListTerminalHandler.swift in Sources */,
 				BC40BCE01B625A4E007D9FF9 /* SessionProfileManager.swift in Sources */,
 				BC56D46A1BB9135B009AA7AB /* FormView.swift in Sources */,
 				BC56D45B1BB907A3009AA7AB /* PasswordField.swift in Sources */,
@@ -590,6 +595,7 @@
 				BC56D46F1BB9423E009AA7AB /* SelectField.swift in Sources */,
 				BC1725FC1C362FB000F9D9A6 /* InsertTerminalHandler.swift in Sources */,
 				BC40BCDE1B62565D007D9FF9 /* SessionProfile.swift in Sources */,
+				BC10F2521C3AB73700456A6E /* NumberListTerminalHandler.swift in Sources */,
 				BC1726051C36386D00F9D9A6 /* OSCTerminalHandler.swift in Sources */,
 				BCAE49861B8F3BF8008D8CBA /* SWXMLHash.swift in Sources */,
 				BC56D42D1BA49C12009AA7AB /* OptionProfileTests.swift in Sources */,

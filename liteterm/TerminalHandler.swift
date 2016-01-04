@@ -9,6 +9,5 @@
 import Foundation
 
 protocol TerminalHandler {
-    init(terminal: Terminal)
     func putData(data: Character) -> Bool
 }

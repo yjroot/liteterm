@@ -9,9 +9,9 @@
 import Foundation
 
 class OSCTerminalHandler: TerminalHandler {
-    let termianl: Terminal
-    required init(terminal: Terminal) {
-        self.termianl = terminal
+    let terminal: Terminal
+    init(terminal: Terminal) {
+        self.terminal = terminal
     }
     
     func putData(data: Character) -> Bool {

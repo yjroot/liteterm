@@ -9,12 +9,7 @@
 import Foundation
 
 class TerminalHandlerList: TerminalHandler {
-    var handlers: [TerminalHandler]
-    let termianl: Terminal
-    required init(terminal: Terminal) {
-        self.termianl = terminal
-        self.handlers = []
-    }
+    var handlers: [TerminalHandler] = []
     
     func putData(data: Character) -> Bool {
         for handler in self.handlers {

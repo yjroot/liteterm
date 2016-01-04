@@ -9,29 +9,29 @@
 import Foundation
 
 class InsertTerminalHandler: TerminalHandler {
-    let termianl: Terminal
-    required init(terminal: Terminal) {
-        self.termianl = terminal
+    let terminal: Terminal
+    init(terminal: Terminal) {
+        self.terminal = terminal
     }
     
     func putData(data: Character) -> Bool {
         if data.unicode < 32 {
             return false
         }
-        let char = TerminalCharacter(chars: [data], attr: self.termianl.attr)
+        let char = TerminalCharacter(chars: [data], attr: self.terminal.attr)
         insertChar(char)
         return true
     }
     
     func insertChar(char: TerminalCharacter) {
-        var cursor = self.termianl.cursor
-        if self.termianl.cols < char.wcwidth + cursor.col {
+        var cursor = self.terminal.cursor
+        if self.terminal.cols < char.wcwidth + cursor.col {
             cursor.col = 0
             cursor.row++
         }
-        self.termianl[cursor.row][cursor.col] = char
+        self.terminal[cursor.row][cursor.col] = char
         cursor.col += char.wcwidth
-        self.termianl.cursor = cursor
+        self.terminal.cursor = cursor
     }
 }
 

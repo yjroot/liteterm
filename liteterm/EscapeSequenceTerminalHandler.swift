@@ -9,12 +9,18 @@
 import Foundation
 
 class EscapeSequenceTerminalHandler: TerminalHandler {
-    let termianl: Terminal
-    required init(terminal: Terminal) {
-        self.termianl = terminal
+    let terminal: Terminal
+    init(terminal: Terminal) {
+        self.terminal = terminal
     }
     
     func putData(data: Character) -> Bool {
-        return true
+        switch data {
+        case "[":
+            self.terminal.handler = CSITerminalHandler(terminal: self.terminal)
+            return true
+        default:
+            return false
+        }
     }
 }

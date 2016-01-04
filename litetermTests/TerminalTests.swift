@@ -90,4 +90,21 @@ class TerminalTests: XCTestCase {
         XCTAssert(terminal.cursor.row == 0)
         XCTAssert(terminal.cursor.col == 9)
     }
+    
+    func testEscape() {
+        XCTAssert(terminal.cursor.row == 0)
+        XCTAssert(terminal.cursor.col == 0)
+        terminal.putData("\u{1b}[2B")
+        XCTAssert(terminal.cursor.row == 2)
+        XCTAssert(terminal.cursor.col == 0)
+        terminal.putData("\u{1b}[2;3H")
+        XCTAssert(terminal.cursor.row == 1)
+        XCTAssert(terminal.cursor.col == 2)
+        terminal.putData("\u{1b}[;2H")
+        XCTAssert(terminal.cursor.row == 0)
+        XCTAssert(terminal.cursor.col == 1)
+        terminal.putData("\u{1b}[2;H")
+        XCTAssert(terminal.cursor.row == 1)
+        XCTAssert(terminal.cursor.col == 0)
+    }
 }

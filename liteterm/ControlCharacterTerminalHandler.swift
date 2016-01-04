@@ -9,13 +9,13 @@
 import Foundation
 
 class ControlCharacterTerminalHandler: TerminalHandler {
-    let termianl: Terminal
-    required init(terminal: Terminal) {
-        self.termianl = terminal
+    let terminal: Terminal
+    init(terminal: Terminal) {
+        self.terminal = terminal
     }
     
     func putData(data: Character) -> Bool {
-        switch (data) {
+        switch data {
         case "\u{8}":
             backspace()
             break
@@ -29,29 +29,37 @@ class ControlCharacterTerminalHandler: TerminalHandler {
             carriagereturn()
             newline()
             break
+        case "\u{1b}":
+            escape()
+            break
         default:
             return false
         }
         
         return true
     }
+    
     func backspace() {
-        self.termianl.cursor.col--
-        if self.termianl.cursor.col < 0 {
-            self.termianl.cursor.col += self.termianl.cols
-            self.termianl.cursor.row--
+        self.terminal.cursor.col--
+        if self.terminal.cursor.col < 0 {
+            self.terminal.cursor.col += self.terminal.cols
+            self.terminal.cursor.row--
         }
-        if self.termianl.cursor.row < 0 {
-            self.termianl.cursor.row = 0
-            self.termianl.cursor.col = 0
+        if self.terminal.cursor.row < 0 {
+            self.terminal.cursor.row = 0
+            self.terminal.cursor.col = 0
         }
     }
     
     func newline() {
-        self.termianl.cursor.row++
+        self.terminal.cursor.row++
     }
     
     func carriagereturn() {
-        self.termianl.cursor.col = 0
+        self.terminal.cursor.col = 0
+    }
+    
+    func escape() {
+        self.terminal.handler = EscapeSequenceTerminalHandler(terminal: self.terminal)
     }
 }
