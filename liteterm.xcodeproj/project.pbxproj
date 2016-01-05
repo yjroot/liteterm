@@ -84,6 +84,7 @@
 		BC56D4791BB95D65009AA7AB /* PathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D42F1BA49E14009AA7AB /* PathUtils.swift */; };
 		BC56D47A1BB95DFB009AA7AB /* BaseProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D4211BA0871F009AA7AB /* BaseProfile.swift */; };
 		BC56D47B1BB95DFE009AA7AB /* DefaultProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56D4241BA08BB9009AA7AB /* DefaultProfile.swift */; };
+		BC590F491C3C1EFD00A1F0DA /* TerminalCSITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC590F481C3C1EFD00A1F0DA /* TerminalCSITests.swift */; };
 		BC6823DF1BEF5665002FDF0C /* Terminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6823DE1BEF5665002FDF0C /* Terminal.swift */; };
 		BC6823E01BEF5665002FDF0C /* Terminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6823DE1BEF5665002FDF0C /* Terminal.swift */; };
 		BC6823E21BEF5711002FDF0C /* TerminalCharacterAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6823E11BEF5711002FDF0C /* TerminalCharacterAttributes.swift */; };
@@ -165,6 +166,7 @@
 		BC56D46D1BB9423E009AA7AB /* SelectField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SelectField.xib; path = liteterm/SelectField.xib; sourceTree = "<group>"; };
 		BC56D4721BB94C34009AA7AB /* NumberField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NumberField.swift; path = liteterm/NumberField.swift; sourceTree = "<group>"; };
 		BC56D4731BB94C34009AA7AB /* NumberField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NumberField.xib; path = liteterm/NumberField.xib; sourceTree = "<group>"; };
+		BC590F481C3C1EFD00A1F0DA /* TerminalCSITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerminalCSITests.swift; sourceTree = "<group>"; };
 		BC6823DE1BEF5665002FDF0C /* Terminal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Terminal.swift; path = liteterm/Terminal.swift; sourceTree = "<group>"; };
 		BC6823E11BEF5711002FDF0C /* TerminalCharacterAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TerminalCharacterAttributes.swift; path = liteterm/TerminalCharacterAttributes.swift; sourceTree = "<group>"; };
 		BCAE49831B8F3BC6008D8CBA /* SWXMLHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWXMLHash.h; path = Library/SWXMLHash/Source/SWXMLHash.h; sourceTree = "<group>"; };
@@ -397,6 +399,7 @@
 				BC40BCEA1B663D3F007D9FF9 /* SessionProfileManagerTests.swift */,
 				BC56D42C1BA49C12009AA7AB /* OptionProfileTests.swift */,
 				BC17260A1C36BB4400F9D9A6 /* TerminalTests.swift */,
+				BC590F481C3C1EFD00A1F0DA /* TerminalCSITests.swift */,
 			);
 			path = litetermTests;
 			sourceTree = "<group>";
@@ -603,6 +606,7 @@
 				BC17260B1C36BB4400F9D9A6 /* TerminalTests.swift in Sources */,
 				BC56D42B1BA09E82009AA7AB /* OptionProfile.swift in Sources */,
 				BC56D45C1BB907A3009AA7AB /* PasswordField.swift in Sources */,
+				BC590F491C3C1EFD00A1F0DA /* TerminalCSITests.swift in Sources */,
 				BC56D46B1BB9135B009AA7AB /* FormView.swift in Sources */,
 				BC56D4601BB907BE009AA7AB /* BaseField.swift in Sources */,
 				BC10F24E1C36E83600456A6E /* TerminalHandlerList.swift in Sources */,

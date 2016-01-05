@@ -26,19 +26,21 @@ class CSITerminalHandler: TerminalHandler {
         switch data {
         case "A":
             parameters.defaultNumber = 1
-            self.terminal.cursor.row -= parameters[0]
+            terminal.cursor.row = max(terminal.cursor.row - parameters[0], 0)
             break
         case "B":
             parameters.defaultNumber = 1
-            self.terminal.cursor.row += parameters[0]
+            terminal.cursor.row = min(terminal.cursor.row + parameters[0],
+                                      terminal.rows - 1)
             break
         case "C":
             parameters.defaultNumber = 1
-            self.terminal.cursor.col += parameters[0]
+            terminal.cursor.col = min(terminal.cursor.col + parameters[0],
+                                      terminal.cols - 1)
             break
         case "D":
             parameters.defaultNumber = 1
-            self.terminal.cursor.col -= parameters[0]
+            terminal.cursor.col = max(terminal.cursor.col - parameters[0], 0)
             break
         case "H":
             parameters.defaultNumber = 1
