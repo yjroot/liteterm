@@ -66,4 +66,17 @@ class TerminalCSITests: XCTestCase {
         terminal.putData("\u{1b}[30D")
         XCTAssert(terminal.cursor.col == 0)
     }
+    
+    func testCNL() {
+        terminal.putData("012345\u{1b}[E")
+        XCTAssert(terminal.cursor.row == 1)
+        XCTAssert(terminal.cursor.col == 0)
+    }
+    
+    func testCPL() {
+        terminal.putData("\n\n012345\u{1b}[F")
+        XCTAssert(terminal.cursor.row == 1)
+        XCTAssert(terminal.cursor.col == 0)
+    }
+    
 }
