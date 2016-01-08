@@ -64,4 +64,25 @@ class Terminal {
         }
         self.cursor.row--
     }
+    
+    func setCursor(row: Int, col: Int) {
+        self.cursor.row = row
+        self.cursor.col = col
+
+        if self.cursor.row < 0 {
+            self.cursor.row = 0
+        } else if self.rows <= self.cursor.row {
+            self.cursor.row = self.rows - 1
+        }
+
+        if self.cursor.col < 0 {
+            self.cursor.col = 0
+        } else if self.cols <= self.cursor.col {
+            self.cursor.col = self.cols - 1
+        }
+    }
+    
+    func moveCursor(row: Int, col: Int) {
+        self.setCursor(self.cursor.row + row, col: self.cursor.col + col)
+    }
 }

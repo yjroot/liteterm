@@ -53,10 +53,13 @@ class CSITerminalHandler: TerminalHandler {
             terminal.cursor.col = 0
             terminal.cursor.row = max(terminal.cursor.row - parameters[0], 0)
             break
+        case "G":
+            parameters.defaultNumber = 1
+            self.terminal.moveCursor(0, col: parameters[0])
+            break
         case "H":
             parameters.defaultNumber = 1
-            self.terminal.cursor.row = parameters[0] - 1
-            self.terminal.cursor.col = parameters[1] - 1
+            self.terminal.setCursor(parameters[0] - 1, col: parameters[1] - 1)
             break
         default:
             break
