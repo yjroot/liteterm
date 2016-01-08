@@ -20,6 +20,27 @@ class TerminalTests: XCTestCase {
         self.terminal = nil
         super.tearDown()
     }
+    
+    func testSetCursor() {
+        terminal.setCursor(0, col: 0)
+        XCTAssert(terminal.cursor.row == 0)
+        XCTAssert(terminal.cursor.col == 0)
+        terminal.setCursor(100, col: 100)
+        XCTAssert(terminal.cursor.row == 4)
+        XCTAssert(terminal.cursor.col == 9)
+    }
+    
+    func testMoveCursor() {
+        self.terminal.moveCursor(1, col: 1)
+        XCTAssert(terminal.cursor.row == 1)
+        XCTAssert(terminal.cursor.col == 1)
+        self.terminal.moveCursor(100, col: 100)
+        XCTAssert(terminal.cursor.row == 4)
+        XCTAssert(terminal.cursor.col == 9)
+        self.terminal.moveCursor(-2, col: -2)
+        XCTAssert(terminal.cursor.row == 2)
+        XCTAssert(terminal.cursor.col == 7)
+    }
 
     func testInputText() {
         terminal.putData("liteterm")
