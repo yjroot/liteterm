@@ -65,7 +65,7 @@ class Terminal {
         self.cursor.row--
     }
     
-    func setCursor(row: Int, col: Int) {
+    func setCursor(row: Int = 0, col: Int = 0) {
         self.cursor.row = row
         self.cursor.col = col
 
@@ -82,7 +82,7 @@ class Terminal {
         }
     }
     
-    func moveCursor(row: Int, col: Int) {
+    func moveCursor(row: Int = 0, col: Int = 0) {
         self.setCursor(self.cursor.row + row, col: self.cursor.col + col)
     }
 }
