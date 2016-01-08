@@ -103,9 +103,9 @@ class TerminalCSITests: XCTestCase {
     
     // [H
     func testCUP() {
-        terminal.putData("\u{1b}[2;2H")
+        terminal.putData("\u{1b}[2;3H")
         XCTAssert(terminal.cursor.row == 1)
-        XCTAssert(terminal.cursor.col == 1)
+        XCTAssert(terminal.cursor.col == 2)
         terminal.putData("\u{1b}[H")
         XCTAssert(terminal.cursor.row == 0)
         XCTAssert(terminal.cursor.col == 0)
@@ -115,6 +115,38 @@ class TerminalCSITests: XCTestCase {
         terminal.putData("\u{1b}[0;0H")
         XCTAssert(terminal.cursor.row == 0)
         XCTAssert(terminal.cursor.col == 0)
+    }
+    
+    // [J
+    func testED() {
+        for _ in 0...4 {
+            terminal.putData("0123456789")
+        }
+        terminal.putData("\u{1b}[3;6H")
+        terminal.putData("\u{1b}[J")
+        XCTAssert(terminal[2].string == "01234")
+        XCTAssert(terminal[3].string == "")
+        XCTAssert(terminal[4].string == "")
+        terminal.putData("\u{1b}[H")
+        for _ in 0...4 {
+            terminal.putData("0123456789")
+        }
+        terminal.putData("\u{1b}[3;6H")
+        terminal.putData("\u{1b}[2J")
+        XCTAssert(terminal[0].string == "")
+        XCTAssert(terminal[1].string == "")
+        XCTAssert(terminal[2].string == "")
+        XCTAssert(terminal[3].string == "")
+        XCTAssert(terminal[4].string == "")
+        terminal.putData("\u{1b}[H")
+        for _ in 0...4 {
+            terminal.putData("0123456789")
+        }
+        terminal.putData("\u{1b}[3;6H")
+        terminal.putData("\u{1b}[1J")
+        XCTAssert(terminal[0].string == "")
+        XCTAssert(terminal[1].string == "")
+        XCTAssert(terminal[2].string == "      6789")
     }
     
 }

@@ -49,6 +49,29 @@ class CSITerminalHandler: TerminalHandler {
         case "H":
             self.terminal.setCursor(parameters[0] - 1, col: parameters[1] - 1)
             break
+        case "J":
+            parameters.defaultNumber = 0
+            switch parameters[0] {
+            case 3:
+                // TODO: Erase saved line
+                break
+            case 2:
+                terminal.erase()
+                break
+            case 1:
+                terminal.erase(end: terminal.cursor)
+                break
+            case 0:
+                terminal.erase(terminal.cursor)
+                break
+            default:
+                break
+            }
+            self.terminal.setCursor(parameters[0] - 1, col: parameters[1] - 1)
+            break
+        case "K":
+            self.terminal.setCursor(parameters[0] - 1, col: parameters[1] - 1)
+            break
         default:
             break
         }
