@@ -38,4 +38,20 @@ class TerminalLine {
             }).joinWithSeparator("")
         }
     }
+    
+    func erase(var begin: Int! = nil, var end: Int! = nil) {
+        if begin == nil {
+            begin = 0
+        }
+        if end == nil {
+            end = chars.count
+        }
+        if end < chars.count - 1 {
+            for col in begin ... end {
+                chars[col] = TerminalCharacter()
+            }
+        } else {
+            chars = [TerminalCharacter](chars[0..<begin])
+        }
+    }
 }

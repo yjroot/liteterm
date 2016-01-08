@@ -41,6 +41,19 @@ class TerminalTests: XCTestCase {
         XCTAssert(terminal.cursor.row == 2)
         XCTAssert(terminal.cursor.col == 7)
     }
+    
+    func testErase() {
+        for _ in 0...4 {
+            terminal.putData("0123456789")
+        }
+        terminal.erase(TerminalPosition(row: 3, col:5))
+        XCTAssert(terminal[3].string == "01234")
+        XCTAssert(terminal[4].string == "")
+        
+        terminal.erase(end: TerminalPosition(row: 1, col:5))
+        XCTAssert(terminal[0].string == "")
+        XCTAssert(terminal[1].string == "      6789")
+    }
 
     func testInputText() {
         terminal.putData("liteterm")
@@ -61,6 +74,19 @@ class TerminalTests: XCTestCase {
     func testAutoWrap() {
         terminal.putData("0123456789liteterm")
         XCTAssert(terminal[1].string == "liteterm")
+    }
+    
+    func testAutoWrapCursor() {
+        for _ in 0...4 {
+            terminal.putData("0123456789")
+        }
+        XCTAssert(terminal[0].string == "0123456789")
+        XCTAssert(terminal[1].string == "0123456789")
+        XCTAssert(terminal[2].string == "0123456789")
+        XCTAssert(terminal[3].string == "0123456789")
+        XCTAssert(terminal[4].string == "0123456789")
+        XCTAssert(terminal.cursor.row == 4)
+        XCTAssert(terminal.cursor.col == 10)
     }
     
     func testNewline() {

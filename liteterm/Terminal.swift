@@ -85,4 +85,32 @@ class Terminal {
     func moveCursor(row: Int = 0, col: Int = 0) {
         self.setCursor(self.cursor.row + row, col: self.cursor.col + col)
     }
+    
+    func erase(var begin: TerminalPosition! = nil, var end: TerminalPosition! = nil) {
+        if begin == nil {
+            begin = TerminalPosition(row: 0, col: 0)
+        }
+        if end == nil {
+            end = TerminalPosition(row: self.rows - 1, col: self.cols)
+        }
+        
+        var beginLine = begin.row
+        var endLine = end.row
+        if beginLine == endLine {
+            self.lines[beginLine].erase(begin.col, end: end.col)
+            return
+        }
+        
+        if begin.col != 0 {
+            self.lines[beginLine].erase(begin.col)
+            beginLine++
+        }
+        if end.col != self.cols {
+            self.lines[endLine].erase(end: end.col)
+            endLine--
+        }
+        for row in beginLine ... min(endLine, self.lines.count - 1) {
+            self.lines[row] = TerminalLine()
+        }
+    }
 }
