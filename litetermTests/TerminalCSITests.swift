@@ -149,4 +149,23 @@ class TerminalCSITests: XCTestCase {
         XCTAssert(terminal[2].string == "      6789")
     }
     
+    // [K
+    func testEL() {
+        for _ in 0...4 {
+            terminal.putData("0123456789")
+        }
+        terminal.putData("\u{1b}[1;6H")
+        terminal.putData("\u{1b}[K")
+        XCTAssert(terminal[0].string == "01234")
+        terminal.putData("\u{1b}[B")
+        terminal.putData("\u{1b}[0K")
+        XCTAssert(terminal[1].string == "01234")
+        terminal.putData("\u{1b}[B")
+        terminal.putData("\u{1b}[1K")
+        XCTAssert(terminal[2].string == "      6789")
+        terminal.putData("\u{1b}[B")
+        terminal.putData("\u{1b}[2K")
+        XCTAssert(terminal[3].string == "")
+        XCTAssert(terminal[4].string == "0123456789")
+    }
 }

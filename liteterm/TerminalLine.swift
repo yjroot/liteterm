@@ -50,7 +50,7 @@ class TerminalLine {
             for col in begin ... end {
                 chars[col] = TerminalCharacter()
             }
-        } else {
+        } else if begin < chars.count - 1  {
             chars = [TerminalCharacter](chars[0..<begin])
         }
     }

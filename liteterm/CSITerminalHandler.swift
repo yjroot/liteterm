@@ -67,10 +67,28 @@ class CSITerminalHandler: TerminalHandler {
             default:
                 break
             }
-            self.terminal.setCursor(parameters[0] - 1, col: parameters[1] - 1)
             break
         case "K":
-            self.terminal.setCursor(parameters[0] - 1, col: parameters[1] - 1)
+            parameters.defaultNumber = 0
+            switch parameters[0] {
+            case 2:
+                terminal.erase(TerminalPosition(row: terminal.cursor.row,
+                    col: 0),
+                    end: TerminalPosition(row: terminal.cursor.row,
+                        col: terminal.cols))
+                break
+            case 1:
+                terminal.erase(TerminalPosition(row: terminal.cursor.row,
+                    col: 0), end: terminal.cursor)
+                break
+            case 0:
+                terminal.erase(terminal.cursor,
+                    end: TerminalPosition(row: terminal.cursor.row,
+                        col: terminal.cols))
+                break
+            default:
+                break
+            }
             break
         default:
             break
