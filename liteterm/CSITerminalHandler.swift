@@ -90,6 +90,13 @@ class CSITerminalHandler: TerminalHandler {
                 break
             }
             break
+        case "S":
+            terminal.scrollUp(parameters[0])
+            break
+        case "T":
+            terminal.scrollDown(parameters[0])
+            break
+            
         default:
             break
         }

@@ -57,12 +57,23 @@ class Terminal {
         self.putData(Array(data.characters))
     }
     
-    func scrollUp() {
-        let line = self.lines.removeFirst()
-        if self.viewer != nil {
-            self.viewer.addScroll(line)
+    func scrollUp(var lines: Int = 1) {
+        while lines-- != 0 {
+            let line = self.lines.removeFirst()
+            self.lines.append(TerminalLine())
+            if self.viewer != nil {
+                self.viewer.addScroll(line)
+            }
+            cursor.row = max(cursor.row - 1, 0)
         }
-        self.cursor.row--
+    }
+    
+    func scrollDown(var lines: Int = 1) {
+        while lines-- != 0{
+            self.lines.removeLast()
+            self.lines.insert(TerminalLine(), atIndex: 0)
+            cursor.row = min(cursor.row + 1, rows - 1)
+        }
     }
     
     func setCursor(row: Int = 0, col: Int = 0) {

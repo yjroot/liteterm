@@ -168,4 +168,36 @@ class TerminalCSITests: XCTestCase {
         XCTAssert(terminal[3].string == "")
         XCTAssert(terminal[4].string == "0123456789")
     }
+    
+    // [S
+    func testSU() {
+        terminal.putData("0\r\n1\r\n2\r\n3\r\n4\u{1b}[S")
+        XCTAssert(terminal[0].string == "1")
+        XCTAssert(terminal[4].string == "")
+        terminal.putData("\u{1b}[2S")
+        XCTAssert(terminal[0].string == "3")
+        XCTAssert(terminal[2].string == "")
+        XCTAssert(terminal[3].string == "")
+        XCTAssert(terminal[4].string == "")
+        XCTAssert(terminal.cursor.row == 1)
+        terminal.putData("\u{1b}[5S")
+        XCTAssert(terminal.cursor.row == 0)
+    }
+    
+    // [T
+    func testSD() {
+        terminal.putData("0\r\n1\r\n2\r\n3\r\n4\u{1b}[T")
+        XCTAssert(terminal[0].string == "")
+        XCTAssert(terminal[4].string == "3")
+        terminal.putData("\u{1b}[2;0H")
+        terminal.putData("\u{1b}[2T")
+        XCTAssert(terminal[0].string == "")
+        XCTAssert(terminal[1].string == "")
+        XCTAssert(terminal[2].string == "")
+        XCTAssert(terminal[4].string == "1")
+        XCTAssert(terminal.cursor.row == 3)
+        terminal.putData("\u{1b}[5T")
+        XCTAssert(terminal.cursor.row == 4)
+    }
+    
 }
