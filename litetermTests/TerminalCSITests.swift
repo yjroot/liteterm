@@ -86,20 +86,38 @@ class TerminalCSITests: XCTestCase {
         XCTAssert(terminal.cursor.col == 0)
     }
     
-    // [G
-    func testCHA() {
+    // [G [`
+    func testCHAandHPA() {
+        terminal.putData("\u{1b}[B")
         terminal.putData("\u{1b}[G")
+        XCTAssert(terminal.cursor.row == 1)
+        XCTAssert(terminal.cursor.col == 0)
+        terminal.putData("\u{1b}[1G")
+        XCTAssert(terminal.cursor.row == 1)
+        XCTAssert(terminal.cursor.col == 0)
+        terminal.putData("\u{1b}[5`")
+        XCTAssert(terminal.cursor.row == 1)
+        XCTAssert(terminal.cursor.col == 4)
+        terminal.putData("\u{1b}[3G")
+        XCTAssert(terminal.cursor.row == 1)
+        XCTAssert(terminal.cursor.col == 2)
+    }
+    
+    // [d
+    func testVPA() {
+        terminal.putData("\u{1b}[C")
+        terminal.putData("\u{1b}[d")
         XCTAssert(terminal.cursor.row == 0)
         XCTAssert(terminal.cursor.col == 1)
-        terminal.putData("\u{1b}[1G")
+        terminal.putData("\u{1b}[1d")
         XCTAssert(terminal.cursor.row == 0)
-        XCTAssert(terminal.cursor.col == 2)
-        terminal.putData("\u{1b}[5G")
-        XCTAssert(terminal.cursor.row == 0)
-        XCTAssert(terminal.cursor.col == 7)
-        terminal.putData("\u{1b}[5G")
-        XCTAssert(terminal.cursor.row == 0)
-        XCTAssert(terminal.cursor.col == 9)
+        XCTAssert(terminal.cursor.col == 1)
+        terminal.putData("\u{1b}[5d")
+        XCTAssert(terminal.cursor.row == 4)
+        XCTAssert(terminal.cursor.col == 1)
+        terminal.putData("\u{1b}[3d")
+        XCTAssert(terminal.cursor.row == 2)
+        XCTAssert(terminal.cursor.col == 1)
     }
     
     // [H [f
