@@ -12,6 +12,7 @@ class Terminal {
     var attr: TerminalCharacterAttributes = TerminalCharacterAttributes()
     var lines: [TerminalLine] = []
     var cursor: TerminalPosition = TerminalPosition()
+    var savedCursor: TerminalPosition = TerminalPosition()
     var cols: Int
     var rows: Int
     var viewer: TerminalView!
@@ -95,6 +96,14 @@ class Terminal {
     
     func moveCursor(row: Int = 0, col: Int = 0) {
         self.setCursor(self.cursor.row + row, col: self.cursor.col + col)
+    }
+    
+    func saveCursor() {
+        self.savedCursor = self.cursor
+    }
+    
+    func restoreCursor() {
+        self.setCursor(self.savedCursor.row, col: self.savedCursor.col)
     }
     
     func erase(var begin: TerminalPosition! = nil, var end: TerminalPosition! = nil) {

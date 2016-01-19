@@ -96,6 +96,12 @@ class CSITerminalHandler: TerminalHandler {
         case "T":
             terminal.scrollDown(parameters[0])
             break
+        case "s":
+            terminal.saveCursor()
+            break
+        case "u":
+            terminal.restoreCursor()
+            break
             
         default:
             break

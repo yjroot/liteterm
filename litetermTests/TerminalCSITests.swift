@@ -201,4 +201,19 @@ class TerminalCSITests: XCTestCase {
         XCTAssert(terminal.cursor.row == 4)
     }
     
+    func testSCPandRCP() {
+        terminal.putData("\u{1b}[3;4H")
+        XCTAssert(terminal.cursor.row == 2)
+        XCTAssert(terminal.cursor.col == 3)
+        terminal.putData("\u{1b}[s")
+        XCTAssert(terminal.savedCursor.row == 2)
+        XCTAssert(terminal.savedCursor.col == 3)
+        terminal.putData("\u{1b}[H")
+        XCTAssert(terminal.cursor.row == 0)
+        XCTAssert(terminal.cursor.col == 0)
+        terminal.putData("\u{1b}[u")
+        XCTAssert(terminal.cursor.row == 2)
+        XCTAssert(terminal.cursor.col == 3)
+    }
+
 }
