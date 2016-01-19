@@ -28,10 +28,10 @@ class CSITerminalHandler: TerminalHandler {
         case "A":
             terminal.moveCursor(-parameters[0])
             break
-        case "B":
+        case "B", "e":
             terminal.moveCursor(parameters[0])
             break
-        case "C":
+        case "C", "a":
             terminal.moveCursor(0, col: parameters[0])
             break
         case "D":

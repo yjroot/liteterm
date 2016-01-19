@@ -38,23 +38,23 @@ class TerminalCSITests: XCTestCase {
         XCTAssert(terminal.cursor.row == 0)
     }
     
-    // [B
-    func testCUD() {
+    // [B [e
+    func testCUDandVPR() {
         terminal.putData("\u{1b}[B")
         XCTAssert(terminal.cursor.row == 1)
         terminal.putData("\u{1b}[1B")
         XCTAssert(terminal.cursor.row == 2)
-        terminal.putData("\u{1b}[3B")
+        terminal.putData("\u{1b}[3e")
         XCTAssert(terminal.cursor.row == 4)
         terminal.putData("\u{1b}[B")
         XCTAssert(terminal.cursor.row == 4)
     }
     
-    // [C
-    func testCUF() {
+    // [C [a
+    func testCUFandHPR() {
         terminal.putData("\u{1b}[C")
         XCTAssert(terminal.cursor.col == 1)
-        terminal.putData("\u{1b}[1C")
+        terminal.putData("\u{1b}[1a")
         XCTAssert(terminal.cursor.col == 2)
         terminal.putData("\u{1b}[30C")
         XCTAssert(terminal.cursor.col == 9)
