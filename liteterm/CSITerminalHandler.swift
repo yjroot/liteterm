@@ -46,7 +46,7 @@ class CSITerminalHandler: TerminalHandler {
         case "G":
             self.terminal.moveCursor(0, col: parameters[0])
             break
-        case "H":
+        case "H", "f":
             self.terminal.setCursor(parameters[0] - 1, col: parameters[1] - 1)
             break
         case "J":

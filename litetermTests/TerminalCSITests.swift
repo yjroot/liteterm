@@ -102,18 +102,18 @@ class TerminalCSITests: XCTestCase {
         XCTAssert(terminal.cursor.col == 9)
     }
     
-    // [H
-    func testCUP() {
+    // [H [f
+    func testCUPandHVP() {
         terminal.putData("\u{1b}[2;3H")
         XCTAssert(terminal.cursor.row == 1)
         XCTAssert(terminal.cursor.col == 2)
-        terminal.putData("\u{1b}[H")
+        terminal.putData("\u{1b}[f")
         XCTAssert(terminal.cursor.row == 0)
         XCTAssert(terminal.cursor.col == 0)
         terminal.putData("\u{1b}[100;100H")
         XCTAssert(terminal.cursor.row == 4)
         XCTAssert(terminal.cursor.col == 9)
-        terminal.putData("\u{1b}[0;0H")
+        terminal.putData("\u{1b}[0;0f")
         XCTAssert(terminal.cursor.row == 0)
         XCTAssert(terminal.cursor.col == 0)
     }
