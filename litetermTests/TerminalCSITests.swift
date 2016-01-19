@@ -17,6 +17,7 @@ class TerminalCSITests: XCTestCase {
     }
     
     override func tearDown() {
+        XCTAssert(terminal.lines.count <= 5)
         self.terminal = nil
         super.tearDown()
     }
