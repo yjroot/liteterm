@@ -99,6 +99,27 @@ class CSITerminalHandler: TerminalHandler {
         case "M":
             terminal.scrollRange(-parameters[0], top: terminal.cursor.row, bottom: terminal.scrollBottom)
             break
+        case "@":
+            let line = terminal[terminal.cursor.row]
+            if line.chars.count <= terminal.cursor.col {
+                break
+            }
+            line.erase(max(terminal.cols - parameters[0], terminal.cursor.col))
+            if terminal.cursor.col + parameters[0] < terminal.cols {
+                for _ in 0..<parameters[0] {
+                    line.chars.insert(TerminalCharacter(), atIndex: terminal.cursor.col)
+                }
+            }
+            break
+        case "P":
+            let line = terminal[terminal.cursor.row]
+            for _ in 0..<parameters[0] {
+                if line.chars.count <= terminal.cursor.col {
+                    break
+                }
+                line.chars.removeAtIndex(terminal.cursor.col)
+            }
+            break
         case "S":
             terminal.scrollUp(parameters[0])
             break

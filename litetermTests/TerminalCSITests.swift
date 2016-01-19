@@ -17,7 +17,10 @@ class TerminalCSITests: XCTestCase {
     }
     
     override func tearDown() {
-        XCTAssert(terminal.lines.count <= 5)
+        for line in 0...4 {
+            XCTAssert(terminal[line].chars.count <= 10)
+        }
+        XCTAssert(terminal.lines.count == 5)
         self.terminal = nil
         super.tearDown()
     }
@@ -257,6 +260,7 @@ class TerminalCSITests: XCTestCase {
         XCTAssert(terminal.cursor.row == 4)
     }
     
+    // [s [u
     func testSCPandRCP() {
         terminal.putData("\u{1b}[3;4H")
         XCTAssert(terminal.cursor.row == 2)
@@ -270,6 +274,25 @@ class TerminalCSITests: XCTestCase {
         terminal.putData("\u{1b}[u")
         XCTAssert(terminal.cursor.row == 2)
         XCTAssert(terminal.cursor.col == 3)
+    }
+    
+    // [@ [P
+    func testICHandDCH() {
+        for _ in 0...4 {
+            terminal.putData("0123456789")
+        }
+        terminal.putData("\u{1b}[1;6H")
+        terminal.putData("\u{1b}[@")
+        XCTAssert(terminal[0].string == "01234 5678")
+        terminal.putData("\u{1b}[B")
+        terminal.putData("\u{1b}[2@")
+        XCTAssert(terminal[1].string == "01234  567")
+        terminal.putData("\u{1b}[B")
+        terminal.putData("\u{1b}[P")
+        XCTAssert(terminal[2].string == "012346789")
+        terminal.putData("\u{1b}[B")
+        terminal.putData("\u{1b}[2P")
+        XCTAssert(terminal[3].string == "01234789")
     }
 
 }

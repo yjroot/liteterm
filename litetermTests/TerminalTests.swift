@@ -53,6 +53,9 @@ class TerminalTests: XCTestCase {
         terminal.erase(end: TerminalPosition(row: 1, col:5))
         XCTAssert(terminal[0].string == "")
         XCTAssert(terminal[1].string == "      6789")
+        
+        terminal.erase(TerminalPosition(row: 1, col:9))
+        XCTAssert(terminal[1].string == "      678")
     }
 
     func testInputText() {
