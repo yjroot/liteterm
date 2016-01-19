@@ -52,6 +52,9 @@ class ControlCharacterTerminalHandler: TerminalHandler {
     }
     
     func newline() {
+        if terminal.cursor.row == terminal.scrollBottom {
+            self.terminal.scrollUp()
+        }
         self.terminal.cursor.row++
     }
     

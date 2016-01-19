@@ -93,6 +93,12 @@ class CSITerminalHandler: TerminalHandler {
                 break
             }
             break
+        case "L":
+            terminal.scrollRange(parameters[0], top: terminal.cursor.row, bottom: terminal.scrollBottom)
+            break
+        case "M":
+            terminal.scrollRange(-parameters[0], top: terminal.cursor.row, bottom: terminal.scrollBottom)
+            break
         case "S":
             terminal.scrollUp(parameters[0])
             break

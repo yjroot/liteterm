@@ -16,10 +16,17 @@ class Terminal {
     var cols: Int
     var rows: Int
     var viewer: TerminalView!
+    var scrollTop: Int
+    var scrollBottom: Int
     
     init(cols: Int, rows: Int) {
         self.cols = cols
         self.rows = rows
+        for _ in 0..<rows {
+            self.lines.append(TerminalLine())
+        }
+        scrollTop = 0
+        scrollBottom = rows - 1
         let defaultHandlers = TerminalHandlerList()
         defaultHandlers.add(InsertTerminalHandler(terminal: self))
         defaultHandlers.add(ControlCharacterTerminalHandler(terminal: self))
@@ -28,9 +35,6 @@ class Terminal {
     
     subscript(key: Int) -> TerminalLine {
         get {
-            while self.lines.count <= key {
-                self.lines.append(TerminalLine())
-            }
             return self.lines[key]
         }
     }
@@ -42,9 +46,6 @@ class Terminal {
             self.handler.putData(data)
         } else {
             self.defaultHandler.putData(data)
-        }
-        while self.rows <= self.cursor.row {
-            self.scrollUp()
         }
     }
     
@@ -58,23 +59,44 @@ class Terminal {
         self.putData(Array(data.characters))
     }
     
-    func scrollUp(var lines: Int = 1) {
-        while lines-- != 0 {
-            let line = self.lines.removeFirst()
-            self.lines.append(TerminalLine())
-            if self.viewer != nil {
+    func scrollRange(var lines: Int, var top: Int! = nil, var bottom: Int! = nil) {
+        top = max(0, top ?? 0)
+        bottom = min(self.rows - 1, bottom ?? self.rows - 1)
+        if top > bottom {
+            return
+        }
+        
+        lines = min(lines, bottom - top + 1)
+        lines = max(lines, -(bottom - top + 1))
+        
+        while 0 < lines {
+            self.lines.removeAtIndex(bottom)
+            self.lines.insert(TerminalLine(), atIndex: top)
+            if (top..<bottom).contains(cursor.row) {
+                cursor.row++
+            }
+            lines--
+        }
+        
+        while lines < 0 {
+            let line = self.lines.removeAtIndex(top)
+            self.lines.insert(TerminalLine(), atIndex: bottom)
+            if top == 0 && self.viewer != nil {
                 self.viewer.addScroll(line)
             }
-            cursor.row = max(cursor.row - 1, 0)
+            if ((top + 1)...bottom).contains(cursor.row) {
+                cursor.row--
+            }
+            lines++
         }
     }
     
-    func scrollDown(var lines: Int = 1) {
-        while lines-- != 0{
-            self.lines.removeLast()
-            self.lines.insert(TerminalLine(), atIndex: 0)
-            cursor.row = min(cursor.row + 1, rows - 1)
-        }
+    func scrollUp(lines: Int = 1) {
+        self.scrollRange(-lines, top: self.scrollTop, bottom: self.scrollBottom)
+    }
+    
+    func scrollDown(lines: Int = 1) {
+        self.scrollRange(lines, top: self.scrollTop, bottom: self.scrollBottom)
     }
     
     func setCursor(row: Int = 0, col: Int = 0) {
