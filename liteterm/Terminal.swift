@@ -107,12 +107,8 @@ class Terminal {
     }
     
     func erase(var begin: TerminalPosition! = nil, var end: TerminalPosition! = nil) {
-        if begin == nil {
-            begin = TerminalPosition(row: 0, col: 0)
-        }
-        if end == nil {
-            end = TerminalPosition(row: self.rows - 1, col: self.cols)
-        }
+        begin = begin ?? TerminalPosition(row: 0, col: 0)
+        end = end ?? TerminalPosition(row: self.rows - 1, col: self.cols)
         
         var beginLine = begin.row
         var endLine = end.row
