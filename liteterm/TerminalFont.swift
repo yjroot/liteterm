@@ -15,7 +15,7 @@ class TerminalFont {
     
     init() {
         NSFontManager.sharedFontManager().availableFontFamilies
-        font = NSFont.systemFontOfSize(18.0)
+        font = NSFont.systemFontOfSize(15.0)
     }
     
     var glyphs: [CGGlyph] = []
@@ -39,8 +39,14 @@ class TerminalFont {
     
     func draw(context: CGContext, color: CGColor) {
         let glyphsArray: Array<CGGlyph> = Array<CGGlyph>(self.glyphs)
-        let positionsArray: Array<CGPoint> = Array<CGPoint>(self.positions)
+        var positionsArray: Array<CGPoint> = Array<CGPoint>(self.positions)
+        let advancesArray: UnsafeMutablePointer<CGSize> = UnsafeMutablePointer<CGSize>.alloc(glyphsArray.count)
         
+        CTFontGetAdvancesForGlyphs(self.font, CTFontOrientation.Default, glyphsArray, advancesArray, glyphsArray.count)
+        for i in 0..<glyphsArray.count {
+            positionsArray[i].x += (self.width - advancesArray[i].width) / 2
+        }
+        advancesArray.dealloc(glyphsArray.count)
         CGContextSetFillColorWithColor(context, color);
         CTFontDrawGlyphs(self.font, glyphsArray, positionsArray, glyphs.count, context);
         
