@@ -14,19 +14,39 @@ class Terminal {
     var cursor: TerminalPosition = TerminalPosition()
     var savedCursor: TerminalPosition = TerminalPosition()
     var cols: Int
-    var rows: Int
+    var _rows: Int = 0
+    var rows: Int {
+        set(rows) {
+            while lines.count < rows {
+                self.lines.append(TerminalLine())
+            }
+            while rows < lines.count {
+                if self.lines.last!.chars.count == 0 {
+                    self.lines.removeLast()
+                } else {
+                    let line = self.lines.removeFirst()
+                    if self.viewer != nil {
+                        self.viewer.addScroll(line)
+                    }
+                }
+            }
+            scrollTop = 0
+            scrollBottom = rows - 1
+            self._rows = rows
+        }
+        get {
+            return self._rows
+        }
+    }
     var viewer: TerminalView!
     var scrollTop: Int
     var scrollBottom: Int
     
     init(cols: Int, rows: Int) {
+        self.scrollTop = 0
+        self.scrollBottom = rows - 1
         self.cols = cols
         self.rows = rows
-        for _ in 0..<rows {
-            self.lines.append(TerminalLine())
-        }
-        scrollTop = 0
-        scrollBottom = rows - 1
         let defaultHandlers = TerminalHandlerList()
         defaultHandlers.add(InsertTerminalHandler(terminal: self))
         defaultHandlers.add(ControlCharacterTerminalHandler(terminal: self))
@@ -35,6 +55,9 @@ class Terminal {
     
     subscript(key: Int) -> TerminalLine {
         get {
+            if self.lines.count <= key {
+                return TerminalLine()
+            }
             return self.lines[key]
         }
     }
@@ -149,6 +172,12 @@ class Terminal {
         }
         for row in beginLine ... min(endLine, self.lines.count - 1) {
             self.lines[row] = TerminalLine()
+        }
+    }
+    
+    func updateText(position: TerminalPosition, length: Int = 1) {
+        if self.viewer != nil {
+            self.viewer.updateText(position, length: length)
         }
     }
 }

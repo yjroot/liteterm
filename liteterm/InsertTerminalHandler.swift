@@ -18,7 +18,7 @@ class InsertTerminalHandler: TerminalHandler {
         if data.unicode < 32 {
             return false
         }
-        let char = TerminalCharacter(chars: [data], attr: self.terminal.attr)
+        let char = TerminalCharacter(chars: data, attr: self.terminal.attr)
         insertChar(char)
         return true
     }
@@ -30,6 +30,7 @@ class InsertTerminalHandler: TerminalHandler {
             cursor.row++
         }
         self.terminal[cursor.row][cursor.col] = char
+        self.terminal.updateText(cursor, length: char.wcwidth)
         cursor.col += char.wcwidth
         self.terminal.cursor = cursor
     }

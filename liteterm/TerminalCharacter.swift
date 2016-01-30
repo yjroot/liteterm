@@ -9,7 +9,7 @@
 import Foundation
 
 struct TerminalCharacter {
-    var chars: [Character] = []
+    var chars: Character!
     var attr: TerminalCharacterAttributes = TerminalCharacterAttributes()
     var wcwidth: Int {
         get {
@@ -17,13 +17,13 @@ struct TerminalCharacter {
         }
     }
     
-    init(chars: [Character] = [], attr: TerminalCharacterAttributes = TerminalCharacterAttributes()) {
+    init(chars: Character! = nil, attr: TerminalCharacterAttributes = TerminalCharacterAttributes()) {
         self.chars = chars
         self.attr = attr
     }
     
     var string: String {
-        if chars.count == 0 {
+        if chars == nil {
             return " "
         }
         return String(self.chars)

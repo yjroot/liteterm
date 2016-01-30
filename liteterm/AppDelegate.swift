@@ -21,7 +21,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.view.addSubview(terminalView)
         view.autoresizesSubviews = true
         terminalView.autoresizingMask = NSAutoresizingMaskOptions([.ViewHeightSizable, .ViewWidthSizable])
-        terminalView.updateText("test", attr: [], x: 0, y: 0)
+        terminalView.terminal = Terminal(cols: 80, rows: 24)
+        terminalView.terminal.putData("Hello liteterm!")
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
