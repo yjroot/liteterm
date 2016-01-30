@@ -122,7 +122,8 @@ class TerminalView: NSView {
     }
     
     func updateText(position: TerminalPosition, length: Int = 1) {
-        let rect = CGRect(x: font.width * (CGFloat(position.col) - 0.5) + padding.x, y: frame.height - ((font.height * CGFloat(position.row + 1) - 0.5) + padding.y), width: font.width * CGFloat(length + 1), height: font.height * 2)
+        let rect = CGRect(x: Int(font.width * (CGFloat(position.col) - 0.5) + padding.x), y: Int(frame.height - (font.height * (CGFloat(position.row + 1) + 0.5) + padding.y)), width: Int(font.width * CGFloat(length + 1)), height: Int(font.height * 2))
+        
         self.displayRect(rect)
     }
     
