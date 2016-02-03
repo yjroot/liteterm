@@ -32,7 +32,7 @@ class InsertTerminalHandler: TerminalHandler {
         self.terminal[cursor.row][cursor.col] = char
         self.terminal.updateText(cursor, length: char.wcwidth)
         cursor.col += char.wcwidth
-        self.terminal.cursor = cursor
+        self.terminal.setCursor(cursor)
     }
 }
 

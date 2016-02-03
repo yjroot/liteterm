@@ -40,26 +40,28 @@ class ControlCharacterTerminalHandler: TerminalHandler {
     }
     
     func backspace() {
-        self.terminal.cursor.col--
-        if self.terminal.cursor.col < 0 {
-            self.terminal.cursor.col += self.terminal.cols
-            self.terminal.cursor.row--
+        var cursor = self.terminal.cursor
+        cursor.col--
+        if cursor.col < 0 {
+            cursor.col += self.terminal.cols
+            cursor.row--
         }
-        if self.terminal.cursor.row < 0 {
-            self.terminal.cursor.row = 0
-            self.terminal.cursor.col = 0
+        if cursor.row < 0 {
+            cursor.row = 0
+            cursor.col = 0
         }
+        self.terminal.setCursor(cursor)
     }
     
     func newline() {
         if terminal.cursor.row == terminal.scrollBottom {
             self.terminal.scrollUp()
         }
-        self.terminal.cursor.row++
+        self.terminal.moveCursor(1)
     }
     
     func carriagereturn() {
-        self.terminal.cursor.col = 0
+        self.terminal.setCursor(self.terminal.cursor.row, col: 0)
     }
     
     func escape() {

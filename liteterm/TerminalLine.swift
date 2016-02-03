@@ -31,6 +31,10 @@ class TerminalLine {
         }
     }
     
+    var count: Int {
+        return self.chars.count
+    }
+    
     var string: String {
         get {
             return self.chars.map({ (char) -> String in

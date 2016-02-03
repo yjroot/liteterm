@@ -14,6 +14,19 @@ struct TerminalCharacterAttributes {
     
     var style: Int8 = 0
     
+    init(textColor: Int8 = 0, backgroundColor: Int8 = 1, bold: Bool = false,
+        underline: Bool = false, blink: Bool = false, reverse: Bool = false,
+        invis: Bool = false, wide: Bool = false) {
+            self.textColor = textColor
+            self.backgroundColor = backgroundColor
+            
+            self.bold = bold
+            self.blink = blink
+            self.reverse = reverse
+            self.invis = invis
+            self.wide = wide
+    }
+    
     let boldBit = Int8(1 << 0)        // 1
     let underlineBit = Int8(1 << 1)   // 4
     let blinkBit = Int8(1 << 2)       // 5

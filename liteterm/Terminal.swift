@@ -54,12 +54,14 @@ class Terminal {
     }
     
     subscript(key: Int) -> TerminalLine {
-        get {
-            if self.lines.count <= key {
-                return TerminalLine()
-            }
-            return self.lines[key]
+        if self.lines.count <= key {
+            return TerminalLine()
         }
+        return self.lines[key]
+    }
+    
+    subscript(position: TerminalPosition) -> TerminalCharacter {
+        return self[position.row][position.col]
     }
     
     var handler: TerminalHandler!
@@ -122,21 +124,26 @@ class Terminal {
         self.scrollRange(lines, top: self.scrollTop, bottom: self.scrollBottom)
     }
     
+    func setCursor(var cursor: TerminalPosition) {
+        if cursor.row < 0 {
+            cursor.row = 0
+        } else if self.rows <= cursor.row {
+            cursor.row = self.rows - 1
+        }
+        
+        if cursor.col < 0 {
+            cursor.col = 0
+        } else if self.cols <= cursor.col {
+            cursor.col = self.cols - 1
+        }
+        self.cursor = cursor
+        if viewer != nil {
+            viewer.updateCursor()
+        }
+    }
+    
     func setCursor(row: Int = 0, col: Int = 0) {
-        self.cursor.row = row
-        self.cursor.col = col
-
-        if self.cursor.row < 0 {
-            self.cursor.row = 0
-        } else if self.rows <= self.cursor.row {
-            self.cursor.row = self.rows - 1
-        }
-
-        if self.cursor.col < 0 {
-            self.cursor.col = 0
-        } else if self.cols <= self.cursor.col {
-            self.cursor.col = self.cols - 1
-        }
+        setCursor(TerminalPosition(row: row, col: col))
     }
     
     func moveCursor(row: Int = 0, col: Int = 0) {

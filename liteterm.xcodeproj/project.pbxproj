@@ -99,6 +99,8 @@
 		BCD4B39F1BCA70B7002AD52C /* SessionProfileListWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD4B39D1BCA70B7002AD52C /* SessionProfileListWindow.xib */; };
 		BCD4B3A31BCD1F0F002AD52C /* ManagerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD4B3A21BCD1F0F002AD52C /* ManagerListView.swift */; };
 		BCD4B3A51BCD3940002AD52C /* ProfileListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD4B3A41BCD3940002AD52C /* ProfileListView.swift */; };
+		BCE5DE031C60F29600872CBD /* TerminalCursorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DE021C60F29600872CBD /* TerminalCursorView.swift */; };
+		BCE5DE041C60F29600872CBD /* TerminalCursorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5DE021C60F29600872CBD /* TerminalCursorView.swift */; };
 		BCE772E51BDCB60F00EBBDAD /* GroupListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1742FC1BDBBBFA0089DEF0 /* GroupListView.swift */; };
 		BCE772E71BE250E700EBBDAD /* ProfileCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE772E61BE250E700EBBDAD /* ProfileCellView.swift */; };
 		FAC1E2061BAC320A000CA886 /* LTTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1E2041BAC320A000CA886 /* LTTabViewController.swift */; };
@@ -183,6 +185,7 @@
 		BCD4B39D1BCA70B7002AD52C /* SessionProfileListWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SessionProfileListWindow.xib; path = liteterm/SessionProfileListWindow.xib; sourceTree = "<group>"; };
 		BCD4B3A21BCD1F0F002AD52C /* ManagerListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManagerListView.swift; path = liteterm/ManagerListView.swift; sourceTree = "<group>"; };
 		BCD4B3A41BCD3940002AD52C /* ProfileListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileListView.swift; path = liteterm/ProfileListView.swift; sourceTree = "<group>"; };
+		BCE5DE021C60F29600872CBD /* TerminalCursorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TerminalCursorView.swift; path = liteterm/TerminalCursorView.swift; sourceTree = "<group>"; };
 		BCE772E61BE250E700EBBDAD /* ProfileCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileCellView.swift; path = liteterm/ProfileCellView.swift; sourceTree = "<group>"; };
 		FAC1E2041BAC320A000CA886 /* LTTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTTabViewController.swift; sourceTree = "<group>"; };
 		FAC1E2051BAC320A000CA886 /* LTTabViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LTTabViewController.xib; sourceTree = "<group>"; };
@@ -299,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				BC06C4D31B3427D200CA6D44 /* TerminalView.swift */,
+				BCE5DE021C60F29600872CBD /* TerminalCursorView.swift */,
 				BC141B901C58EA06004723BB /* TerminalFont.swift */,
 			);
 			name = "Terminal View";
@@ -579,6 +583,7 @@
 				BC0F90A11C32BFD30004D2B7 /* TerminalCharacter.swift in Sources */,
 				BCD4B39E1BCA70B7002AD52C /* SessionProfileListWindowController.swift in Sources */,
 				BC1726071C3638E500F9D9A6 /* ControlCharacterTerminalHandler.swift in Sources */,
+				BCE5DE031C60F29600872CBD /* TerminalCursorView.swift in Sources */,
 				BC1726041C36386D00F9D9A6 /* OSCTerminalHandler.swift in Sources */,
 				BCAE49851B8F3BC6008D8CBA /* SWXMLHash.swift in Sources */,
 				BC1725FE1C3635D000F9D9A6 /* EscapeSequenceTerminalHandler.swift in Sources */,
@@ -625,6 +630,7 @@
 				BC56D4281BA099A6009AA7AB /* DefaultProfileTests.swift in Sources */,
 				BC56D4261BA08BB9009AA7AB /* DefaultProfile.swift in Sources */,
 				BCE772E51BDCB60F00EBBDAD /* GroupListView.swift in Sources */,
+				BCE5DE041C60F29600872CBD /* TerminalCursorView.swift in Sources */,
 				BC1742FB1BDBA4120089DEF0 /* BaseProfileManager.swift in Sources */,
 				BC0F90A21C32BFD30004D2B7 /* TerminalCharacter.swift in Sources */,
 				BC40BCEB1B663D3F007D9FF9 /* SessionProfileManagerTests.swift in Sources */,
