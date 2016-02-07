@@ -9,6 +9,16 @@
 import Cocoa
 
 class TerminalView: NSView {
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+    override init(frame frameRect: NSRect) {
+        super.init(frame: frameRect)
+        cursorView = TerminalCursorView(terminal: self)
+        addSubview(cursorView)
+    }
+    
     var _terminal: Terminal!
     var terminal: Terminal! {
         get {
@@ -34,19 +44,10 @@ class TerminalView: NSView {
         return max(Int(self.frame.width / font.width), 1)
     }
     
-    override init(frame frameRect: NSRect) {
-        super.init(frame: frameRect)
-        addSubview(cursorView)
-        self.markedText = nil
-    }
-    var cursorView: TerminalCursorView! = TerminalCursorView()
+    var cursorView: TerminalCursorView!
     
     override var acceptsFirstResponder: Bool {
         return true
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
     }
     
     override func acceptsFirstMouse(theEvent: NSEvent?) -> Bool {
@@ -137,15 +138,41 @@ class TerminalView: NSView {
         self.displayRect(rect)
     }
     
-    func updateCursor() {
+    func updateCursor(markedText: NSAttributedString!, position: TerminalPosition) {
+        if cursorView == nil {
+            return
+        }
+        
+        let attributes: TerminalCharacterAttributes = TerminalCharacterAttributes()
+        
+        let string: String
+        if markedText != nil {
+            string = markedText.string
+        } else {
+            string = " "
+        }
+        
+        let characters = string.characters
+        cursorView.text.erase()
+        for char in characters {
+            let terminalCharacter = TerminalCharacter(chars: char, attr: attributes)
+            cursorView.text.chars.append(terminalCharacter)
+
+            for _ in 1..<terminalCharacter.wcwidth {
+                cursorView.text.chars.append(TerminalCharacter())
+            }
+        }
+        
         var cursorDrawPosition = TerminalPosition()
         if terminal != nil {
             cursorDrawPosition = terminal.cursor
         }
-        if self.cols <= cursorDrawPosition.col + cursorLine.count {
-            cursorDrawPosition.col = self.cols - cursorLine.count
+        if self.cols <= cursorDrawPosition.col + cursorView.text.count {
+            cursorDrawPosition.col = self.cols - cursorView.text.count
         }
-        self.cursorView.frame = termPositionToRect(cursorDrawPosition, length: cursorLine.count)
+        
+        self.cursorView.frame = termPositionToRect(cursorDrawPosition, length: cursorView.text.count)
+        self.cursorView.display()
     }
     
     override func keyDown(theEvent: NSEvent) {
@@ -158,33 +185,8 @@ class TerminalView: NSView {
     func addScroll(line: TerminalLine) {
     }
     
-    var cursorLine:TerminalLine = TerminalLine()
-    var markedText: NSAttributedString! {
-        get {
-            return self._markedText
-        }
-        set (markedText) {
-            self._markedText = markedText
-            let attributes: TerminalCharacterAttributes = TerminalCharacterAttributes()
-            
-            if markedText == nil {
-                self.cursorLine.erase()
-                self.cursorLine[0] = TerminalCharacter(chars: nil, attr: attributes)
-                self.updateCursor()
-                return
-            }
-            
-            let chars = markedText.string.characters.map { (char) -> TerminalCharacter in
-                return TerminalCharacter(chars: char, attr: attributes)
-            }
-            self.cursorLine.chars = chars
-            self.updateCursor()
-        }
-    }
-    var _markedText: NSAttributedString!
     var _selectedRange: NSRange = NSRange(location: 0,length: 0)
     var _markedRange: NSRange = NSRange(location: NSNotFound, length: 0)
-    
     override func deleteBackward(sender: AnyObject?) {
     }
     
@@ -198,7 +200,7 @@ extension TerminalView: NSTextInputClient {
             terminal.putData(aString as! String)
         }
         self._markedRange = replacementRange
-        self.markedText = nil
+        self.updateCursor(nil, position: terminal.cursor)
     }
     
     func setMarkedText(aString: AnyObject, selectedRange: NSRange, replacementRange: NSRange) {
@@ -206,9 +208,11 @@ extension TerminalView: NSTextInputClient {
         self._markedRange = replacementRange
         
         if let attributedString = aString as? NSAttributedString {
-            self.markedText = attributedString
+            self.updateCursor(attributedString, position: terminal.cursor)
         } else if let string = aString as? NSString {
-            self.markedText = NSAttributedString(string: string as String)
+            self.updateCursor(NSAttributedString(string: string as String), position: terminal.cursor)
+        } else {
+            self.updateCursor(nil, position: terminal.cursor)
         }
     }
     

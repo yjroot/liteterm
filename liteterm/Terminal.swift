@@ -138,7 +138,7 @@ class Terminal {
         }
         self.cursor = cursor
         if viewer != nil {
-            viewer.updateCursor()
+            viewer.updateCursor(nil, position: self.cursor)
         }
     }
     
