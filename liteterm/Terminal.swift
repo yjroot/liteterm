@@ -133,7 +133,7 @@ class Terminal {
         
         if cursor.col < 0 {
             cursor.col = 0
-        } else if self.cols <= cursor.col {
+        } else if self.cols < cursor.col {
             cursor.col = self.cols - 1
         }
         self.cursor = cursor
