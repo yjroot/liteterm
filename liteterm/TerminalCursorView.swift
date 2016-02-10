@@ -23,7 +23,7 @@ class TerminalCursorView: NSView {
     }
     
     override func drawRect(dirtyRect: NSRect) {
-        let textColor = NSColor.whiteColor()
+        let textColor = RGBColor(red: UInt16.max, green: UInt16.max, blue: UInt16.max)
         let backgroundColor = NSColor.greenColor()
         
         let context = NSGraphicsContext.currentContext()!
@@ -37,10 +37,10 @@ class TerminalCursorView: NSView {
             let char = self.text[i]
             
             if char.chars != nil {
-                terminal.font.addChar(char.chars, position: rect.origin)
+                terminal.font.drawChar(char.chars, position: rect.origin, color: textColor, context: currentContext)
             }
         }
-        self.terminal.font.draw(currentContext, color: textColor.CGColor)
+        self.terminal.font.flush()
         
         context.restoreGraphicsState()
     }

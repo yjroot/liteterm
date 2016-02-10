@@ -11,6 +11,7 @@ import Foundation
 class Terminal {
     var attr: TerminalCharacterAttributes = TerminalCharacterAttributes()
     var lines: [TerminalLine] = []
+    var palette: TerminalColorPalette = TerminalColorPalette()
     var cursor: TerminalPosition = TerminalPosition()
     var savedCursor: TerminalPosition = TerminalPosition()
     var cols: Int

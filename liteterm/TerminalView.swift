@@ -96,17 +96,20 @@ class TerminalView: NSView {
     }
     
     func _drawChar(char: TerminalCharacter, position: TerminalPosition) {
-        let rect = CGRect(origin: termPositionToPoint(position), size: CGSize(width: font.width, height: font.height))
+        let rect = termPositionToRect(position, length: char.wcwidth)
+        let textColor = terminal.palette[char.attr.textColor]
         
-        let backgroundColor = NSColor.blackColor()
-        //backgroundColor = NSColor(red: CGFloat(arc4random()%100)/100, green: CGFloat(arc4random()%100)/100, blue: CGFloat(arc4random()%100)/100, alpha: 0.5)
+        if char.chars != nil {
+            self.font.drawChar(char.chars, position: rect.origin, color: textColor, context: currentContext)
+        }
+    }
+    
+    func _drawBackground(char: TerminalCharacter, position: TerminalPosition) {
+        let rect = termPositionToRect(position, length: char.wcwidth)
+        let backgroundColor = terminal.palette[char.attr.backgroundColor]
         
         CGContextSetFillColorWithColor(currentContext, backgroundColor.CGColor)
         CGContextFillRect(currentContext, rect)
-        
-        if char.chars != nil {
-            self.font.addChar(char.chars, position: rect.origin)
-        }
     }
     
     var currentContext: CGContext!
@@ -118,15 +121,24 @@ class TerminalView: NSView {
         CGContextSetFillColorWithColor(context.CGContext, NSColor.blackColor().CGColor)
         CGContextFillRect(context.CGContext, dirtyRect)
         
-        let begin = pointToTermPosition(CGPoint(x: dirtyRect.origin.x, y: dirtyRect.origin.y + dirtyRect.height))
-        let end = pointToTermPosition(CGPoint(x: dirtyRect.origin.x + dirtyRect.width, y: dirtyRect.origin.y))
+        let begin = pointToTermPosition(CGPoint(x: dirtyRect.origin.x - 0.1, y: dirtyRect.origin.y + dirtyRect.height + 0.1))
+        let end = pointToTermPosition(CGPoint(x: dirtyRect.origin.x + dirtyRect.width + 0.1, y: dirtyRect.origin.y - 0.1))
         
         if self.terminal != nil {
             for position in begin...end {
+                self._drawBackground(self.terminal[position], position: position)
+            }
+            for position in begin...end {
                 self._drawChar(self.terminal[position], position: position)
             }
-            self.font.draw(currentContext, color: NSColor.whiteColor().CGColor)
+            self.font.flush()
         }
+        
+        /*if debugmode {
+            let color = NSColor(red: CGFloat(arc4random()%100)/100, green: CGFloat(arc4random()%100)/100, blue: CGFloat(arc4random()%100)/100, alpha: 0.5)
+            CGContextSetFillColorWithColor(context.CGContext, color.CGColor)
+            CGContextFillRect(context.CGContext, dirtyRect)
+        }*/
         
         currentContext = nil
         context.restoreGraphicsState()
@@ -246,5 +258,11 @@ extension TerminalView: NSTextInputClient {
     
     func characterIndexForPoint(aPoint: NSPoint) -> Int {
         return 0
+    }
+}
+
+extension RGBColor {
+    var CGColor: CGColorRef {
+        return NSColor(red: CGFloat(red) / 65535.0, green: CGFloat(green) / 65535.0, blue: CGFloat(blue) / 65535.0, alpha: 1.0).CGColor
     }
 }

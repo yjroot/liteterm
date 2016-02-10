@@ -20,16 +20,26 @@ class TerminalFont {
     
     var glyphs: [CGGlyph] = []
     var positions: [CGPoint] = []
-    func addChar(char: Character, position: CGPoint) -> Bool {
+    var context: CGContextRef!
+    var color: RGBColor!
+    
+    func drawChar(char: Character, position: CGPoint, color: RGBColor, context: CGContextRef) -> Bool {
+        if self.context != nil && color != self.color {
+            flush()
+        }
+        self.context = context
+        self.color = color
         let charArray: Array<UniChar> = Array<UniChar>(String(char).utf16)
         let glyphArray: UnsafeMutablePointer<CGGlyph> = UnsafeMutablePointer<CGGlyph>.alloc(charArray.count)
         if !CTFontGetGlyphsForCharacters(self.font, charArray, glyphArray, charArray.count) {
+            self.flush()
             return false
         }
         
         let glyph = glyphArray[0]
         glyphArray.dealloc(charArray.count)
         if glyph == 0 {
+            self.flush()
             return false
         }
         glyphs.append(glyph)
@@ -37,7 +47,11 @@ class TerminalFont {
         return true
     }
     
-    func draw(context: CGContext, color: CGColor) {
+    func flush() {
+        if context == nil || color == nil || self.glyphs.count == 0{
+            return
+        }
+        
         let glyphsArray: Array<CGGlyph> = Array<CGGlyph>(self.glyphs)
         var positionsArray: Array<CGPoint> = Array<CGPoint>(self.positions)
         let advancesArray: UnsafeMutablePointer<CGSize> = UnsafeMutablePointer<CGSize>.alloc(glyphsArray.count)
@@ -47,10 +61,24 @@ class TerminalFont {
             positionsArray[i].x += (self.width - advancesArray[i].width) / 2
         }
         advancesArray.dealloc(glyphsArray.count)
-        CGContextSetFillColorWithColor(context, color);
+        CGContextSetFillColorWithColor(context, color.CGColor);
         CTFontDrawGlyphs(self.font, glyphsArray, positionsArray, glyphs.count, context);
         
+        reset()
+    }
+    
+    func reset() {
         glyphs = []
         positions = []
+        context = nil
+        color = nil
     }
+}
+
+func ==(left: RGBColor, right: RGBColor) -> Bool {
+    return left.red == right.red && left.green == right.green && left.blue == right.blue
+}
+
+func !=(left: RGBColor, right: RGBColor) -> Bool {
+    return !(left == right)
 }

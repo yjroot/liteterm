@@ -9,12 +9,12 @@
 import Foundation
 
 struct TerminalCharacterAttributes {
-    var textColor: Int8 = 0
-    var backgroundColor: Int8 = 0
+    var textColor: UInt8 = 0
+    var backgroundColor: UInt8 = 0
     
     var style: Int8 = 0
     
-    init(textColor: Int8 = 0, backgroundColor: Int8 = 1, bold: Bool = false,
+    init(textColor: UInt8 = 7, backgroundColor: UInt8 = 0, bold: Bool = false,
         underline: Bool = false, blink: Bool = false, reverse: Bool = false,
         invis: Bool = false, wide: Bool = false) {
             self.textColor = textColor
