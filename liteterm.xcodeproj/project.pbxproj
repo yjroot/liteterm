@@ -39,6 +39,8 @@
 		BC1742FA1BDBA32A0089DEF0 /* BaseProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1742F91BDBA32A0089DEF0 /* BaseProfileManager.swift */; };
 		BC1742FB1BDBA4120089DEF0 /* BaseProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1742F91BDBA32A0089DEF0 /* BaseProfileManager.swift */; };
 		BC1742FD1BDBBBFA0089DEF0 /* GroupListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1742FC1BDBBBFA0089DEF0 /* GroupListView.swift */; };
+		BC2033031C6B5625004980F0 /* wcwidth.c in Sources */ = {isa = PBXBuildFile; fileRef = BC2033011C6B5625004980F0 /* wcwidth.c */; };
+		BC2033041C6B5625004980F0 /* wcwidth.c in Sources */ = {isa = PBXBuildFile; fileRef = BC2033011C6B5625004980F0 /* wcwidth.c */; };
 		BC4088511B62542B00E54711 /* SessionProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4088501B62542B00E54711 /* SessionProfile.swift */; };
 		BC40BCDD1B62558A007D9FF9 /* SessionProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC40BCDC1B62558A007D9FF9 /* SessionProfileTests.swift */; };
 		BC40BCDE1B62565D007D9FF9 /* SessionProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4088501B62542B00E54711 /* SessionProfile.swift */; };
@@ -141,6 +143,10 @@
 		BC17260A1C36BB4400F9D9A6 /* TerminalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerminalTests.swift; sourceTree = "<group>"; };
 		BC1742F91BDBA32A0089DEF0 /* BaseProfileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseProfileManager.swift; path = liteterm/BaseProfileManager.swift; sourceTree = "<group>"; };
 		BC1742FC1BDBBBFA0089DEF0 /* GroupListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupListView.swift; path = liteterm/GroupListView.swift; sourceTree = "<group>"; };
+		BC2032FF1C6B5625004980F0 /* liteterm-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "liteterm-Bridging-Header.h"; sourceTree = "<group>"; };
+		BC2033001C6B5625004980F0 /* litetermTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "litetermTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		BC2033011C6B5625004980F0 /* wcwidth.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = wcwidth.c; path = liteterm/wcwidth.c; sourceTree = "<group>"; };
+		BC2033021C6B5625004980F0 /* wcwidth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = wcwidth.h; path = liteterm/wcwidth.h; sourceTree = "<group>"; };
 		BC4088501B62542B00E54711 /* SessionProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SessionProfile.swift; path = liteterm/SessionProfile.swift; sourceTree = "<group>"; };
 		BC40BCDC1B62558A007D9FF9 /* SessionProfileTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionProfileTests.swift; sourceTree = "<group>"; };
 		BC40BCDF1B625A4E007D9FF9 /* SessionProfileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SessionProfileManager.swift; path = liteterm/SessionProfileManager.swift; sourceTree = "<group>"; };
@@ -318,6 +324,8 @@
 				BC09D81D1C08900800CD2F96 /* TerminalColorPalette.swift */,
 				BC0F90A61C32E4D50004D2B7 /* TerminalPosition.swift */,
 				BC0F90AC1C32ED330004D2B7 /* Terminal Handler */,
+				BC2033011C6B5625004980F0 /* wcwidth.c */,
+				BC2033021C6B5625004980F0 /* wcwidth.h */,
 			);
 			name = "Terminal Emulator";
 			sourceTree = "<group>";
@@ -325,6 +333,8 @@
 		BCAE49811B8F3B91008D8CBA /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				BC2032FF1C6B5625004980F0 /* liteterm-Bridging-Header.h */,
+				BC2033001C6B5625004980F0 /* litetermTests-Bridging-Header.h */,
 				BCAE49821B8F3BA9008D8CBA /* SWXMLHash */,
 			);
 			name = Library;
@@ -473,7 +483,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftMigration = 0700;
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Liteterm Team";
 				TargetAttributes = {
@@ -568,6 +578,7 @@
 				BC56D47A1BB95DFB009AA7AB /* BaseProfile.swift in Sources */,
 				BCE772E71BE250E700EBBDAD /* ProfileCellView.swift in Sources */,
 				BC10F24D1C36E83600456A6E /* TerminalHandlerList.swift in Sources */,
+				BC2033031C6B5625004980F0 /* wcwidth.c in Sources */,
 				BCB66D021B3287EE008AFB75 /* AppDelegate.swift in Sources */,
 				BC56D4791BB95D65009AA7AB /* PathUtils.swift in Sources */,
 				BC1726011C36385200F9D9A6 /* CSITerminalHandler.swift in Sources */,
@@ -605,6 +616,7 @@
 				BC40BCDE1B62565D007D9FF9 /* SessionProfile.swift in Sources */,
 				BC10F2521C3AB73700456A6E /* NumberListTerminalHandler.swift in Sources */,
 				BC1726051C36386D00F9D9A6 /* OSCTerminalHandler.swift in Sources */,
+				BC2033041C6B5625004980F0 /* wcwidth.c in Sources */,
 				BCAE49861B8F3BF8008D8CBA /* SWXMLHash.swift in Sources */,
 				BC56D42D1BA49C12009AA7AB /* OptionProfileTests.swift in Sources */,
 				BC56D4751BB94C34009AA7AB /* NumberField.swift in Sources */,
@@ -748,11 +760,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = liteterm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.liteterm.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "liteterm-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -760,11 +775,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = liteterm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.liteterm.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "liteterm-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -772,6 +789,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -785,6 +803,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.liteterm.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "litetermTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/liteterm.app/Contents/MacOS/liteterm";
 			};
 			name = Debug;
@@ -793,6 +813,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -802,6 +823,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.liteterm.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "litetermTests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/liteterm.app/Contents/MacOS/liteterm";
 			};
 			name = Release;

@@ -157,4 +157,19 @@ class TerminalTests: XCTestCase {
         XCTAssert(terminal.cursor.row == 1)
         XCTAssert(terminal.cursor.col == 0)
     }
+    
+    func testWcwidth() {
+        XCTAssert(TerminalCharacter(chars: "a").wcwidth == 1)
+        XCTAssert(TerminalCharacter(chars: "é").wcwidth == 1)
+        XCTAssert(TerminalCharacter(chars: "가").wcwidth == 2)
+        XCTAssert(TerminalCharacter(chars: "あ").wcwidth == 2)
+        
+        
+        terminal.putData("abc")
+        XCTAssert(terminal.cursor.row == 0)
+        XCTAssert(terminal.cursor.col == 3)
+        terminal.putData("가나다")
+        XCTAssert(terminal.cursor.row == 0)
+        XCTAssert(terminal.cursor.col == 9)
+    }
 }
