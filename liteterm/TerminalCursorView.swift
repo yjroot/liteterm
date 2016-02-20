@@ -30,14 +30,14 @@ class TerminalCursorView: NSView {
         context.saveGraphicsState()
         let currentContext = context.CGContext
         
-        CGContextSetFillColorWithColor(context.CGContext, backgroundColor.CGColor)
-        CGContextFillRect(context.CGContext, dirtyRect)
+        CGContextSetFillColorWithColor(currentContext, backgroundColor.CGColor)
+        CGContextFillRect(currentContext, dirtyRect)
         for i in 0...self.text.count {
             let rect = CGRect(origin: CGPoint(x: terminal.font.width * CGFloat(i), y: 0.0), size: CGSize(width: terminal.font.width, height: terminal.font.height))
             let char = self.text[i]
             
             if char.chars != nil {
-                terminal.font.drawChar(char.chars, position: rect.origin, color: textColor, context: currentContext)
+                terminal.font.drawChar(char.chars, position: rect.origin, width: char.wcwidth, color: textColor, context: currentContext)
             }
         }
         self.terminal.font.flush()

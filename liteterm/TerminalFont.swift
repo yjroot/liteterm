@@ -8,22 +8,25 @@
 
 import Cocoa
 
-class TerminalFont {
-    var font: CTFont
-    let width: CGFloat = 10.0
-    let height: CGFloat = 18.0
+class TerminalFont: BaseTerminalFont {
+    var font: NSFont
+    var width: CGFloat = 10.0
+    var height: CGFloat = 18.0
     
     init() {
         NSFontManager.sharedFontManager().availableFontFamilies
-        font = NSFont.systemFontOfSize(15.0)
+        font = NSFont(name: "나눔고딕", size: 18)!
+        height = font.ascender - font.descender
+        width = height * 0.6
     }
     
     var glyphs: [CGGlyph] = []
     var positions: [CGPoint] = []
+    var widths: [Int] = []
     var context: CGContextRef!
     var color: RGBColor!
     
-    func drawChar(char: Character, position: CGPoint, color: RGBColor, context: CGContextRef) -> Bool {
+    func drawChar(char: Character, position: CGPoint, width: Int, color: RGBColor, context: CGContextRef) -> Bool {
         if self.context != nil && color != self.color {
             flush()
         }
@@ -44,6 +47,7 @@ class TerminalFont {
         }
         glyphs.append(glyph)
         positions.append(position)
+        widths.append(width)
         return true
     }
     
@@ -58,7 +62,8 @@ class TerminalFont {
         
         CTFontGetAdvancesForGlyphs(self.font, CTFontOrientation.Default, glyphsArray, advancesArray, glyphsArray.count)
         for i in 0..<glyphsArray.count {
-            positionsArray[i].x += (self.width - advancesArray[i].width) / 2
+            positionsArray[i].x += ((self.width * CGFloat(widths[i])) - advancesArray[i].width) / 2
+            positionsArray[i].y -= self.font.descender
         }
         advancesArray.dealloc(glyphsArray.count)
         CGContextSetFillColorWithColor(context, color.CGColor);
@@ -70,6 +75,7 @@ class TerminalFont {
     func reset() {
         glyphs = []
         positions = []
+        widths = []
         context = nil
         color = nil
     }

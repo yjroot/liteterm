@@ -61,9 +61,16 @@ class TerminalView: NSView {
     override func mouseDown(theEvent: NSEvent) {
     }
     
+    override func viewWillStartLiveResize() {
+        cursorView.hidden = true
+    }
+    
     override func viewDidEndLiveResize() {
         terminal.rows = self.rows
         terminal.cols = self.cols
+        
+        updateCursorPosition()
+        cursorView.hidden = false
     }
     
     var padding: CGPoint {
@@ -100,7 +107,7 @@ class TerminalView: NSView {
         let textColor = terminal.palette[char.attr.textColor]
         
         if char.chars != nil {
-            self.font.drawChar(char.chars, position: rect.origin, color: textColor, context: currentContext)
+            self.font.drawChar(char.chars, position: rect.origin, width: char.wcwidth, color: textColor, context: currentContext)
         }
     }
     
@@ -175,6 +182,11 @@ class TerminalView: NSView {
             }
         }
         
+        self.updateCursorPosition()
+        self.cursorView.display()
+    }
+    
+    func updateCursorPosition() {
         var cursorDrawPosition = TerminalPosition()
         if terminal != nil {
             cursorDrawPosition = terminal.cursor
@@ -184,7 +196,6 @@ class TerminalView: NSView {
         }
         
         self.cursorView.frame = termPositionToRect(cursorDrawPosition, length: cursorView.text.count)
-        self.cursorView.display()
     }
     
     override func keyDown(theEvent: NSEvent) {
