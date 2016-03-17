@@ -21,6 +21,7 @@ class DefaultProfile {
             "protocol": "ssh",
             "ssh": [
                 "auth": [
+                    "method": "password",
                     "username": "",
                     "password": ""
                 ],
@@ -53,12 +54,6 @@ extension DefaultProfile: BaseProfile {
             return self
         }
         set(profile) {}
-    }
-    
-    subscript(key : String) -> ProfileSelector {
-        get {
-            return ProfileSelector(profile: self, key: key)
-        }
     }
     
     func getValue(keys: [String]) -> String? {

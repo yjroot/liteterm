@@ -6,14 +6,30 @@
             <option value="ssh">SSH</option>
             <option value="telnet">Telnet</option>
         </select>
-        <text label="Host" path="connection/host" />
-        <number label="Port" path="connection/port" />
-        <text label="Username" path="connection/ssh/auth/username" />
-        <password label="Password" path="connection/ssh/auth/password" />
+        
+        <text label="Host" path="connection/host" if="connection/protocol==ssh" />
+        <number label="Port" path="connection/ssh/port" if="connection/protocol==ssh" />
+        <text label="Username" path="connection/ssh/auth/username" if="connection/protocol==ssh" />
+        <password label="Password" path="connection/ssh/auth/password" if="connection/protocol==ssh" />
+        
+        <text label="Host" path="connection/host" if="connection/protocol==telnet" />
+        <number label="Port" path="connection/telnet/port" if="connection/protocol==telnet" />
+        <text label="Username" path="connection/telnet/auth/username" if="connection/protocol==telnet" />
+        <password label="Password" path="connection/telnet/auth/password" if="connection/protocol==telnet" />
+        <serialpath label="Serial path" path="connection/serial/path" if="connection/protocol==serial" />
+        
+        <multilinetext label="Command" path="connection/host" if="connection/protocol==local" />
+        
         <select label="Encoding" path="terminal/encoding">
+            <option value="ascii">ASCII</option>
             <option value="utf8">UTF-8</option>
+            <option value="utf16">UTF-16</option>
+            <option value="utf32">UTF-32</option>
+            <option value="euckr">euc-kr</option>
+            <option value="cp949">cp949</option>
         </select>
     </group>
+    
     <group label="Connection">
         <form label="General">
             <select label="Protocol" path="connection/protocol">
@@ -22,16 +38,49 @@
                 <option value="ssh">SSH</option>
                 <option value="telnet">Telnet</option>
             </select>
+            
+            <text label="Host" path="connection/host" if="connection/protocol==ssh" />
+            <number label="Port" path="connection/ssh/port" if="connection/protocol==ssh" />
+            
+            <text label="Host" path="connection/host" if="connection/protocol==telnet" />
+            <number label="Port" path="connection/telnet/port" if="connection/protocol==telnet" />
         </form>
     </group>
+    
+    <group label="SSH" if="connection/protocol==ssh">
+        <form label="Authentication">
+            <text label="Username" path="connection/ssh/auth/username" />
+            <select label="Authentication Method" path="connection/ssh/auth/method">
+                <option value="password">Password</option>
+                <option value="publickey">Public Key</option>
+            </select>
+            <password label="Password" path="connection/ssh/auth/password" if="connection/ssh/auth/method==password"/>
+        </form>
+    </group>
+    
+    <group label="Telnet" if="connection/protocol==telnet">
+        <form label="Authentication">
+            <text label="Username" path="connection/telnet/auth/username" />
+            <password label="Password" path="connection/telnet/auth/password" />
+        </form>
+    </group>
+    
     <group label="Terminal">
         <form label="General">
             <select label="Encoding" path="terminal/encoding">
+                <option value="ascii">ASCII</option>
                 <option value="utf8">UTF-8</option>
+                <option value="utf16">UTF-16</option>
+                <option value="utf32">UTF-32</option>
+                <option value="euckr">euc-kr</option>
+                <option value="cp949">cp949</option>
             </select>
             <select label="Type" path="terminal/type">
                 <option value="xterm">xterm</option>
                 <option value="vt52">VT52</option>
+                <option value="vt100">VT100</option>
+                <option value="vt110">VT110</option>
+                <option value="vt220">VT220</option>
             </select>
         </form>
     </group>

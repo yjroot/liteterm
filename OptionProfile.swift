@@ -40,12 +40,6 @@ extension OptionProfile: BaseProfile {
         set(profile) {}
     }
     
-    subscript(key : String) -> ProfileSelector {
-        get {
-            return ProfileSelector(profile: self, key: key)
-        }
-    }
-    
     func getValue(keys: [String]) -> String? {
         var any: AnyObject? = self.profile
         for key in keys {

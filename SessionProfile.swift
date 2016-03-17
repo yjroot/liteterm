@@ -17,6 +17,12 @@ class SessionProfile {
     var error: Bool = false
     var filepath: NSURL? = nil
     
+    private func emptyXML() -> XMLIndexer {
+        let root = XMLElement(name: rootElementName)
+        root.addElement("liteterm", withAttributes: ["version":"0.01"])
+        return XMLIndexer(root)
+    }
+    
     private var xml: XMLIndexer? = nil
     var root: XMLIndexer {
         if self.xml != nil {
@@ -34,9 +40,7 @@ class SessionProfile {
         }
         
         if self.xml == nil {
-            let root = XMLElement(name: rootElementName)
-            root.addElement("liteterm", withAttributes: ["version":"0.01"])
-            self.xml = XMLIndexer(root)
+            self.xml = self.emptyXML()
         }
         
         return self.xml!["liteterm"]
@@ -48,12 +52,15 @@ class SessionProfile {
     
     init(filepath: NSURL? = nil) {
         self.filepath = filepath
+        if filepath == nil {
+            self.xml = emptyXML()
+        }
     }
     
     func save() -> Bool {
         if let path: NSURL = self.filepath {
             do {
-                try "\(self)".writeToURL(path, atomically: true, encoding: NSUTF8StringEncoding)
+                try self.xml!.description.writeToURL(path, atomically: true, encoding: NSUTF8StringEncoding)
             } catch _ {
             }
             return true
@@ -63,12 +70,6 @@ class SessionProfile {
 }
 
 extension SessionProfile: BaseProfile {
-    subscript(key : String) -> ProfileSelector {
-        get {
-            return ProfileSelector(profile: self, key: key)
-        }
-    }
-    
     func getValue(keys: [String]) -> String? {
         var xml: XMLIndexer = self.root
         for key in keys {
@@ -94,6 +95,6 @@ extension SessionProfile: BaseProfile {
     }
     
     var description: String {
-        return self.xml!.description
+        return "description"
     }
 }

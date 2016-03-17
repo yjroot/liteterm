@@ -12,16 +12,23 @@ protocol BaseProfile: CustomStringConvertible {
     var parent: BaseProfile { get set }
     func getValue(keys: [String]) -> String?
     func setValue(keys: [String], value: String)
-    subscript(key : String) -> ProfileSelector { get }
+}
+
+extension BaseProfile {
+    subscript(key : String) -> ProfileSelector {
+        get {
+            return ProfileSelector(profile: self, keyList: [key])
+        }
+    }
 }
 
 class ProfileSelector {
     var profile: BaseProfile
     var list: [String]
     
-    init(profile: BaseProfile, key: String) {
+    init(profile: BaseProfile, keyList: [String]) {
         self.profile = profile
-        self.list = [key]
+        self.list = keyList
     }
     
     init(selector: ProfileSelector, key: String) {
@@ -33,6 +40,10 @@ class ProfileSelector {
         get {
             return ProfileSelector(selector: self, key: key)
         }
+    }
+    
+    var exist: Bool {
+        return profile.getValue(self.list) != nil
     }
     
     var value: String {

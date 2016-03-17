@@ -41,6 +41,9 @@
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
+                    <connections>
+                        <outlet property="delegate" destination="-2" id="7gy-Sh-5xy"/>
+                    </connections>
                 </textField>
             </subviews>
             <constraints>

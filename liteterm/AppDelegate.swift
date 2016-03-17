@@ -22,28 +22,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
     
-    var sessionProfileWindowController: SessionProfileWindowController?
-    
-    @IBAction func newSession(sender: AnyObject) {
-        sessionProfileWindowController = SessionProfileWindowController()
-        sessionProfileWindowController!.loadWindow()
-        sessionProfileWindowController!.awakeFromNib()
-        sessionProfileWindowController!.showWindow(self)
-    }
-    
-    @IBAction func openSession(_: AnyObject) {
-        let alert = NSAlert()
-        alert.messageText = "Event"
-        alert.addButtonWithTitle("OK")
-        alert.informativeText = "Open Session."
-        
-        alert.beginSheetModalForWindow(window, completionHandler: nil)
-    }
-    
     let optionWindowController = OptionWindowController(windowNibName: "Options")
     
     @IBAction func openOptions(sender: AnyObject){
         optionWindowController.openWindow()
+    }
+    
+    // MainMenu - File
+    @IBAction func newSession(sender: AnyObject) {
+    }
+    
+    var sessionProfileListWindowController: SessionProfileListWindowController!
+    @IBAction func openSession(sender: AnyObject) {
+        sessionProfileListWindowController = SessionProfileListWindowController()
+        sessionProfileListWindowController.loadWindow()
+        sessionProfileListWindowController.showWindow(self)
     }
 }
 
